@@ -11,7 +11,10 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
   
   loginForm!: FormGroup;
-  constructor( private auth: AuthService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor( 
+    private auth: AuthService, 
+    private formBuilder: FormBuilder, 
+    private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -21,11 +24,12 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  signIn(){
-    let email = this.loginForm.value.email;
+  login(){
+    let user = this.loginForm.value.email;
     let pass = this.loginForm.value.pass;
     
-    this.auth.signIn(email, pass).subscribe({next: res => {
+    this.auth.signIn(user, pass).subscribe({
+      next: res => {
       if (res.success) {
         let data = JSON.stringify({
           token: res.data.token, 
