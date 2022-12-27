@@ -11,7 +11,7 @@ export class AuthService {
   constructor( private http: HttpClient) { }
 
 //LOGIN
-  signIn(email: any, pass:string){
+  signIn(email: string, pass:string){
     let userData =
     {
       user: email,
@@ -30,5 +30,15 @@ export class AuthService {
     let url = this.host + endpoint;
     return this.http.post<any>(url, userDataJson, httpOption)
 
+  }
+
+  isLoggedIn() {
+    if (localStorage.getItem('currentUser') === null) {
+      return false;
+    }    
+    let data:any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(data);
+    let token = currentUser.token;
+    return token;
   }
 }

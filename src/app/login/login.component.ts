@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
   
   loginForm!: FormGroup;
-  constructor( private auth: AuthService, private formBuilder: FormBuilder) { }
+  constructor( private auth: AuthService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -20,14 +21,24 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  login(){
+  signIn(){
     let email = this.loginForm.value.email;
     let pass = this.loginForm.value.pass;
     
-    this.auth.signIn(email, pass).subscribe(res => {
-      localStorage.setItem("token", res.token);
-      localStorage.setItem("email", res.email);
-    })
+    this.auth.signIn(email, pass).subscribe({next: res => {
+      if (res.success) {
+        let data = JSON.stringify({
+          token: res.data.token, 
+          email: res.data.email
+        });
+        localStorage.setItem('currentUser', data);
+        this.router.navigate(['groups']);
+    }
+  },
+    error: err => {
+      alert('Hiba! Az azonosítás sikertelen!')
+    }
+    });
     
   }
 }
