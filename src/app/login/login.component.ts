@@ -14,17 +14,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      user: [''],
-      password: [''],
+      email: [''],
+      pass: [''],
 
     })
   }
 
-  signIn(){
-    let user = this.loginForm.value.email;
-    let pass = this.loginForm.value.password;
+  login(){
+    let email = this.loginForm.value.email;
+    let pass = this.loginForm.value.pass;
     
-    this.auth.signIn(user, pass).subscribe(res => {
+    this.auth.signIn(email, pass).subscribe(res => {
       localStorage.setItem("token", res.token);
       localStorage.setItem("email", res.email);
     })
