@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div id="box">
+    <form [formGroup]="loginForm" >
+        <div style="font-size: 20px; margin: 10px;" class="login text-center">Bejelentkezés</div>
+
+        <div class="email mb-3">
+            <label for="email" class="form-label ">Email</label>
+            <input id="text" type="text" formControlName="email" class="form-control" placeholder="Email címet" ngModel>
+        </div>
+
+        <div class="password mb-3">
+            <label for="password" class="form-label">Jelszó</label>
+            <input id="text" type="password" formControlName="password" class="form-control" placeholder="Jelszó" ngModel>
+        </div>
+
+        <div class="button mb-3 text-center">
+            <button id="button" class="btn btn-info" type="submit" (click)="signIn()">Bejelentkezés</button>
+        </div>
+
+        <div class="link text-center">
+            <a href="/signup">Nincs még fiókja? Regisztráljon itt!</a>
+        </div>
+    </form>
+</div>

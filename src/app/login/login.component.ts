@@ -9,7 +9,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class LoginComponent implements OnInit {
   
-  loginForm !: FormGroup;
+  loginForm!: FormGroup;
   constructor( private auth: AuthService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("token", res.token);
       localStorage.setItem("email", res.email);
     })
-    console.error("sikerelen");
     
   }
 }
