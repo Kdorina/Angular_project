@@ -1,19 +1,21 @@
 <div id="box">
-    <form [formGroup]="loginForm">
+    <form [formGroup]="form" (ngSubmit)="login()">
         <div style="font-size: 20px; margin: 10px;" class="login text-center">Bejelentkezés</div>
 
         <div class="email mb-3">
-            <label for="email" class="form-label ">Email</label>
-            <input formControlName="email" class="form-control" placeholder="Email címet">
-        </div>
+            <label class="form-label ">Email</label>
+            <input type="ema" class="form-control"
+             placeholder="Email címet" formControlName="email" >
+          </div>
 
         <div class="password mb-3">
             <label class="form-label">Jelszó</label>
-            <input type="password" formControlName="pass" class="form-control" placeholder="Jelszó">
-        </div>
-
+            <input type="password" class="form-control" 
+            placeholder="Jelszó" formControlName="pass">
+          </div>
+         
         <div class="button mb-3 text-center">
-            <button id="button" class="btn btn-info" type="submit" (click)="login()">Bejelentkezés</button>
+            <button id="button" class="btn btn-info" type="submit" >Bejelentkezés</button>
         </div>
 
         <div class="link text-center">
@@ -21,3 +23,4 @@
         </div>
     </form>
 </div>
+
