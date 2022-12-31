@@ -7,11 +7,11 @@
           <img [src]="image" alt="loginFormPic">
     </div>
   
-    <!-- LOGIN FORM (RIGHT SIDE) -->
+    <!-- REG FORM (RIGHT SIDE) -->
       <form class="login" [formGroup]="form" (ngSubmit)="register()">
           <div id="loginText" class="text-center">bejelentkezés</div>
   
-          <!-- LOGIN BOX -->
+          <!-- REG BOX -->
           <div class="box">
             <div class="email mb-3">
                 <label class="form-label ">Név</label>
@@ -27,18 +27,18 @@
     
 
             <div class="email mb-3">
-                <label class="form-label ">Életkor</label>
+                <label class="form-label ">Születési év</label>
                 <input type="date" class="form-control"
-                 placeholder="Életkor" formControlName="age" >
+                 formControlName="birthday" >
               </div>
 
               <div class="mb-3">
                 <label for="password" class="form-label">Nem</label>
-                <select class="form-select" aria-label="Default select example">
+                <select formControlName="gender" class="form-select" aria-label="Default select example">
                     <option selected>Válassza ki</option>
-                    <option value="1">Nő</option>
-                    <option value="2">Férfi</option>
-                    <option value="3">Egyéb</option>
+                    <option value="nő">Nő</option>
+                    <option value="férfi">Férfi</option>
+                    <option value="egyéb">Egyéb</option>
                   </select>
             </div>
 
@@ -56,12 +56,12 @@
   
             </div>
   
-          <!-- LOGIN BUTTON -->
+          <!-- REG BUTTON -->
           <div class="button mb-3 text-center">
               <button id="button" class="btn btn-info" type="submit" >Regisztráció</button>
           </div>
   
-             <!-- REG LINK -->
+             <!-- LOG LINK -->
           <div class="link text-center">
             <a class="regLink" href="/login">Van már fiókja? Jelentkezzen be!</a>
         </div>
