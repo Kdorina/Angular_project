@@ -1,8 +1,101 @@
 
-#box{
-    background-color:#f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
+.login{
 
-   
+    padding: 2px;
+    width: 450px;
+    float: right;
+}
+// CONTAINER
+.container{
+    display: flex;
+    height: 500px;
+    width: 800px;
+    box-shadow: 0px 2px 40px rgb(175, 183, 199);
+    margin:auto;
+    margin-top: 50px;
+}
+
+// jobb oldal LOGIN
+
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    background-color:#ffffff;
+}
+#loginText{
+    font-size: 30px;
+    margin-top: 30px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-variant: small-caps;
+}
+.box{
+    margin-top: 20px;
+ }
+label{
+    margin: 2px;
+}
+input{
+    width: 250px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.link{
+    display: flex;
+    font-size: 12px;
+}
+.regLink{
+    color: #7b8ae9;
+}
+.button{
+    margin-top: 25px;
+}
+#button{
+    border-radius: 20px;
+    width: 150px;
+    background-color: #e97bc8;
+    padding: 8px;
+    border:  none;
+
+}
+#button:hover{
+    background-color: #7b8ae9;
+}
+// bal oldal
+.welcomeTextMini{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+}
+.welcomeText{
+    position: absolute;
+    top: 28%;
+    left: 25%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-variant: small-caps;
+
+}
+.leftSide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+
+}
+img{
+    margin: 0;
+    width: 450px;
+    height: 500px;
 }

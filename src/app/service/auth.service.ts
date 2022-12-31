@@ -27,9 +27,9 @@ export class AuthService {
     return this.http.post<any>(url, authData, httpOptions);
   }
 
-  logout(name: string, token: string) {
+  logout(email: string, token: string) {
     const userData = {
-      name: name,
+      email: email,
       tokenId: token
     }
     let httpHeaders = new HttpHeaders();
@@ -39,7 +39,7 @@ export class AuthService {
     }
     let endpoint = 'logout';
     let url = this.host + endpoint;
-    console.log(userData.name)
+    console.log(userData.email)
     return this.http.post<any>(url, userData, httpOptions);
   }
   

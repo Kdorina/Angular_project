@@ -14,9 +14,9 @@ export class AppComponent {
   logout() {
     let jsonUserData: any = localStorage.getItem('userData');
     let userData = JSON.parse(jsonUserData);
-    console.log(userData.name);
+    console.log(userData.email);
     console.log(userData.token);
-    this.auth.logout(userData.name, userData.token).subscribe({
+    this.auth.logout(userData.email, userData.token).subscribe({
       next: res => {
         console.log(res)
       }

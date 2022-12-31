@@ -10,6 +10,9 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  image:string = "assets/images/pic.jpg";
+
   form!: FormGroup;
   title = "User-Login";
   submitted!: boolean;
@@ -34,6 +37,7 @@ export class LoginComponent implements OnInit {
           next: data => {
             localStorage.setItem('userData', JSON.stringify(data));
           
+              this.router.navigate(['/home']);
           },
           error: err => {
             console.log('Hiba! A belépés sikertelen!')
