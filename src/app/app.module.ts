@@ -11,6 +11,7 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     RegisterComponent,
     NavbarComponent,
+    AboutComponent,
     
   ],
   imports: [

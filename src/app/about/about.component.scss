@@ -1,0 +1,142 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8fcff;
+}
+.container{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+
+}
+
+// MINI CARDS ABOUT US(ESZTER, DORINA)
+.container .cards{
+    position: relative;
+    width: 320px;
+    height: 440px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+                inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+                5px 5px 5px rgba(0, 0, 0,0.05),
+                -5px -5px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    margin: 30px;
+}
+
+.container .cards .box{
+    position:absolute;
+    top:20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #f8fcff;
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .cards:hover .box{
+    transform: translateY(-30px);
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.4);
+    background: linear-gradient(45deg, #d1a346cc, #cd2962);
+}
+
+.container .cards .box .content{
+    padding: 20px;
+    text-align: center;
+}
+.container .cards .box .content h2{
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: rgb(0, 0, 0,0.05);
+    transition: 0.5s;
+}
+img{
+    width: 150px;
+    clip-path: circle();
+}
+.container .cards:hover .box .content h2{
+    color: rgb(0, 0, 0,0.05);
+}
+
+.container .cards .box .content h3{
+   font-size: 1.8rem;
+   color: #777;
+   z-index: 1;
+    transition: 0.5s;
+}
+container .cards .box .content p{
+    font-size: 1em;
+    font-weight: 300;
+    color: #777;
+    z-index: 1;
+    transition: 0.5s;
+}
+.container .cards:hover .box .content h3,
+.container .cards:hover .box .content p{
+    color: #fff;
+}
+
+
+//MAIN CARD
+
+.container .mainCard {
+        position: relative;
+        width: 1200px;
+        height: 700px;
+        box-shadow: 0 0px 20px rgba(0, 0, 0, 0.272);
+        border-radius: 15px;
+        margin: 30px;
+        background: linear-gradient(45deg, #d1a346cc, #cd2962);
+}
+.container .mainCard .box{
+    position:absolute;
+    top:20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    
+    background: #f8fcff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+.container .mainCard .box .content{
+    padding: 20px;
+   
+}
+
+.container .mainCard .box .content h1{
+    text-align: center;
+    // font-size: 1.8rem;
+    color: rgb(40, 40, 40);
+    z-index: 1;
+     transition: 0.5s;
+     
+ }
+ .container .mainCard .box .content p{
+    font-size: 1em;
+    font-weight: 300;
+    color: rgb(95, 95, 95);
+    z-index: 1;
+    transition: 0.5s;
+}
+
+@media (max-width: 800px){
+    .container .mainCard{
+        height: 700px;
+        width: 600px;
+        background: linear-gradient(180deg, #d1a346cc, #cd2962);
+    
+    }
+}
