@@ -13,6 +13,12 @@ import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 
+import { AdminComponent } from './admin/admin.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+
+import { AdminRoutingModule} from 'src/app/admin/admin-routing.module';
+import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +28,9 @@ import { AboutComponent } from './about/about.component';
     RegisterComponent,
     NavbarComponent,
     AboutComponent,
+    AdminComponent,
+    AdminHomeComponent,
+    AdminNavbarComponent,
     
   ],
   imports: [
@@ -29,7 +38,8 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AdminRoutingModule
     
   ],
   providers: [],
