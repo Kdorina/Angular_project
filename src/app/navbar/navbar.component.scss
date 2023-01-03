@@ -1,6 +1,6 @@
 
 header{
-    position: fixed;
+    position: relative;
     width: 100%;
     top: 0;
     right: 0;
@@ -16,13 +16,13 @@ header{
 .logo{
     display: flex;
     align-items: center;
-
+    text-decoration: none;
 }
 
 .logo span {
     color:rgb(0, 0, 0);
-   font-weight: 600;
-   font-size: 28px;
+    font-weight: 600;
+    font-size: 28px;
     margin-right: 3px;
 }
 .navbar{
@@ -53,6 +53,7 @@ header{
 }
 
 .main a{
+    text-decoration: none;
     margin-right: 25px;
     margin-left: 10px;
     color: black;
@@ -60,26 +61,22 @@ header{
     font-weight: 500;
     transition: all .50s ease;
 }
+.main a:hover{
+    background-color: rgba(0, 0, 0, 0.057);
+    padding: 5px;
+    border-radius: 5px;
+}
 
-.user{
+.log{
     display: flex;
     align-items: center;
 
 }
 
-.user i{
-    color: rgb(0, 0, 0);
-    font-size: 28px;
-    margin-right: 7px;
-}
-
-.main a:hover{
-   color: #000;
-}
 #menu-icon{
-    border-radius: 30px;
-    padding: 2px 8px 2px;
-    background-color: rgb(255, 255, 255);
+    border: none;
+    // padding: 2px 8px 2px;
+    background-color:clear;
     font-size: 25px;
     color:rgb(0, 0, 0);
     cursor: pointer;
@@ -105,36 +102,72 @@ header{
 @media (max-width: 1090px){
     #menu-icon{
         display: block;
+        background-color: none;
+        padding: 0px 5px;
+
+        border-radius: 5px;
+    }
+    #menu-icon:hover{
+        background-color: rgba(255, 115, 0, 0.493);
+       
     }
     .navbar{
         position: absolute;
-        top: 100%;
+        margin-top: 250px;
+        // top: 100%;
         right: -100%;
-        width: 270px;
+        width: 170px;
         height: 29vh;
-        background-color: rgb(224, 224, 224);
+        background-color: rgba(224, 224, 224, 0.42);
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
         justify-content: flex-start;
         border-radius: 10px;
         transition: all .50s ease;
        
     }
-    .navbar a{
-       display: block;
-       margin: 12px 0;
-       padding: 0px 25px;
-       transition: all .50s ease;
-       
+    .navbar td{
+        display: block;
+        padding: 10px;
+        border-radius: 10px;
     }
-    .navbar a:hover{
-        color: azure;
-        transform: translateY(5px);
+    .navbar td a{
+        margin: 12px 0;
+        transition: all .5s ease;
+        text-decoration: none;
+
+    }
+
+    .navbar td:hover{
+        color: #000;
+        width: 170px;
+        background-color: rgba(255, 115, 0, 0.443);
+        // transform: translateY(5px);
+        transition: 0.1s;
+        
     }
     .navbar a:active{
-        color: azure;
+        color: #000;
     }
-    .navbar.open{
+    .navbar{
         right: 2%;
+        opacity: 1;
     }
+
+    .main a{
+        text-decoration: none;
+        margin-left: 10px;
+        color: black;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all .50s ease;
+    }
+    .main .reg{
+        margin-right: 150px;
+    }
+    .main .log {
+        
+        margin-left: 100px;
+    }
+
 }
