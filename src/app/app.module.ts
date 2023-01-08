@@ -18,6 +18,9 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
 import { AdminRoutingModule} from 'src/app/admin/admin-routing.module';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
+import { AdminStatisticComponent } from './admin/admin-statistic/admin-statistic.component';
+import { AdminStudentsComponent } from './admin/admin-students/admin-students.component';
+import { AdminSchoolsComponent } from './admin/admin-schools/admin-schools.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.componen
     AdminComponent,
     AdminHomeComponent,
     AdminNavbarComponent,
+    AdminStatisticComponent,
+    AdminStudentsComponent,
+    AdminSchoolsComponent,
     
   ],
   imports: [

@@ -1,0 +1,152 @@
+.container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1500px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+
+}
+
+.container .cards{
+    position: relative;
+    margin-left: 20px;
+    width: 300px;
+    height: 200px;
+    // box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+    //             inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+    //             5px 5px 5px rgba(0, 0, 0,0.05),
+    //             -5px -5px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    // margin: 30px;
+}
+
+.container .cards .box{
+    position:absolute;
+    top:20px;
+    left: 10px;
+    right: 10px;
+    bottom: 20px;
+    background: #f8fcff;
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .cards:hover .box{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.4);
+    background: linear-gradient(45deg, #ffffffcc, #b2c4ff);
+}
+
+.container .cards .box .content{
+    padding: 20px;
+    text-align: center;
+}
+.container .cards .box .content h2{
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: rgb(0, 0, 0,0.05);
+    transition: 0.5s;
+}
+
+.container .cards:hover .box .content h2{
+    color: rgba(0, 0, 0, 0.05);
+}
+
+.container .cards .box .content h3{
+   font-size: 1.8rem;
+   color: #777;
+   z-index: 1;
+    transition: 0.5s;
+}
+container .cards .box .content p{
+    font-size: 1em;
+    font-weight: 300;
+    color: #777;
+    z-index: 1;
+    transition: 0.5s;
+}
+.container .cards:hover .box .content h3,
+.container .cards:hover .box .content p{
+    color: rgb(0, 0, 0);
+}
+
+// MAIN ADMIN CARDS
+
+#main{
+
+    position:absolute;
+    top:20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #ffffff;
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mainCard{
+    position: relative;
+    width: 1000px;
+    min-height: 50vh;
+    // box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+    //             inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+    //             5px 5px 5px rgba(0, 0, 0,0.05),
+    //             -5px -5px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    // margin: 30px;
+}
+ #main2{
+
+    position:absolute;
+    top:20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #ffffff;
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+}
+ #mainCard2{    flex: 2;
+    position: relative;
+    width: 500px;
+    min-height: 50vh;
+    // box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+    //             inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+    //             5px 5px 5px rgba(0, 0, 0,0.05),
+    //             -5px -5px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    // margin: 30px;
+}
+#mainCard #main #mainContent h2{
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: rgb(0, 0, 0,0.05);
+    transition: 0.5s;
+}
+#mainCard2 #main2 #mainContent2 h2{
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: rgb(0, 0, 0,0.05);
+    transition: 0.5s;
+}
+
+thead {
+color: #b2c4ff;
+font-size: 25px;
+}
