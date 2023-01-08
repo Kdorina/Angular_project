@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
           next: data => {
             localStorage.setItem('userData', JSON.stringify(data));
           
-              this.router.navigate(['/home']);
+              this.router.navigate(['/main-page']);
           },
           error: err => {
             console.log('Hiba! A belépés sikertelen!')

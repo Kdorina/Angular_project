@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,9 @@ import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.componen
 import { AdminStatisticComponent } from './admin/admin-statistic/admin-statistic.component';
 import { AdminStudentsComponent } from './admin/admin-students/admin-students.component';
 import { AdminSchoolsComponent } from './admin/admin-schools/admin-schools.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { NewSubjectComponent } from './new-subject/new-subject.component';
+import { EditSubjectComponent } from './edit-subject/edit-subject.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,9 @@ import { AdminSchoolsComponent } from './admin/admin-schools/admin-schools.compo
     AdminStatisticComponent,
     AdminStudentsComponent,
     AdminSchoolsComponent,
+    MainPageComponent,
+    NewSubjectComponent,
+    EditSubjectComponent,
     
   ],
   imports: [
@@ -45,7 +52,8 @@ import { AdminSchoolsComponent } from './admin/admin-schools/admin-schools.compo
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    CommonModule
     
   ],
   providers: [],
