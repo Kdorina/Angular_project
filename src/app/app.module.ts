@@ -25,6 +25,10 @@ import { AdminSchoolsComponent } from './admin/admin-schools/admin-schools.compo
 import { MainPageComponent } from './main-page/main-page.component';
 import { NewSubjectComponent } from './new-subject/new-subject.component';
 import { EditSubjectComponent } from './edit-subject/edit-subject.component';
+import { UserNavbarComponent } from './user-navbar/user-navbar.component';
+import { FilesComponent } from './files/files.component';
+import { UserStatisticComponent } from './user-statistic/user-statistic.component';
+import { BodyComponent } from './body/body.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,10 @@ import { EditSubjectComponent } from './edit-subject/edit-subject.component';
     MainPageComponent,
     NewSubjectComponent,
     EditSubjectComponent,
+    UserNavbarComponent,
+    FilesComponent,
+    UserStatisticComponent,
+    BodyComponent,
     
   ],
   imports: [
