@@ -4,9 +4,10 @@
     <div class="cards">
         <div class="content">
             <label for="subject" class="form-label">Tantárgyam</label>
-            <input type="text" class="form-control" placeholder="tantárgy...">
+            <input type="text" class="form-control" placeholder="tantárgy..." #newSubject>
             <div>
-                <button routerLink="/subjects" class="btn btn-info">Felvesz</button>
+                <button routerLink="/subjects" class="btn btn-info" 
+                (click)="store(newSubject.value); newSubject.value='' ">Felvesz</button>
             </div>
         </div>
     </div>
@@ -19,11 +20,22 @@
             </div>
         </div>
     </div>
-</div>
 
 
-<div class="">
-    <table>
+    <div class=" cards" *ngIf="show">
+        <div class="content">
+            <label id="subjectEdit" for="subject" class="form-label">Tantárgy</label>
+            <input type="text" class="form-control" [(ngModel)]="editSubject" #clickSubject>
+                
+                <div>
+                    <button class=" editBtn btn btn-outline-info" type="button"
+                    (click)="update(clickSubject.value)">Szerkeszt</button>
+                </div>
+        </div>
+    </div>
+
+<div class="subjectTable">
+    <table class="table table-striped">
     <thead>
         <th>ID</th>
         <th>Tantárgy</th>
@@ -36,8 +48,8 @@
         <tr *ngFor="let sub of data">
             <td>{{ sub.id }}</td>
             <td>{{ sub.subject }}</td>
-            <td><button class="editBtn btn btn-outline-success" routerLink="/edit/{{sub.id}}"><i class="fa fa-pencil fa-fw"></i></button></td>
-            <td><button  class=" deletBtn btn btn-outline-danger" (click)="destroy(sub.id)"><i class="fa fa-trash fa-fw"></i></button></td>
+            <td><button class="editBtn btn btn-outline-success" (click)="editShow()"><i class="bi bi-pencil"></i></button></td>
+            <td><button  class=" deletBtn btn btn-outline-danger" (click)="destroy(sub.id)"><i class="bi bi-trash"></i></button></td>
         </tr>
     </tbody>
 
