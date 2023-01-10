@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { count } from 'rxjs';
 import { AdminService } from '../service/admin.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class AdminHomeComponent implements OnInit {
 
   ngOnInit(){
     this.getUsers();
+    this.countUser();
   }
   getUsers(){
    this.users= this.AdminService.getUsers().subscribe(user=>{
@@ -23,5 +25,15 @@ export class AdminHomeComponent implements OnInit {
       console.log(user);
     });
   
+  }
+  count:any;
+  num:any;
+  countUser(){
+    this.count= this.AdminService.countUsers().subscribe(sum=>{
+      this.count= sum;
+      
+   this.num  = sum? sum.length : 0;
+    console.log(this.num)
+    });
   }
 }

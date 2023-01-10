@@ -23,12 +23,28 @@ export class AdminService {
     return this.http.get<any>(url, httpOptions);
 
   }
-//  getUsers(){
-//     return this.http.get<any>(this.host+'user');
-//   }
-//   httpOptions = {
-//     headers : new HttpHeaders({
-//       'Content-Type':' application/json'
-//     })
-//   };
+  countUsers(){
+    let httpHeaders = new HttpHeaders();
+    httpHeaders.set('Content-Type', 'application/json');
+    const httpOptions = {
+      headers: httpHeaders
+    }
+    let endpoint = 'sum';
+    let url = this.host + endpoint;
+    return this.http.get<any>(url, httpOptions);
+
+  }
+  ageOfUsers(){
+    let httpHeaders = new HttpHeaders();
+    httpHeaders.set('Content-Type', 'application/json');
+    const httpOptions = {
+      headers: httpHeaders
+    }
+    let endpoint = 'age';
+    let url = this.host + endpoint;
+    return this.http.get<any>(url, httpOptions);
+
+  }
+
+
 }
