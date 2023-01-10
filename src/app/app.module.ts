@@ -23,8 +23,6 @@ import { AdminStatisticComponent } from './admin/admin-statistic/admin-statistic
 import { AdminStudentsComponent } from './admin/admin-students/admin-students.component';
 import { AdminSchoolsComponent } from './admin/admin-schools/admin-schools.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { NewSubjectComponent } from './new-subject/new-subject.component';
-import { EditSubjectComponent } from './edit-subject/edit-subject.component';
 import { FilesComponent } from './files/files.component';
 import { UserStatisticComponent } from './user-statistic/user-statistic.component';
 
@@ -44,8 +42,6 @@ import { UserStatisticComponent } from './user-statistic/user-statistic.componen
     AdminStudentsComponent,
     AdminSchoolsComponent,
     MainPageComponent,
-    NewSubjectComponent,
-    EditSubjectComponent,
     FilesComponent,
     UserStatisticComponent,
   ],

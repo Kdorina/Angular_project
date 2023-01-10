@@ -59,15 +59,17 @@
                                 <th>ID</th>
                                 <th>Név</th>
                                 <th>Email</th>
+                                <th>Születési év</th>
+                                <th>Nem</th>
                             </thead>
                         
-                            <tbody *ngIf="users?.length ">
+                            <tbody *ngIf="users.length ">
                                 <tr *ngFor="let user of users">
                                     <td>{{ user.id }}</td>
                                     <td>{{ user.name }}</td>
                                     <td>{{ user.email }}</td>
-                                    <!-- <td>{{ user.date_of_birth }}</td>
-                                    <td>{{ user.gender }}</td> -->
+                                    <td>{{ user.date_of_birth }}</td>
+                                    <td>{{ user.gender }}</td>
                                 </tr>
                       
                             </tbody>
