@@ -17,7 +17,10 @@ export class AdminHomeComponent implements OnInit {
   ngOnInit(){
     this.getUsers();
     this.countUser();
+    this. ageOfUsers();
   }
+
+  // USERS IN TABLE
   getUsers(){
    this.users= this.AdminService.getUsers().subscribe(user=>{
       this.users= user;
@@ -26,14 +29,29 @@ export class AdminHomeComponent implements OnInit {
     });
   
   }
+
+  // USERS NUMBER
   count:any;
   num:any;
   countUser(){
-    this.count= this.AdminService.countUsers().subscribe(sum=>{
-      this.count= sum;
+    this.count= this.AdminService.getUsers().subscribe(data=>{
+      this.count= data;
       
-   this.num  = sum? sum.length : 0;
-    console.log(this.num)
+   this.num  = data? data.length : 0;
+    // console.log(this.num)
     });
+  }
+
+  //USERS AGE
+  age:any;
+  sum:any;
+  ageOfUsers(){
+    this.AdminService.ageOfUsers().subscribe(data=>{
+      this.age = data ;
+
+      this.sum  = data? data.length : 0;
+      console.log(this.sum)
+    });
+ 
   }
 }
