@@ -1,23 +1,5 @@
 <p>Tantárgyaim</p>
 
-<div>
-    <table class=" table table-striped">
-        
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Tantárgy</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr *ngFor="let sub of data">
-                <td>{{sub.id}}</td>
-                <td>{{sub.subject}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 <div class="container">
     <div class="cards">
         <div class="content">
@@ -38,3 +20,27 @@
         </div>
     </div>
 </div>
+
+
+<div class="">
+    <table>
+    <thead>
+        <th>ID</th>
+        <th>Tantárgy</th>
+        <th>Szerkeztés</th>
+        <th>Törlés</th>
+    </thead>
+
+
+    <tbody *ngIf="data.length">
+        <tr *ngFor="let sub of data">
+            <td>{{ sub.id }}</td>
+            <td>{{ sub.subject }}</td>
+            <td><button class="editBtn btn btn-outline-success" routerLink="/edit/{{sub.id}}"><i class="fa fa-pencil fa-fw"></i></button></td>
+            <td><button  class=" deletBtn btn btn-outline-danger" (click)="destroy(sub.id)"><i class="fa fa-trash fa-fw"></i></button></td>
+        </tr>
+    </tbody>
+
+</table>
+
+<div>

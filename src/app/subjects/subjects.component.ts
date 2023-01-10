@@ -18,10 +18,17 @@ ngOnInit(): void {
 
 
 index(){
-   this.api.index().subscribe((res)=>{
+   this.data= this.api.index().subscribe((res)=>{
     this.data = res;
-    console.log(res)
+    console.log(this.data)
   })
+}
+destroy(id:any){
+  this.api.destroy(id).subscribe(res=>{
+
+    console.log(res);
+  }
+  );
 }
 
 }
