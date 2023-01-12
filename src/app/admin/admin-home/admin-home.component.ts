@@ -34,10 +34,10 @@ export class AdminHomeComponent implements OnInit {
   count:any;
   num:any;
   countUser(){
-    this.count= this.AdminService.getUsers().subscribe(data=>{
-      this.count= data;
+    this.count= this.AdminService.getUsers().subscribe(user=>{
+      this.count= user;
       
-   this.num  = data? data.length : 0;
+   this.num  = user? user.length : 0;
     // console.log(this.num)
     });
   }
@@ -49,8 +49,8 @@ export class AdminHomeComponent implements OnInit {
     this.AdminService.ageOfUsers().subscribe(data=>{
       this.age = data ;
 
-      this.sum  = data? data.length : 0;
-      console.log(this.sum)
+      // this.sum  = data? data.length : 0;
+      console.log(data);
     });
  
   }

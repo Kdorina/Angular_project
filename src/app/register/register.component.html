@@ -9,12 +9,17 @@
   
     <!-- REG FORM (RIGHT SIDE) -->
       <form class="login" [formGroup]="form" (ngSubmit)="register()">
-          <div id="loginText" class="text-center">bejelentkezés</div>
+          <div id="loginText" class="text-center">Regisztráció</div>
   
           <!-- REG BOX -->
           <div class="box">
+            <div class="building mb-3">
+                <label class="form-label ">Intézmény neve</label>
+                <input type="text" class="form-control"
+                 placeholder="Intézmény" formControlName="buildingName" >
+              </div>
             <div class="email mb-3">
-                <label class="form-label ">Név</label>
+                <label class="form-label ">Felhasználó név</label>
                 <input type="text" class="form-control"
                  placeholder="Teljes név" formControlName="name" >
               </div>
