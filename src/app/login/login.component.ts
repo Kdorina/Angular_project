@@ -33,17 +33,26 @@ export class LoginComponent implements OnInit {
       login(){
         let email = this.form.value.email;
         let pass = this.form.value.pass;
-        this.auth.login(email, pass).subscribe({
-          next: data => {
-            localStorage.setItem('userData', JSON.stringify(data));
-          
-              this.router.navigate(['/main-page']);
-          },
-          error: err => {
-            console.log('Hiba! A belépés sikertelen!')
+
+        this.auth.login(email, pass)
+        .subscribe( data => {
+
+            console.log(data.token);
+            console.log(data.success);
+
+          if(data.success) {
+
+            localStorage.setItem('userData', JSON.stringify({token: data.token, name: data.name}));
+
+            this.router.navigate(['/main-page']);
+
           }
-          
-        });
-        
+          else 
+          {
+            alert('A belépés sikertelen!');
+          }
+        })
+
+
       }
 }
