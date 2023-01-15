@@ -11,6 +11,24 @@ export class AdminService {
 
   constructor( private http: HttpClient) { }
 
+  
+//LOGIN
+login(email: string, pass:string){
+  let authData =
+  {
+    email: email,
+    password: pass
+  }
+  let httpHeaders = new HttpHeaders();
+  httpHeaders.set('Content-Type', 'application/json');
+  const httpOptions = {
+    headers: httpHeaders
+  }
+  let endpoint = 'login';
+  let url = this.host + endpoint;
+  return this.http.post<any>(url, authData, httpOptions);
+}
+
 
   getUsers(){
     let httpHeaders = new HttpHeaders();

@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SubjectsComponent } from './subjects/subjects.component';
+import { SubjectsComponent } from './user/subjects/subjects.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -17,14 +17,20 @@ import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AdminRoutingModule} from 'src/app/admin/admin-routing.module';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
 import { AdminStatisticComponent } from './admin/admin-statistic/admin-statistic.component';
 import { AdminStudentsComponent } from './admin/admin-students/admin-students.component';
 import { AdminSchoolsComponent } from './admin/admin-schools/admin-schools.component';
-import { MainPageComponent } from './main-page/main-page.component';
-import { FilesComponent } from './files/files.component';
-import { UserStatisticComponent } from './user-statistic/user-statistic.component';
+
+import { UserRoutingModule } from './user/user-routing.modul';
+import { UserComponent } from './user/user.component';
+import { MainPageComponent } from './user/main-page/main-page.component';
+import { FilesComponent } from './user/files/files.component';
+import { UserStatisticComponent } from './user/user-statistic/user-statistic.component';
+import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -41,9 +47,12 @@ import { UserStatisticComponent } from './user-statistic/user-statistic.componen
     AdminStatisticComponent,
     AdminStudentsComponent,
     AdminSchoolsComponent,
+    AdminLoginComponent,
     MainPageComponent,
     FilesComponent,
     UserStatisticComponent,
+    UserNavbarComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +61,8 @@ import { UserStatisticComponent } from './user-statistic/user-statistic.componen
     FormsModule,
     ReactiveFormsModule,
     AdminRoutingModule,
-    CommonModule
+    UserRoutingModule,
+    CommonModule,
     
   ],
   providers: [],

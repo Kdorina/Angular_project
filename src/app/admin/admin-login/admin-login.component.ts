@@ -1,24 +1,21 @@
-
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators , FormControlName} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../user/service/auth.service';
+import { AdminService } from '../service/admin.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-admin-login',
+  templateUrl: './admin-login.component.html',
+  styleUrls: ['./admin-login.component.scss']
 })
-export class LoginComponent implements OnInit {
-
-  image:string = "assets/images/pic.jpg";
+export class AdminLoginComponent {
 
   form!: FormGroup;
   title = "User-Login";
   submitted!: boolean;
 
   constructor( 
-    private auth: AuthService, 
+    private admin: AdminService, 
     private formBuilder: FormBuilder, 
     private router: Router) { }
 
@@ -34,7 +31,7 @@ export class LoginComponent implements OnInit {
         let email = this.form.value.email;
         let pass = this.form.value.pass;
 
-        this.auth.login(email, pass)
+        this.admin.login(email, pass)
         .subscribe( data => {
 
             console.log(data.token);
@@ -44,7 +41,7 @@ export class LoginComponent implements OnInit {
 
             localStorage.setItem('userData', JSON.stringify({token: data.token, name: data.name}));
 
-            this.router.navigate(['/user/main-home']);
+            this.router.navigate(['/admin-home']);
 
           }
           else 
