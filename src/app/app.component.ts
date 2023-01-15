@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from './user/service/auth.service';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,14 +12,10 @@ export class AppComponent {
   constructor(private auth: AuthService) {}
  
   logout() {
-    let jsonUserData: any = localStorage.getItem('userData');
-    let userData = JSON.parse(jsonUserData);
-    console.log(userData.email);
-    console.log(userData.token);
-    this.auth.logout(userData.email, userData.token).subscribe({
-      next: res => {
-        console.log(res)
-      }
-    });
+   this.auth.logout();
+   console.log('Kilépés');
+  }
+  successLogout(){
+    console.log('Sikeres kijelentkezés')
   }
 }

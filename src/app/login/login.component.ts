@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators , FormControlName} from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../user/service/auth.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -35,14 +35,14 @@ export class LoginComponent implements OnInit {
         let pass = this.form.value.pass;
 
         this.auth.login(email, pass)
-        .subscribe( data => {
+        .subscribe( res => {
 
-            console.log(data.token);
-            console.log(data.success);
+            console.log(res.data.token);
+            console.log(res.name);
 
-          if(data.success) {
+          if(res.success) {
 
-            localStorage.setItem('userData', JSON.stringify({token: data.token, name: data.name}));
+            localStorage.setItem('currentUser', JSON.stringify({token: res.data.token, name: res.data.email}));
 
             this.router.navigate(['/user/main-home']);
 

@@ -27,27 +27,9 @@ export class AuthService {
     return this.http.post<any>(url, authData, httpOptions);
   }
 
-  logout(email: string, token: string) {
-    const userData = {
-      email: email,
-      tokenId: token
-    }
-    let httpHeaders = new HttpHeaders();
-    httpHeaders.set('Content-Type', 'application/json');
-    const httpOptions = {
-      headers: httpHeaders
-    }
-    let endpoint = 'logout';
-    let url = this.host + endpoint;
-    console.log(userData.email)
-    return this.http.post<any>(url, userData, httpOptions);
-  }
-
-
-  register(name:any, email:any,
-          birthday:any, gender:any, 
+  register(name:any, email:any, birthday:any, gender:any, 
           pass:any, conf_pass:any
-){
+          ){
     let newAuthData =
     {
       name: name,
@@ -67,4 +49,32 @@ export class AuthService {
     return this.http.post<any>(url, newAuthData, httpOptions);
   }
   
+  logout() {
+    if(localStorage.getItem('currentUser') === null){
+      return;
+    }
+    let data:any = localStorage.getItem('currentUser');
+    localStorage.removeItem('currentUser');
+    let currentUser = JSON.parse(data);
+    let token = currentUser.token;
+    let httpHeaders = new HttpHeaders();
+    httpHeaders.set('Content-Type', 'application/json');
+
+    const httpOptions = {
+      headers: httpHeaders
+    }
+    let endpoint = 'logout';
+    let url = this.host + endpoint;
+    return this.http.post<any>(url, httpOptions);
+  }
+
+  isLoggedIn(){
+    if(localStorage.getItem('currentUser') === null){
+      return false;
+    }
+    let data:any = localStorage.getItem('currentUser');
+    let userData = JSON.parse(data);
+    let token = userData.token;
+    return token;
+  }
 }
