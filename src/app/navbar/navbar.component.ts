@@ -7,13 +7,13 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
-  navbar: any;
+  homeNavbar= false;
 
-  show(){
-  this.navbar = true;
+  home(){
+  this.homeNavbar = !this.homeNavbar;
   }
-  close(){
-  this.navbar = false;
+  show(){
+    console.log("ooooo")
   }
 
 }

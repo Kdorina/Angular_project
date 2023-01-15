@@ -12,11 +12,6 @@ const routes: Routes = [
   {path: "home", component:HomeComponent},
   {path: "about", component: AboutComponent},
 
-  // {path: "", redirectTo:"main-page", pathMatch: "full"},
-  // {path: "main-page", component: MainPageComponent},
-  // {path: "subject", component: SubjectsComponent},
-  // {path: "user-statistic", component: UserStatisticComponent},
-  // {path: "files", component: FilesComponent}
 ];
 
 @NgModule({

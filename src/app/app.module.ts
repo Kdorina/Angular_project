@@ -36,11 +36,11 @@ import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    SubjectsComponent,
-    HomeComponent,
     RegisterComponent,
+    HomeComponent,
     NavbarComponent,
     AboutComponent,
+
     AdminComponent,
     AdminHomeComponent,
     AdminNavbarComponent,
@@ -48,11 +48,15 @@ import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
     AdminStudentsComponent,
     AdminSchoolsComponent,
     AdminLoginComponent,
-    MainPageComponent,
-    FilesComponent,
-    UserStatisticComponent,
-    UserNavbarComponent,
+
     UserComponent,
+    MainPageComponent,
+    UserNavbarComponent,
+    FilesComponent,
+    SubjectsComponent,
+    UserStatisticComponent,
+    
+   
   ],
   imports: [
     BrowserModule,

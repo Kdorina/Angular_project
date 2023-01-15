@@ -11,7 +11,7 @@ import { AdminService } from '../service/admin.service';
 export class AdminLoginComponent {
 
   form!: FormGroup;
-  title = "User-Login";
+  title = "Admin-Login";
   submitted!: boolean;
 
   constructor( 
@@ -31,24 +31,18 @@ export class AdminLoginComponent {
         let email = this.form.value.email;
         let pass = this.form.value.pass;
 
-        this.admin.login(email, pass)
-        .subscribe( data => {
+        this.admin.adminLogin(email, pass)
+        .subscribe( res => {
 
-            console.log(data.token);
-            console.log(data.success);
+            console.log(res.token);
+            console.log(res.name);
 
-          if(data.success) {
-
-            localStorage.setItem('userData', JSON.stringify({token: data.token, name: data.name}));
-
+            localStorage.setItem('token', res.token );
+            localStorage.setItem('token', res.name );
             this.router.navigate(['/admin-home']);
 
           }
-          else 
-          {
-            alert('A belépés sikertelen!');
-          }
-        })
+        )
 
 
       }

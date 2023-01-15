@@ -8,9 +8,9 @@ import { AdminStudentsComponent } from "./admin-students/admin-students.componen
 import { AdminComponent } from "./admin.component";
 
 const routes: Routes = [
-  {path: "", component: AdminComponent,
+  {path: "admin", component: AdminComponent,
   children: [{
-      path:"admin-login", component:AdminLoginComponent
+      path:"login", component:AdminLoginComponent
   }]},
 
     {path: "admin", component: AdminComponent,
