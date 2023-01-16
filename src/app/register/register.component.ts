@@ -25,6 +25,7 @@ form!:FormGroup;
     ngOnInit() {
       this.form = this.formBuilder.group({
         name:[''],
+        buildingName:[''],
         email: [''],
         birthday:[''],
         gender: [''],
@@ -34,6 +35,7 @@ form!:FormGroup;
       }
     
       register(){
+        let buildingName = this.form.value.buildingName;
         let name = this.form.value.name;
         let email = this.form.value.email;
         let birthday = this.form.value.birthday;
@@ -41,7 +43,7 @@ form!:FormGroup;
         let pass = this.form.value.pass;
         let conf_pass = this.form.value.conf_pass;
        
-        this.auth.register(name, email, birthday, gender, pass, conf_pass).subscribe({
+        this.auth.register(buildingName, name, email, birthday, gender, pass, conf_pass).subscribe({
           next: res => {
             console.log(res)
             localStorage.setItem('newAuthData', JSON.stringify(res));

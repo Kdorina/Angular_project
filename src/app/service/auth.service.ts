@@ -27,11 +27,12 @@ export class AuthService {
     return this.http.post<any>(url, authData, httpOptions);
   }
 
-  register(name:any, email:any, birthday:any, gender:any, 
+  register(buildingName:any, name:any, email:any, birthday:any, gender:any, 
           pass:any, conf_pass:any
           ){
     let newAuthData =
     {
+      buildingName: buildingName,
       name: name,
       email: email,
       date_of_birth:birthday,

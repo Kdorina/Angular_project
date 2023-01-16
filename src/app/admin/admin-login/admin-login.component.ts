@@ -12,7 +12,6 @@ export class AdminLoginComponent {
 
   form!: FormGroup;
   title = "Admin-Login";
-  submitted!: boolean;
 
   constructor( 
     private admin: AdminService, 
@@ -32,18 +31,25 @@ export class AdminLoginComponent {
         let pass = this.form.value.pass;
 
         this.admin.adminLogin(email, pass)
-        .subscribe( res => {
+        .subscribe(res => {
+          console.log(res);
+        //   console.log(res.data.token);
+        //   console.log(res.name);
 
-            console.log(res.token);
-            console.log(res.name);
+        // if(res.success) {
 
-            localStorage.setItem('token', res.token );
-            localStorage.setItem('token', res.name );
-            this.router.navigate(['/admin-home']);
+        //   localStorage.setItem('currentUser', JSON.stringify({token: res.data.token, name: res.data.name}));
 
-          }
-        )
+        //   this.router.navigate(['/admin/home']);
+
+        // }
+        // else 
+        // {
+        //   alert('A belépés sikertelen!');
+        // }
+      })
 
 
-      }
+    }
+
 }
