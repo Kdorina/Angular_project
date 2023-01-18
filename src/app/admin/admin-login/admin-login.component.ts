@@ -32,21 +32,19 @@ export class AdminLoginComponent {
 
         this.admin.adminLogin(email, pass)
         .subscribe(res => {
-          console.log(res);
-        //   console.log(res.data.token);
-        //   console.log(res.name);
+          // console.log(res);
 
-        // if(res.success) {
+        if(res.success) {
 
-        //   localStorage.setItem('currentUser', JSON.stringify({token: res.data.token, name: res.data.name}));
+          localStorage.setItem('currentAdmin', JSON.stringify({token: res.data.token, name: res.data.name}));
 
-        //   this.router.navigate(['/admin/home']);
+          this.router.navigate(['/admin/home']);
 
-        // }
-        // else 
-        // {
-        //   alert('A belépés sikertelen!');
-        // }
+        }
+        else 
+        {
+          alert('A belépés sikertelen!');
+        }
       })
 
 

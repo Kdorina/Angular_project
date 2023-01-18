@@ -30,11 +30,11 @@ adminLogin(email: string, pass:string){
 }
  
 logout() {
-  if(localStorage.getItem('currentUser') === null){
+  if(localStorage.getItem('currentAdmin') === null){
     return;
   }
-  let data:any = localStorage.getItem('currentUser');
-  localStorage.removeItem('currentUser');
+  let data:any = localStorage.getItem('currentAdmin');
+  localStorage.removeItem('currentAdmin');
   let currentUser = JSON.parse(data);
   let token = currentUser.token;
   let httpHeaders = new HttpHeaders();
@@ -50,10 +50,10 @@ logout() {
 
 
 isLoggedIn(){
-  if(localStorage.getItem('currentUser') === null){
+  if(localStorage.getItem('currentAdmin') === null){
     return false;
   }
-  let data:any = localStorage.getItem('currentUser');
+  let data:any = localStorage.getItem('currentAdmin');
   let userData = JSON.parse(data);
   let token = userData.token;
   return token;
