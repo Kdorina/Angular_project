@@ -1,28 +1,47 @@
-<p>Tantárgyaim</p>
+<div class="mainText">
+    <h2>Tantárgyaim</h2>
+</div>
 
-<div class="container">
+<div class="container mt-5">
     <div class="cards">
         <div class="content">
-            <label for="subject" class="form-label">Tantárgyam</label>
+            <label for="subject" class="text form-label">Tantárgyam</label>
             <input type="text" class="form-control" placeholder="tantárgy..." #newSubject>
-            <div>
-                <button routerLink="/subjects" class="btn btn-info" 
+            <!-- <div>
+                <button routerLink="/subjects" class="btn btn-info mt-2" 
                 (click)="store(newSubject.value); newSubject.value='' ">Felvesz</button>
+            </div> -->
+
+            <div class="gradesButton d-grid gap-2 mt-2">
+                <button class="btn btn-success" (click)="add()">+</button>
+            </div>
+
+
+            <div class="mt-3" *ngIf="grade">
+                <label for="subject" class="text form-label">Jegyeim</label>
+                <input type="number" class="form-control" placeholder="jegyeim...">
+    
+                <div class="d-grid gap-2 ">
+                    <button routerLink="/subjects" class="btn btn-info mt-2"
+                    (click)="store(newSubject.value); newSubject.value='' ">Felvesz</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="cards">
-        <div class="content">
+</div>
+
+    <!-- <div class="cards mt-2">
+        <div class="grades">
             <label for="subject" class="form-label">Jegyeim</label>
             <input type="number" class="form-control" placeholder="jegyeim...">
             <div>
-                <button routerLink="/subjects" class="btn btn-info">Felvesz</button>
+                <button routerLink="/subjects" class="btn btn-info mt-2">Felvesz</button>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
-    <div class=" cards" *ngIf="show">
+    <div class="cards" *ngIf="show">
         <div class="content">
             <label id="subjectEdit" for="subject" class="form-label">Tantárgy</label>
             <input type="text" class="form-control" [(ngModel)]="editSubject" #clickSubject>
@@ -34,25 +53,25 @@
         </div>
     </div>
 
-<div class="subjectTable">
-    <table class="table table-striped">
-    <thead>
-        <th>ID</th>
-        <th>Tantárgy</th>
-        <th>Szerkeztés</th>
-        <th>Törlés</th>
-    </thead>
-
-
-    <tbody *ngIf="data.length">
-        <tr *ngFor="let sub of data">
-            <td>{{ sub.id }}</td>
-            <td>{{ sub.subject }}</td>
-            <td><button class="editBtn btn btn-outline-success" (click)="editShow()"><i class="bi bi-pencil"></i></button></td>
-            <td><button  class=" deletBtn btn btn-outline-danger" (click)="destroy(sub.id)"><i class="bi bi-trash"></i></button></td>
-        </tr>
-    </tbody>
-
-</table>
+<div class="subjectTable mt-5">
+    <div class="dataContent">
+        <table class="table table-default">
+        <thead>
+            <th>ID</th>
+            <th>Tantárgy</th>
+            <th>Szerkeztés</th>
+            <th>Törlés</th>
+        </thead>
+        <tbody *ngIf="data.length">
+            <tr *ngFor="let sub of data">
+                <td>{{ sub.id }}</td>
+                <td>{{ sub.subject }}</td>
+                <td><button class="editBtn btn btn-success" (click)="editShow()"><i class="bi bi-pencil"></i></button></td>
+                <td><button  class=" deletBtn btn btn-danger" (click)="destroy(sub.id)"><i class="bi bi-trash"></i></button></td>
+            </tr>
+        </tbody>
+        
+        </table>
+    </div>
 
 <div>

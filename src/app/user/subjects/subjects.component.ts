@@ -12,10 +12,16 @@ export class SubjectsComponent implements OnInit{
   constructor(private api:ApiService ){}
 
   data: any;
+  grade :any;
+
 
 ngOnInit(): void {
  this.index();
 
+}
+
+add(){
+this.grade = true;
 }
 
 index(){

@@ -26,7 +26,7 @@ import { AdminSchoolsComponent } from './admin/admin-schools/admin-schools.compo
 
 import { UserRoutingModule } from './user/user-routing.modul';
 import { UserComponent } from './user/user.component';
-import { MainPageComponent } from './user/main-page/main-page.component';
+import { UserHomeComponent } from './user/user-home/user-home.component';
 import { FilesComponent } from './user/files/files.component';
 import { UserStatisticComponent } from './user/user-statistic/user-statistic.component';
 import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
@@ -50,7 +50,7 @@ import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
     AdminLoginComponent,
 
     UserComponent,
-    MainPageComponent,
+    UserHomeComponent,
     UserNavbarComponent,
     FilesComponent,
     SubjectsComponent,
