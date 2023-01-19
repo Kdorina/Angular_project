@@ -10,6 +10,7 @@
 }
 
 .container .cards{
+    margin-top: -540px;
     position: relative;
     margin-left: 20px;
     width: 300px;
@@ -23,7 +24,7 @@
     left: 10px;
     right: 10px;
     bottom: 20px;
-    background: #f8fcff;
+    background: #f7fcff;
     box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
     border-radius: 15px;
     display: flex;
@@ -31,27 +32,65 @@
     align-items: center;
 }
 .container .cards:hover .content{
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     box-shadow: 0 10px 20px rgb(0, 0, 0,0.4);
-    background: linear-gradient(45deg, #fff1b9cc, hsl(326, 100%, 92%));
+    background: linear-gradient(45deg, #0000005c, #eefdffb0);
 }
 
 .container .cards .content h2{
     position: absolute;
     // top: -10px;
     // right: 30px;
-    font-size: 40px;
+    font-size: 50px;
     color: #00000045;
     transition: 0.5s;
 }
 
 .container .cards:hover .content h2{
-    color:  #00000089;
+    color:  #0000009f;
 }
 
-.container .cards .content h3{
-   font-size: 1.8rem;
+.container .cards .content .child3{
+    margin-top: 85px;
+    font-size: 1.5rem;
    color: #777;
    z-index: 1;
     transition: 0.5s;
+}
+
+//NOTE CARD
+
+.noteCard{
+    position:relative;
+    margin-left: 20px;
+    min-width: 400px;
+    min-height: 700px;
+    border-radius: 15px;
+    align-items: stretch;
+    background-color: rgba(0, 0, 0, 0.815);
+}
+
+ .hold{
+    align-items: center;
+    margin-left: 10px;
+    background-color: #f0f8ff3c;
+    max-width: 380px;
+    min-height: 590px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.noteChild{
+    margin-left: 1%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #d2faffb0;
+    max-width: 350px;
+}
+
+.noteCard .noteText{
+    margin-top: 5px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
 }
