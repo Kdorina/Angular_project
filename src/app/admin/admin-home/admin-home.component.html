@@ -66,39 +66,38 @@
         </div>
         <div id="mainCard" >
             <div id="main">
-                <div  id="mainContent" >
-                    <h2>5</h2>
-                    <h3>Tanulók</h3>
+                <div class="scroll"   id="mainContent" >
+                    <table class="table table-striped">
+                        <thead>
+                            <th>ID</th>
+                            <th>Név</th>
+                            <th>Email</th>
+                            <th>Szülév</th>
+                            <th>Nem</th>
+                        </thead>
+
+                        <tbody *ngIf="users.length ">
+                            <tr *ngFor="let user of users">
+                                <td>{{ user.id }}</td>
+                                <td>{{ user.name }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.date_of_birth }}</td>
+                                <td>{{ user.gender }}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    
                 </div>
             </div>
         </div>
     
-    
-    
-    
+
         <div id="mainCard2">
             <div id="main2">
-                        <div  class="scroll"  id="mainContent2" >
-                            <table class="table table-striped">
-                                <thead>
-                                    <th>ID</th>
-                                    <th>Név</th>
-                                    <th>Email</th>
-                                    <th>Szülév</th>
-                                    <th>Nem</th>
-                                </thead>
-    
-                                <tbody *ngIf="users.length ">
-                                    <tr *ngFor="let user of users">
-                                        <td>{{ user.id }}</td>
-                                        <td>{{ user.name }}</td>
-                                        <td>{{ user.email }}</td>
-                                        <td>{{ user.date_of_birth }}</td>
-                                        <td>{{ user.gender }}</td>
-                                    </tr>
-    
-                                </tbody>
-                            </table>
+                        <div id="mainContent2" >
+                            <h2>5</h2>
+                    <h3>Iskolák</h3>
                     </div>
                 </div>
         </div>

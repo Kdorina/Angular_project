@@ -195,7 +195,7 @@ container .cards .box .content p{
 
 #mainCard{
     position: relative;
-    width: 1000px;
+    min-width: 1000px;
     min-height: 50vh;
     // box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
     //             inset -5px -5px 5px rgba(255, 255, 255, 0.5),
@@ -206,13 +206,25 @@ container .cards .box .content p{
 }
 
 #mainCard #main #mainContent h2{
-    position: absolute;
+    position: relative;
     top: -10px;
     right: 30px;
     font-size: 8em;
     color: rgba(255, 255, 255, 0.05);
     transition: 0.5s;
 }
+thead {
+    color: #b2c4ff;
+    font-size: 25px;
+    }
+    
+    .scroll{
+        margin-top: 5px;
+        height: 400px;
+        width: 900px;
+        overflow-y: scroll;
+        padding: 10px;
+    }
 
  #main2{
     position:absolute;
@@ -227,7 +239,8 @@ container .cards .box .content p{
     justify-content: center;
     // align-items: center;
 }
- #mainCard2{    flex: 2;
+ #mainCard2{    
+    flex: 2;
     position: relative;
     width: 500px;
     min-height: 50vh;
@@ -236,7 +249,7 @@ container .cards .box .content p{
 }
 
 #mainCard2 #main2 #mainContent2 h2{
-    position: absolute;
+    position: relative;
     top: -10px;
     right: 30px;
     font-size: 8em;
@@ -244,15 +257,3 @@ container .cards .box .content p{
     transition: 0.5s;
 }
 
-thead {
-color: #b2c4ff;
-font-size: 25px;
-}
-
-.scroll{
-    margin-top: 10px;
-    height: 400px;
-    width: 450px;
-    overflow-y: scroll;
-    padding: 10px;
-}
