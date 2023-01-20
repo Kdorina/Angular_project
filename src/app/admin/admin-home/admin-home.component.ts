@@ -12,15 +12,18 @@ export class AdminHomeComponent implements OnInit {
 
   constructor(private AdminService: AdminService, private router: Router) { }
   
-  users:any;
+ 
 
   ngOnInit(){
     this.getUsers();
     this.countUser();
     this.ageOfUsers();
+    this.Schools();
   }
 
+
   // USERS IN TABLE
+  users:any;
   getUsers(){
    this.users= this.AdminService.getUsers().subscribe(user=>{
       this.users= user;
@@ -53,6 +56,14 @@ export class AdminHomeComponent implements OnInit {
    
  
 
+  }
+schools:any;
+
+  Schools(){
+  this.AdminService.Schools().subscribe(data=>{
+      this.schools = data ;
+      console.log(this.schools);
+    })
   }
 
 }

@@ -95,9 +95,22 @@
 
         <div id="mainCard2">
             <div id="main2">
-                        <div id="mainContent2" >
-                            <h2>5</h2>
-                    <h3>Iskolák</h3>
+                        <div class="scroll2" id="mainContent2" >
+                            <table class="table2 table table-striped">
+                                <thead>
+                                    <!-- <th>ID</th> -->
+                                    <th>Regisztrált Intézmények</th>
+                                </thead>
+        
+                                <tbody >
+                                    <tr *ngFor="let school of schools">
+                                        <!-- <td>{{ school.id }}</td> -->
+                                        <td>{{ school.buildingName }}</td>
+                                    </tr>
+        
+                                </tbody>
+                            </table>
+                            
                     </div>
                 </div>
         </div>

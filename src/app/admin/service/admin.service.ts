@@ -96,6 +96,18 @@ isLoggedIn(){
 
   }
 
+  Schools(){
+    let httpHeaders = new HttpHeaders();
+    httpHeaders.set('Content-Type', 'application/json');
+    const httpOptions = {
+      headers: httpHeaders
+    }
+    let endpoint = 'allBuilding';
+    let url = this.host + endpoint;
+    return this.http.get<any>(url, httpOptions);
+
+  }
+
 
 
 }
