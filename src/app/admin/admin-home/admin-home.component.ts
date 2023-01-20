@@ -58,12 +58,14 @@ export class AdminHomeComponent implements OnInit {
 
   }
 schools:any;
-
+numSchool:any;
   Schools(){
   this.AdminService.Schools().subscribe(data=>{
       this.schools = data ;
       console.log(this.schools);
-    })
+
+      this.numSchool = data? data.length : 0;
+    });
   }
 
 }
