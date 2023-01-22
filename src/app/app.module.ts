@@ -17,7 +17,7 @@ import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
-import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminRoutingModule} from 'src/app/admin/admin-routing.module';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
 import { AdminStatisticComponent } from './admin/admin-statistic/admin-statistic.component';

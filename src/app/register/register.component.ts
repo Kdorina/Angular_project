@@ -47,7 +47,7 @@ form!:FormGroup;
           next: res => {
             console.log(res)
             localStorage.setItem('newAuthData', JSON.stringify(res));
-              this.router.navigate(['/login']);
+              this.router.navigate(['/user/login']);
           },
           error: err => {
             console.log('Hiba! A regisztráció sikertelen!')
