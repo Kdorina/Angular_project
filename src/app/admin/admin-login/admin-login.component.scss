@@ -27,3 +27,16 @@ font-weight: 600;
     font-size: 20px;
     font-weight: 600;
 }
+
+
+
+//VALIDATION
+input.ng-valid {
+    border-left: 10px solid #29debd;
+}
+input.ng-invalid {
+    border-left: 10px solid #e41b1b;
+}
+span{
+    color: #e41b1b;
+}

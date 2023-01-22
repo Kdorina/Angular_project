@@ -96,3 +96,14 @@ img{
     width: 450px;
     height: 500px;
 }
+
+//VALIDATION
+input.ng-valid {
+    border-left: 10px solid #29debd;
+}
+input.ng-invalid {
+    border-left: 10px solid #e41b1b;
+}
+span{
+    color: #e41b1b;
+}

@@ -18,12 +18,18 @@
               <label class="form-label ">Email</label>
               <input type="email" class="form-control"
                placeholder="Email címet" formControlName="email" >
+               <span *ngIf="form.controls['email'].errors?.['required']">
+                Email cím megadása kötelező.
+               </span>
             </div>
   
           <div class="password mb-3">
               <label class="form-label">Jelszó</label>
               <input type="password" class="form-control"
               placeholder="Jelszó" formControlName="pass">
+              <span *ngIf="form.controls['pass'].errors?.['required']">
+                Jelszó megadása kötelező.
+               </span>
             </div>
 
           </div>

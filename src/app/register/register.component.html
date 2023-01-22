@@ -17,17 +17,26 @@
                 <label class="form-label ">Intézmény neve</label>
                 <input type="text" class="form-control"
                  placeholder="Intézmény" formControlName="buildingName" >
+                 <span *ngIf="form.controls['buildingName'].errors?.['required']">
+                  Iskola nevének megadása kötelező.
+                 </span>
               </div>
             <div class="email mb-3">
                 <label class="form-label ">Felhasználó név</label>
                 <input type="text" class="form-control"
                  placeholder="Teljes név" formControlName="name" >
+                 <span *ngIf="form.controls['name'].errors?.['required']">
+                  Név megadása kötelező.
+                 </span>
               </div>
     
             <div class="email mb-3">
                 <label class="form-label ">Email</label>
                 <input type="email" class="form-control"
                  placeholder="Email címet" formControlName="email" >
+                 <span *ngIf="form.controls['email'].errors?.['required']">
+                  Email cím megadása kötelező.
+                 </span>
               </div>
     
 
@@ -35,6 +44,9 @@
                 <label class="form-label ">Születési év</label>
                 <input type="date" class="form-control"
                  formControlName="birthday" >
+                 <span *ngIf="form.controls['birthday'].errors?.['required']">
+                  Születési év megadása kötelező.
+                 </span>
               </div>
 
               <div class="mb-3">
@@ -44,6 +56,9 @@
                     <option value="nő">Nő</option>
                     <option value="férfi">Férfi</option>
                     <option value="egyéb">Egyéb</option>
+                    <span *ngIf="form.controls['gender'].errors?.['required']">
+                      Nem megadása kötelező.
+                     </span>
                   </select>
             </div>
 
@@ -51,12 +66,18 @@
                 <label class="form-label">Jelszó</label>
                 <input type="password" class="form-control"
                 placeholder="Jelszó" formControlName="pass">
+                <span *ngIf="form.controls['pass'].errors?.['required']">
+                  Jelszó megadása kötelező.
+                 </span>
               </div>
     
             <div class="conf_password mb-3">
                 <label class="form-label">Jelszó megerősítés</label>
                 <input type="password" class="form-control"
                 placeholder="Jelszó megerősítés" formControlName="conf_pass">
+                <span *ngIf="form.controls['conf_pass'].errors?.['required']">
+                  Jelszó megerősítés kötelező.
+                 </span>
               </div>
   
             </div>

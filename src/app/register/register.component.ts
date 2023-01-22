@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup , Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
@@ -9,7 +9,7 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   
 image:string = "assets/images/pic.jpg";
 form!:FormGroup;
@@ -24,13 +24,13 @@ form!:FormGroup;
   
     ngOnInit() {
       this.form = this.formBuilder.group({
-        name:[''],
-        buildingName:[''],
-        email: [''],
-        birthday:[''],
-        gender: [''],
-        pass:[''],
-        conf_pass: ['']
+        name:['',Validators.required],
+        buildingName:['',Validators.required],
+        email: ['', Validators.required],
+        birthday:['', Validators.required],
+        gender: ['', Validators.required],
+        pass:['',Validators.required],
+        conf_pass: ['',Validators.required]
       });
       }
     
