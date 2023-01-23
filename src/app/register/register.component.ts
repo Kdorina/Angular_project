@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class RegisterComponent implements OnInit {
   
-image:string = "assets/images/pic.jpg";
+image = "/assets/images/bg3.gif";
 form!:FormGroup;
 
   submitted!: boolean;
