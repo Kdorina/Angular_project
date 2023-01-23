@@ -1,48 +1,42 @@
-<div class="container">
-
-  <!-- LEFT SIDE  -->
-  <div class="leftSide">
-    <div class="welcomeTextMini">Jó újra látni</div>
-    <div class="welcomeText">üdvözöljük</div>
-        <img [src]="image" alt="loginFormPic">
-  </div>
-
-  <!-- LOGIN FORM (RIGHT SIDE) -->
-    <form class="login" [formGroup]="form" (ngSubmit)="login()">
-        <div id="loginText" class="text-center">bejelentkezés</div>
-
-        <!-- LOGIN BOX -->
-        <div class="box">
+<body>
+  <div class="container">
   
-          <div class="email mb-3">
-              <label class="form-label ">Email</label>
-              <input type="email" class="form-control"
-               placeholder="Email címet" formControlName="email" >
-               <span *ngIf="form.controls['email'].errors?.['required']">
-                Email cím megadása kötelező.
-               </span>
+      <form class="login" [formGroup]="form" (ngSubmit)="login()">
+          <div id="loginText" class="text-center">Bejelentkezés</div>
+  
+          <!-- LOGIN BOX -->
+          <div class="box">
+  
+            <div class="input-box mb-3">
+                <label class="form-label ">Email</label>
+                <input type="email" class="form-control"
+                 placeholder="Email címet" formControlName="email" >
+                 <span *ngIf="form.controls['email'].errors?.['required']">
+                  Email cím megadása kötelező.
+                 </span>
+              </div>
+  
+            <div class="input-box mb-3">
+                <label class="form-label">Jelszó</label>
+                <input type="password" class="form-control"
+                placeholder="Jelszó" formControlName="pass">
+                <span *ngIf="form.controls['pass'].errors?.['required']">
+                  Jelszó megadása kötelező.
+                 </span>
+              </div>
+  
             </div>
   
-          <div class="password mb-3">
-              <label class="form-label">Jelszó</label>
-              <input type="password" class="form-control"
-              placeholder="Jelszó" formControlName="pass">
-              <span *ngIf="form.controls['pass'].errors?.['required']">
-                Jelszó megadása kötelező.
-               </span>
-            </div>
-
+          <!-- LOGIN BUTTON -->
+          <div class="button mb-3 text-center">
+              <button id="button" class="btn btn-info" type="submit" >Bejelentkezés</button>
           </div>
-
-        <!-- LOGIN BUTTON -->
-        <div class="button mb-3 text-center">
-            <button id="button" class="btn btn-info" type="submit" >Bejelentkezés</button>
+  
+             <!-- REG LINK -->
+          <div class="link text-center">
+            <a class="regLink" href="/user/register">Nincs még fiókja? Regisztráljon itt!</a>
         </div>
-
-           <!-- REG LINK -->
-        <div class="link text-center">
-          <a class="regLink" href="/user/register">Nincs még fiókja? Regisztráljon itt!</a>
-      </div>
-
-    </form>
-</div>
+  
+      </form>
+  </div>
+</body>

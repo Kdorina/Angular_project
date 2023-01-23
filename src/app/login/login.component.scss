@@ -1,10 +1,19 @@
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-image: url('/assets/images/bg3.gif');
+   
+}
 
 // CONTAINER
 .container{
-    justify-content: center;
-    display: flex;
+    max-width: 700px;
+    width: 100%;
     height: 500px;
-    width: 800px;
+    border-radius: 15px ;
     box-shadow: 0px 2px 40px rgb(175, 183, 199);
     margin:auto;
     margin-top: 200px;
@@ -15,86 +24,77 @@
 .login{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    background-color: opacity($color: #ffffff);
     align-items: center;
-    background-color:#ffffff;
+
 }
+
 #loginText{
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 30px;
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-variant: small-caps;
+    font-weight: 500;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
-.box{
-    margin-top: 20px;
+
+form .box .input-box{
+    margin: 25px;
+}
+
+form .box .input-box .form-label{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
  }
-label{
-    margin: 2px;
-}
-input{
-    width: 250px;
-    padding: 5px;
-    border-radius: 5px;
-}
+ 
+ 
+ .login .box .input-box input{
+     height: 35px;
+     width: 100%;
+     min-width: 300px;
+     outline: none;
+     border: 1px solid #6188f1;
+     padding-left: 15px;
+     font-size: 16px;
+     border-bottom-width: 2px ;
+     transition: all 0.3s ease;
+ }
+
 .link{
     display: flex;
-    font-size: 12px;
+    font-size: 15px;
 }
 .regLink{
-    color: #7b8ae9;
+    color: #000000;
 }
-.button{
-    margin-top: 25px;
-}
-#button{
-    border-radius: 20px;
-    width: 150px;
-    background-color: #e97bc8;
-    padding: 8px;
-    border:  none;
 
+
+form .button {
+    height: 45px;
+    margin: 45px 0;
 }
-#button:hover{
-    background-color: #7b8ae9;
-}
-// bal oldal
-.welcomeTextMini{
-    position: absolute;
-    top: 43%;
-    // left: 25%;
-    margin-left: 50px;
-    text-align: center;
-    font-size: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transform: translate(-50%, -50%);
+
+form .button button{
+    height: 100%;
+    width: 100%;
+    min-width: 300px;
+    background-color: #546cf6;
     color: #ffffff;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
 }
-.welcomeText{
-    position: fixed;
-    top: 48%;
-    // left: 25%;
-    margin-left: 225px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-    font-variant: small-caps;
 
+form .button button:hover{
+    background-color: #304fff;
 }
-.leftSide{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
 
-}
-img{
-    margin: 0;
-    width: 450px;
-    height: 500px;
+@media (max-width: 584px) {
+    .container{
+        max-width: 100%;
+    }
+
 }
 
 //VALIDATION
