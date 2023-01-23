@@ -14,7 +14,8 @@ body{
     width: 100%;
     height: 500px;
     border-radius: 15px ;
-    box-shadow: 0px 2px 40px rgb(175, 183, 199);
+    box-shadow: 0px 2px 20px #5a5b5c;
+    background-color: #ffffff68 ;
     margin:auto;
     margin-top: 200px;
 }
@@ -24,7 +25,6 @@ body{
 .login{
     display: flex;
     flex-direction: column;
-    background-color: opacity($color: #ffffff);
     align-items: center;
 
 }
