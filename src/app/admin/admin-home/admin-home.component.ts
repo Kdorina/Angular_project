@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { count } from 'rxjs';
 import { AdminService } from '../service/admin.service';
 
 @Component({
@@ -46,12 +45,24 @@ export class AdminHomeComponent implements OnInit {
   }
 
   //USERS AGE
-  age:any;
+  // age:any;
   showAge:any;
   ageOfUsers(){
     this.AdminService.ageOfUsers().subscribe(data=>{
-      this.age = data ;
-      console.log(this.age)
+      this.showAge = data;
+      console.log(this.showAge);
+
+      // var str = data;
+      // var num = Number(str)
+      // console.log(num);
+      
+      
+
+      var string = JSON.stringify({data});
+      console.log(string);
+
+
+    
     });
    
  
@@ -69,3 +80,5 @@ numSchool:any;
   }
 
 }
+
+

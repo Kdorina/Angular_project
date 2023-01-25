@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    padding: 10px;
+    position: relative;
+   
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: 700;
+}
+// CONTAINER
+.box{
+    border-radius: 15px ;
+    box-shadow: 0px 2px 20px #5a5b5c;
+    background-color: #ffffff68 ;
+    padding: 20px 20px 40px;
+    margin-top: 70px;
+    margin-bottom: 80px;
+}
+
+table{
+   width: 700px;
+}
