@@ -1,9 +1,9 @@
 <div class="mainText mt-4">
-    <h2>Tantárgyaim</h2>
+    <h2>Vedd fel tantárgyaidból kapott jegyeidet</h2>
 </div>
 
-<div class="gradesButton mt-2">
-    <button class="btn btn-success" (click)="add()">+</button>
+<div class="actionButton m-4">
+    <button id="addaction" class="btn btn-success" (click)="add()">+</button>
 </div>
 
 
@@ -34,32 +34,34 @@
 </form>
 </div>
 
-
-    <div class="cards" *ngIf="show">
-        <form [formGroup]="form" (ngSubmit)="updateSubject()">
-            <div class="content">
-                    <div>
-                        <label id="id" for="id" class="form-label">ID</label>
-                        <input type="text" class="form-control" formControlName="id" readonly>
-                    </div>
-                    <div>
-                        <label id="subjectEdit" for="subject" class="form-label">Tantárgy</label>
-                        <input type="text" class="form-control" formControlName="subject" >
-                    </div>
-        
-                    <div>
-                        <label id="gradeEdit" for="grade" class="form-label">Jegy</label>
-                        <input type="number" class="form-control" formControlName="grade">
-                    </div>
-        
+<div class="container">
+    
+        <div class="cards" *ngIf="show">
+            <form [formGroup]="form" (ngSubmit)="updateSubject()">
+                <div class="content">
                         <div>
-                            <button class=" editBtn btn btn-outline-info" type="submit">Szerkeszt</button>
+                            <label id="id" for="id" class="form-label">ID</label>
+                            <input type="text" class="form-control" formControlName="id" readonly>
                         </div>
-                </div>
-        </form>
-    </div>
+                        <div>
+                            <label id="subjectEdit" for="subject" class="form-label">Tantárgy</label>
+                            <input type="text" class="form-control" formControlName="subject" >
+                        </div>
+    
+                        <div>
+                            <label id="gradeEdit" for="grade" class="form-label">Jegy</label>
+                            <input type="number" class="form-control" formControlName="grade">
+                        </div>
+    
+                            <div class="d-grid gap-2">
+                                <button class=" editBtn btn btn-info mt-2" type="submit">Szerkeszt</button>
+                            </div>
+                    </div>
+            </form>
+        </div>
+</div>
 
-<div class="subjectTable mt-5">
+<div class="subjectTable mt-1">
     <div class="dataContent">
         <table class="table table-default">
         <thead>
