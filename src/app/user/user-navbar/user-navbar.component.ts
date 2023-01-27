@@ -17,9 +17,16 @@ export class UserNavbarComponent {
     this.userNavbar = !this.userNavbar;
   }
   logout(){
-
-      this.auth.logout();
-      console.log('Kilépés');
+    let jsonCurrentUser: any = localStorage.getItem("currentUser");
+    let currentUser = JSON.parse(jsonCurrentUser);
+    console.log(currentUser.name);
+    console.log(currentUser.token);
+    this.auth.logout(currentUser.name, currentUser.token).subscribe({
+      next: res => {
+        console.log(res);
+      }
+    });
+      localStorage.removeItem("currentUser");
       this.router.navigate(['home'])
   }
 }

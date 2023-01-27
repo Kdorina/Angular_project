@@ -41,14 +41,16 @@
     </div> -->
 
 
-    <div class="cards" *ngIf="show">
+    <!-- <div class="cards" *ngIf="show"> -->
+    <div class="cards" >
         <div class="content">
             <label id="subjectEdit" for="subject" class="form-label">Tantárgy</label>
             <input type="text" class="form-control" [(ngModel)]="editSubject" #clickSubject>
                 
                 <div>
                     <button class=" editBtn btn btn-outline-info" type="button"
-                    (click)="update(clickSubject.value)">Szerkeszt</button>
+                    (click)="update()">Szerkeszt</button>
+                    <!-- (click)="update(clickSubject.value)">Szerkeszt</button> -->
                 </div>
         </div>
     </div>
@@ -62,12 +64,12 @@
             <th>Szerkeztés</th>
             <th>Törlés</th>
         </thead>
-        <tbody *ngIf="data.length">
-            <tr *ngFor="let sub of data">
-                <td>{{ sub.id }}</td>
-                <td>{{ sub.subject }}</td>
+        <tbody *ngIf="users.length">
+            <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.subject }}</td>
                 <td><button class="editBtn btn btn-success" (click)="editShow()"><i class="bi bi-pencil"></i></button></td>
-                <td><button  class=" deletBtn btn btn-danger" (click)="destroy(sub.id)"><i class="bi bi-trash"></i></button></td>
+                <td><button  class=" deletBtn btn btn-danger" (click)="destroy()"><i class="bi bi-trash"></i></button></td>
             </tr>
         </tbody>
         

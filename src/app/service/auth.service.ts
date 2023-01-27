@@ -50,14 +50,13 @@ export class AuthService {
     return this.http.post<any>(url, newAuthData, httpOptions);
   }
   
-  logout() {
-    if(localStorage.getItem('currentUser') === null){
-      return;
+  logout(name: string , token: any) {
+
+    const currentUser = {
+      name: name,
+      tokenId: token
     }
-    let data:any = localStorage.getItem('currentUser');
-    localStorage.removeItem('currentUser');
-    let currentUser = JSON.parse(data);
-    let token = currentUser.token;
+
     let httpHeaders = new HttpHeaders();
     httpHeaders.set('Content-Type', 'application/json');
 
@@ -66,7 +65,7 @@ export class AuthService {
     }
     let endpoint = 'logout';
     let url = this.host + endpoint;
-    return this.http.post<any>(url, httpOptions);
+    return this.http.post<any>(url, currentUser, httpOptions);
   }
 
   isLoggedIn(){
