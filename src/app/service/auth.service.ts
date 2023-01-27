@@ -50,22 +50,25 @@ export class AuthService {
     return this.http.post<any>(url, newAuthData, httpOptions);
   }
   
-  logout(name: string , token: any) {
-
-    const currentUser = {
-      name: name,
-      tokenId: token
+  logout() {
+    if (localStorage.getItem('currentUser') === null) {
+      return;
     }
-
-    let httpHeaders = new HttpHeaders();
-    httpHeaders.set('Content-Type', 'application/json');
-
-    const httpOptions = {
-      headers: httpHeaders
+    let data:any = localStorage.getItem('currentUser');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('selectedClassgroup');
+    let currentUser = JSON.parse(data);
+    let token = currentUser.token;    
+    let headerObj = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+    const httpOption = {
+      headers: headerObj
     }
     let endpoint = 'logout';
     let url = this.host + endpoint;
-    return this.http.post<any>(url, currentUser, httpOptions);
+    return this.http.post<any>(url, '', httpOption);
   }
 
   isLoggedIn(){

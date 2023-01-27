@@ -1,6 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router} from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { ApiService } from '../../service/api.service';
 
 @Component({
@@ -9,84 +11,105 @@ import { ApiService } from '../../service/api.service';
   styleUrls: ['./subjects.component.scss']
 })
 export class SubjectsComponent implements OnInit{
-  constructor(private api:ApiService ){}
 
-  users: any;
-  grade :any;
+
+  addPanel: boolean = false;
+  show: boolean = false;
+  addForm!: FormGroup;
+  form!: FormGroup;
+  subjects: any;
+
+  constructor(private api:ApiService ,private router: Router, 
+              private formBuilder: FormBuilder,
+              private route: ActivatedRoute){}
 
 
 ngOnInit(): void {
  this.index();
-}
 
-add(){
-this.grade = true;
+ this.addForm = this.formBuilder.group({
+   subject: ['',Validators.required],
+   grade: ['', Validators.required],
+  });
+   
+ this.form = this.formBuilder.group({
+   id: [''],
+   subject: [''],
+   grade: [''],
+  });
+   
+
+
 }
 
 index(){
-   this.users= this.api.index().subscribe((res)=>{
-    this.users = res;
-    console.log(this.users)
-  })
+  this.api.index().subscribe({
+      next: res=>{
+        this.subjects = res;
+        console.log(res);
+      },
+      error: err => {
+        console.log('Hiba! A dolgozók letöltése sikertelen!');
+      }
+    });
 }
 
 //tantárgy hozzáadás és eltárolása
 
-subjects: any;
+addSubjects(){
+  let subject = {
+    subject: this.addForm.value.subject,
+    grade: this.addForm.value.grade,
 
-store(newSubject:string){
-this.subjects ={
-  'subject':newSubject,
-};
-
-this.api.store().subscribe({
-  next:res =>{
-    console.log(res);
-    this.subjects.pus(res);
+  }
+  this.api.store(subject).subscribe({
+    next:res =>{
+      console.log(res);
 
   }
 });
 
 }
 
-
-//tantárgy szerkeztése
-
-subjectId: any;
-editSubject: any;
-
-// update(clickSubject:string){
-
-//   this.api.update(this.subjectId).subscribe((res)=>{
-//     console.log("Sikeres szerkeztés!");
-//   })
-
-// }
-// show: any;
-editShow(){
-  // this.show = true;
-}
-destroy(){
-  // this.show = true;
-}
-update(){
-  // this.show = true;
+add(){
+  this.addPanel = true;
 }
 
 
-//tantárgy törlése
 
-// destroy(user:any){
-//   this.api.destroy(user.id).subscribe({
-//     next:res=>{
-//       console.log(res);
-//       this.users.forEach((auth: any, index:number) => {
-//         if(auth.id === user.id){
-//           this.auth.splice(index,1)
-//         }
-//       })
+// tantárgy szerkeztése
+editShow(subject:any){
+  this.form.patchValue({id: subject.id});
+  this.form.patchValue({subject: subject.subject});
+  this.form.patchValue({grade: subject.grade});
+  this.show = true;
+}
 
-//     }
-//   });
-// }
+updateSubject(){
+ let subject = {
+  id: this.form.value.id,
+  subject: this.form.value.subject,
+  grade: this.form.value.grade,
+
+ }
+  this.api.update(subject).subscribe({
+    next:res=>{
+      console.log(res);
+      this.show = false;
+    }
+        
+      });
+    }
+
+//tantárgy törlés
+
+
+destroy(id:any){
+  this.api.delete(id).subscribe({
+    next:res=>{
+      console.log(res);
+      
+  }
+});
+}
 }
