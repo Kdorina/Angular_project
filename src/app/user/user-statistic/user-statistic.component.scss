@@ -1,0 +1,33 @@
+.container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1500px;
+    flex-wrap: wrap;
+    padding: 40px;
+
+}
+
+.container .content{
+    position: relative;
+    margin: 20px;
+    border-radius: 15px;
+
+}
+
+.box{
+    background: linear-gradient(45deg, rgb(158, 211, 255),rgb(221, 167, 255));
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+    border-radius: 15px;
+    width: 400px;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.data p{
+    font-size: 30px;
+}
