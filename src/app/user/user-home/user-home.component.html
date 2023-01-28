@@ -2,42 +2,73 @@
 <!-- <h2>Szia!</h2> -->
 
 <div class="container" >
-    <div class="cards">
-        <div class="content" routerLink="/user/subject">
-            <h2><i id="icon" class="bi  bi-journal-plus"></i></h2>
-           <div class="parent">
-               <div class="child3">Tantárgyak</div>
-                <!-- <h3>Tantárgyak</h3> -->
-           </div>
+    
+        <div class="cards mt-2">
+            <div class="content" routerLink="/user/subject">
+                <h2><i id="icon" class="bi  bi-journal-plus"></i></h2>
+               <div class="parent">
+                   <div class="child3">Tantárgyak</div>
+                    <!-- <h3>Tantárgyak</h3> -->
+               </div>
+            </div>
+       
+       
+            <div class="content"  routerLink="/user/file">
+                <h2><i id="icon" class="bi bi-file-arrow-up"></i></h2>
+               <div class="parent">
+                   <div class="child3">Fájlok</div>
+                    <!-- <h3>Fájlok</h3> -->
+               </div>
+            </div>
+   
+        
+            <div class="content" routerLink="/user/statist">
+                <h2><i id="icon" class="bi bi-graph-up"></i></h2>
+               <div class="parent">
+                   <div class="child3">Statisztika</div>
+                    <!-- <h3>Statistika</h3> -->
+               </div>
+            </div>
         </div>
-    </div>
 
-    <div class="cards">
-        <div class="content"  routerLink="/user/file">
-            <h2><i id="icon" class="bi bi-file-arrow-up"></i></h2>
-           <div class="parent">
-               <div class="child3">Fájlok</div>
-                <!-- <h3>Fájlok</h3> -->
-           </div>
-        </div>
-    </div>
-    <div class="cards" >
-        <div class="content" routerLink="/user/statist">
-            <h2><i id="icon" class="bi bi-graph-up"></i></h2>
-           <div class="parent">
-               <div class="child3">Statisztika</div>
-                <!-- <h3>Statistika</h3> -->
-           </div>
-        </div>
-    </div>
-
-    <div class="noteCard" >
+    <div class="noteCard mt-5" >
         <div class="noteContent">
            <div class="noteParent">
-            <p class="noteText">Note</p>
+            <p class="noteText">To do list</p>
                <div class="hold">
                 <div class="noteChild">
-                    {{'megjegyzés 1'}}
+                   <input type="text" class="form-control">
+                   <button class="mt-2">Felvesz</button>
+                </div>
+                <div class="list mt-4">
+                   <div class="listBox mt-2">
+                    <p>szia!</p>
+                    <button class="delBtn"><i class="bi bi-trash"></i></button>
+                   </div>
+                   <div class="listBox mt-2">
+                    <p>szia!</p>
+                    <button class="delBtn"><i class="bi bi-trash"></i></button>
+                   </div>
+                   <div class="listBox mt-2">
+                    <p>szia!</p>
+                    <button class="delBtn"><i class="bi bi-trash"></i></button>
+                   </div>
+                   <div class="listBox mt-2">
+                    <p>szia!</p>
+                    <button class="delBtn"><i class="bi bi-trash"></i></button>
+                   </div>
+                   <div class="listBox mt-2">
+                    <p>szia!</p>
+                    <button class="delBtn"><i class="bi bi-trash"></i></button>
+                   </div>
+                   <div class="listBox mt-2">
+                    <p>szia!</p>
+                    <button class="delBtn"><i class="bi bi-trash"></i></button>
+                   </div>
+                   <div class="listBox mt-2">
+                    <p>szia!</p>
+                    <button class="delBtn"><i class="bi bi-trash"></i></button>
+                   </div>
                 </div>
                </div>
            </div>
