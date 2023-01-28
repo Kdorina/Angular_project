@@ -3,13 +3,15 @@
     <div class="container">
         <h2>Töltsd fel fájlaidat | jegyzeteidről képeidet</h2>
         <div class="box">
-            <div class="input-box ">
-                <label for="file" class="form-label" >Feltöltés</label>
-                <input type="file" class="form-control">
-            </div>
-            <div class="d-grid mt-3">
-                <button class="btn btn-info">Feltölt</button>
-            </div>
+            <form action="post" [formGroup]="fileForm" (submit)="addNewFile()">
+                <div class="input-box ">
+                    <label for="file" class="form-label" >Feltöltés</label>
+                    <input type="file" class="form-control">
+                </div>
+                <div class="d-grid mt-3">
+                    <button class="btn btn-info" type="submit">Feltölt</button>
+                </div>
+            </form>
         </div>
 
             <div class="fileTable" >
@@ -22,17 +24,19 @@
                             </thead>
 
                             <tbody >
-                                <!-- <tr *ngFor="let file of files">
+                                <tr *ngFor="let file of files">
                                     <td>{{ file.id }}</td>
                                     <td>{{ file.file }}</td>
-                                    
-                                </tr> -->
+                                    <td>
+                                        <button class="btn btn-warning" (click)="Delete(file.id)">Törlés</button>
+                                    </td>
+                                </tr>
 
                             </tbody>
                         </table>
                 </div>
             </div>
-    
+        
         </div>
 
 </body>
