@@ -9,8 +9,9 @@ import { UserStatisticComponent } from './user-statistic/user-statistic.componen
 import { AuthGuard } from '../guard/auth.guard';
 
 const routes: Routes = [
+{path:'', component:UserComponent, canActivate:[AuthGuard]},
 
-    {path:'user', component:UserComponent, canActivate:[AuthGuard],
+    {path:'user', component:UserComponent,
     children:[{
         path:'Uhome', component:UserHomeComponent,
         canActivate:[AuthGuard],

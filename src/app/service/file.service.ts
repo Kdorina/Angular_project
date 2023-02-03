@@ -12,28 +12,28 @@ export class FileService {
   constructor(private http: HttpClient) { }
 
   index(){
-    return this.http.get<any>(this.host+"allFile");
+    return this.http.get<any>(this.host+"image");
     
   };
   
  
-  addFiles(file:any){
-    let jsonUserData: any = localStorage.getItem('currentUser');
-    let currentUser = JSON.parse(jsonUserData);
-    let token = currentUser.token;
-
-    let httpHeaders = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer' + token
+  addFiles(image:any){
+    // let jsonUserData: any = localStorage.getItem('currentUser');
+    // let currentUser = JSON.parse(jsonUserData);
+    // let token = currentUser.token;
+    let token= localStorage.getItem('token');
+    let headers = new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization':'Bearer' + token
     });
 
     const httpOptions = {
-      headers : httpHeaders
+      headers : headers
     };
 
-    let endpoint="addFile";
+    let endpoint="images";
     let url = this.host + endpoint;
-    return this.http.post<any>(url, httpOptions);
+    return this.http.post<any>(url,image, httpOptions);
   }
 
   Delete(id:any){
@@ -50,7 +50,7 @@ export class FileService {
       headers : httpHeaders
     };
 
-    let endpoint="deleteFile/";
+    let endpoint="images/";
     let url = this.host + endpoint;
     return this.http.delete<any>(url +id, httpOptions);
   }

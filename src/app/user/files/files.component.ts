@@ -17,29 +17,31 @@ export class FilesComponent implements OnInit{
    this.index();
 
    this.fileForm = this.formBuilder.group({
-    file: ['']
+    image: [null]
    })
   }
   fileForm!:FormGroup;
-  files:any;
+  images:any;
 
   index(){
     this.file.index().subscribe({
       next:res=>{
-      this.files =res;
+      this.images =res;
         // console.log(this.files);
       }
     });
   }
 
+
   addNewFile(){
-    let file ={
-      file: this.fileForm.value.file
+    let image ={
+      image: this.fileForm.value.image
 
     }
-    this.file.addFiles(file).subscribe({
+    this.file.addFiles(image).subscribe({
       next: res => {
-        console.log(res);
+        this.images = res;
+        console.log(this.images);
       }
     })
   }

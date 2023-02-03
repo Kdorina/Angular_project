@@ -11,22 +11,27 @@ export class AuthService {
   constructor( private http: HttpClient) { }
 
 //LOGIN
-  login(email: string, pass:string){
+  login(name: string, pass:string){
     let authData =
     {
-      email: email,
+      name: name,
       password: pass
     }
-    let httpHeaders = new HttpHeaders();
-    httpHeaders.set('Content-Type', 'application/json');
-    const httpOptions = {
-      headers: httpHeaders
-    }
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    let httpOption = {
+      headers: headers
+    };
     let endpoint = 'login';
     let url = this.host + endpoint;
-    return this.http.post<any>(url, authData, httpOptions);
+    return this.http.post<any>(url, authData, httpOption);
   }
 
+
+  
   register(buildingName:any, name:any, email:any, birthday:any, gender:any, 
           pass:any, conf_pass:any
           ){
@@ -50,25 +55,20 @@ export class AuthService {
     return this.http.post<any>(url, newAuthData, httpOptions);
   }
   
-  logout() {
-    if (localStorage.getItem('currentUser') === null) {
-      return;
+  logout(name: string, token:string) {
+    let authData =
+    {
+      name: name,
+      token: token
     }
-    let data:any = localStorage.getItem('currentUser');
-    localStorage.removeItem('currentUser');
-    localStorage.removeItem('selectedClassgroup');
-    let currentUser = JSON.parse(data);
-    let token = currentUser.token;    
-    let headerObj = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + token
-    });
-    const httpOption = {
-      headers: headerObj
+    let httpHeaders  = new HttpHeaders()
+    httpHeaders.set('Content-Type', 'application/json');
+    const httpOptions = {
+      headers: httpHeaders
     }
     let endpoint = 'logout';
     let url = this.host + endpoint;
-    return this.http.post<any>(url, '', httpOption);
+    return this.http.post<any>(url, authData, httpOptions);
   }
 
   isLoggedIn(){

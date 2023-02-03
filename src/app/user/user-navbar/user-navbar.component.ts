@@ -9,24 +9,23 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class UserNavbarComponent {
 
-  constructor(private auth: AuthService, 
-              private router: Router){}
+  constructor(private auth: AuthService, private router: Router){}
   userNavbar = false;
 
   user(){
     this.userNavbar = !this.userNavbar;
   }
   logout(){
-  //   let jsonCurrentUser: any = localStorage.getItem("currentUser");
-  //   let currentUser = JSON.parse(jsonCurrentUser);
-  //   console.log(currentUser.name);
-  //   console.log(currentUser.token);
-  //   this.auth.logout().subscribe({
-  //     next: res => {
-  //       console.log(res);
-  //     }
-  //   });
-  //     localStorage.removeItem("currentUser");
-  //     this.router.navigate(['home'])
+    let jsonCurrentUser: any = localStorage.getItem("currentUser");
+    let currentUser = JSON.parse(jsonCurrentUser);
+    console.log(currentUser.name);
+    console.log(currentUser.token);
+    this.auth.logout(currentUser.name, currentUser.token).subscribe({
+      next: res => {
+        console.log(res);
+      }
+    });
+      localStorage.removeItem("currentUser");
+      this.router.navigate(['home'])
   }
 }

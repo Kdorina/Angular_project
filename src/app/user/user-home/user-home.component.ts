@@ -1,3 +1,4 @@
+import { WeekDay } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -11,8 +12,8 @@ export class UserHomeComponent implements OnInit{
   constructor(private router: Router){}
 
   ngOnInit(): void {
-  
   }
+
 
   // navigateSub(){
   //   this.router.navigate(['/user/subject'])

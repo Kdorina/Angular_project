@@ -6,7 +6,7 @@
             <form action="post" [formGroup]="fileForm" (submit)="addNewFile()">
                 <div class="input-box ">
                     <label for="file" class="form-label" >Feltöltés</label>
-                    <input type="file" class="form-control">
+                    <input type="file" class="form-control"  formControlName="image">
                 </div>
                 <div class="d-grid mt-3">
                     <button class="btn btn-info" type="submit">Feltölt</button>
@@ -24,11 +24,11 @@
                             </thead>
 
                             <tbody >
-                                <tr *ngFor="let file of files">
-                                    <td>{{ file.id }}</td>
-                                    <td>{{ file.file }}</td>
+                                <tr *ngFor="let image of images">
+                                    <td>{{ image.id }}</td>
+                                    <td>{{ image.image }}</td>
                                     <td>
-                                        <button class="btn btn-warning" (click)="Delete(file.id)">Törlés</button>
+                                        <button class="btn btn-warning" (click)="Delete(image.id)">Törlés</button>
                                     </td>
                                 </tr>
 

@@ -19,22 +19,19 @@ export class ApiService {
   
  
   store(subject:any){
-    let jsonUserData: any = localStorage.getItem('currentUser');
-    let currentUser = JSON.parse(jsonUserData);
-    let token = currentUser.token;
+    let token = localStorage.getItem('token');
 
-    let httpHeaders = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer' + token
+    let headers = new HttpHeaders({
+      'Content-Type': 'applicaton/json',
+      'Authorization': 'Bearer ' + token
     });
 
-    const httpOptions = {
-      headers : httpHeaders
+    let httpOption = {
+      headers: headers
     };
-
     let endpoint="subjects";
     let url = this.host + endpoint;
-    return this.http.post<any>(url, subject, httpOptions);
+    return this.http.post<any>(url, subject, httpOption);
   }
 
   // store(): Observable<any>{

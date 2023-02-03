@@ -28,12 +28,11 @@ ngOnInit(): void {
  this.index();
 
  this.addForm = this.formBuilder.group({
-   subject: ['',Validators.required],
-   grade: ['', Validators.required],
+   subject: [''],
+   grade: [''],
   });
    
  this.form = this.formBuilder.group({
-   id: [''],
    subject: [''],
    grade: [''],
   });
@@ -55,6 +54,9 @@ index(){
 }
 
 //tantárgy hozzáadás és eltárolása
+add(){
+  this.addPanel = true;
+}
 
 addSubjects(){
   let subject = {
@@ -65,17 +67,9 @@ addSubjects(){
   this.api.store(subject).subscribe({
     next:res =>{
       console.log(res);
-
   }
 });
-
 }
-
-add(){
-  this.addPanel = true;
-}
-
-
 
 // tantárgy szerkeztése
 editShow(subject:any){
