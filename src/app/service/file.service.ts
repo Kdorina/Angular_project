@@ -17,15 +17,21 @@ export class FileService {
   };
   
  
-  addFiles(image:any){
+  addFiles(image:any, description:any){
     // let jsonUserData: any = localStorage.getItem('currentUser');
     // let currentUser = JSON.parse(jsonUserData);
     // let token = currentUser.token;
-    let token= localStorage.getItem('token');
+    // let token= localStorage.getItem('token');
+
     let headers = new HttpHeaders({
       'Content-Type':'application/json',
-      'Authorization':'Bearer' + token
+      // 'Authorization':'Bearer' + token
     });
+
+    let file = {
+      description: description,
+      image: image
+    }
 
     const httpOptions = {
       headers : headers
@@ -33,7 +39,7 @@ export class FileService {
 
     let endpoint="images";
     let url = this.host + endpoint;
-    return this.http.post<any>(url,image, httpOptions);
+    return this.http.post<any>(url,file, httpOptions);
   }
 
   Delete(id:any){

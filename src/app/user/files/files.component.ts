@@ -17,7 +17,9 @@ export class FilesComponent implements OnInit{
    this.index();
 
    this.fileForm = this.formBuilder.group({
-    image: [null]
+    description: [''],
+    image: [''],
+
    })
   }
   fileForm!:FormGroup;
@@ -27,21 +29,21 @@ export class FilesComponent implements OnInit{
     this.file.index().subscribe({
       next:res=>{
       this.images =res;
-        // console.log(this.files);
+        console.log(this.images);
       }
     });
   }
 
 
   addNewFile(){
-    let image ={
-      image: this.fileForm.value.image
+      let description = this.fileForm.value.description;
+      let image = this.fileForm.value.image;
 
-    }
-    this.file.addFiles(image).subscribe({
+    this.file.addFiles(image, description).subscribe({
       next: res => {
-        this.images = res;
-        console.log(this.images);
+        // this.images = res;
+        console.log(res);
+        this.index();
       }
     })
   }
@@ -52,6 +54,7 @@ export class FilesComponent implements OnInit{
     this.file.Delete(id).subscribe({
       next:res=>{
         console.log(res)
+        this.index(); //<= egyből vissza adja a törölt értéket az oldalon , nem kell frissiteni
       }
     })
   }

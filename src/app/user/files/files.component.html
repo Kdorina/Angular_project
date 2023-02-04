@@ -5,7 +5,11 @@
         <div class="box">
             <form action="post" [formGroup]="fileForm" (submit)="addNewFile()">
                 <div class="input-box ">
-                    <label for="file" class="form-label" >Feltöltés</label>
+                    <label for="description" class="form-label" >Leírás</label>
+                    <input type="text" class="form-control"  formControlName="description">
+                </div>
+                <div class="input-box ">
+                    <label for="file" class="form-label" >Fájl</label>
                     <input type="file" class="form-control"  formControlName="image">
                 </div>
                 <div class="d-grid mt-3">
@@ -19,6 +23,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <th>ID</th>
+                                <th>Leírás</th>
                                 <th>Fájlok</th>
                                 <th>Törlés</th>
                             </thead>
@@ -26,9 +31,10 @@
                             <tbody >
                                 <tr *ngFor="let image of images">
                                     <td>{{ image.id }}</td>
+                                    <td>{{ image.description }}</td>
                                     <td>{{ image.image }}</td>
                                     <td>
-                                        <button class="btn btn-warning" (click)="Delete(image.id)">Törlés</button>
+                                        <button id="deleteBtn" class="btn btn-danger" (click)="Delete(image.id)">Törlés</button>
                                     </td>
                                 </tr>
 
