@@ -36,12 +36,21 @@
            <div class="noteParent">
             <p class="noteText">To do list</p>
                <div class="hold">
-                <div class="noteChild">
-                   <input type="text" class="form-control">
-                   <button class="mt-2">Felvesz</button>
-                </div>
-                <div class="list mt-4">
-                   <div class="listBox mt-2">
+                <form action="" [formGroup]="noteForm" (submit)="addNote()">
+                    <div class="noteChild">
+                       <input type="text" class="form-control" formControlName="note">
+                       <div>
+                        <button class="mt-2" type="submit">Felvesz</button>
+                    </div>
+                    </div>
+                </form>
+
+                <div class="list mt-4" >
+                   <div class="listBox mt-2" *ngFor="let text of description">
+                    <p>{{text.note}}</p>
+                    <button class="delBtn"><i class="bi bi-trash"></i></button>
+                   </div>
+                   <!-- <div class="listBox mt-2">
                     <p>szia!</p>
                     <button class="delBtn"><i class="bi bi-trash"></i></button>
                    </div>
@@ -64,11 +73,7 @@
                    <div class="listBox mt-2">
                     <p>szia!</p>
                     <button class="delBtn"><i class="bi bi-trash"></i></button>
-                   </div>
-                   <div class="listBox mt-2">
-                    <p>szia!</p>
-                    <button class="delBtn"><i class="bi bi-trash"></i></button>
-                   </div>
+                   </div> -->
                 </div>
                </div>
            </div>

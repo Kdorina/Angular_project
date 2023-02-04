@@ -1,6 +1,8 @@
 import { WeekDay } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NoteService } from 'src/app/service/note.service';
 
 @Component({
   selector: 'app-user-home',
@@ -9,9 +11,34 @@ import { Router } from '@angular/router';
 })
 export class UserHomeComponent implements OnInit{
 
-  constructor(private router: Router){}
+  description:any;
+  noteForm!: FormGroup;
+
+  constructor( private noteService: NoteService, private router: Router, private formBuilder: FormBuilder){}
 
   ngOnInit(): void {
+    this.getNotes();
+    this.noteForm = this.formBuilder.group({
+      note:['']
+    })
+  }
+
+  getNotes(){
+    this.noteService.index().subscribe({
+      next: res=> {
+        this.description = res;
+        console.log(this.description);
+      }
+    })
+  }
+  addNote(){
+    let notes = this.noteForm.value.note
+    this.noteService.store(notes).subscribe({
+      next: res => {
+        console.log(res);
+        // this.getNotes();
+      }
+    })
   }
 
 

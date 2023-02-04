@@ -1,7 +1,6 @@
 import { HttpClient,  HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +21,7 @@ export class ApiService {
     let token = localStorage.getItem('token');
 
     let headers = new HttpHeaders({
-      'Content-Type': 'applicaton/json',
+      'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     });
 
