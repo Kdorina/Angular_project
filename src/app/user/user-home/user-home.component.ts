@@ -36,7 +36,16 @@ export class UserHomeComponent implements OnInit{
     this.noteService.store(notes).subscribe({
       next: res => {
         console.log(res);
-        // this.getNotes();
+        this.getNotes();
+      }
+    })
+  }
+
+  deleteNote(id:any){
+    this.noteService.delete(id).subscribe({
+      next: res=>{
+        console.log(res)
+        this.getNotes();
       }
     })
   }

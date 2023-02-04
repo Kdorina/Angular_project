@@ -48,7 +48,9 @@
                 <div class="list mt-4" >
                    <div class="listBox mt-2" *ngFor="let text of description">
                     <p>{{text.note}}</p>
-                    <button class="delBtn"><i class="bi bi-trash"></i></button>
+                    <button class="delBtn" (click)="deleteNote(text.id)">
+                        <i class="bi bi-trash"></i>
+                    </button>
                    </div>
                    <!-- <div class="listBox mt-2">
                     <p>szia!</p>

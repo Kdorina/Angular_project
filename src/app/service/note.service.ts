@@ -33,4 +33,20 @@ export class NoteService {
     return this.http.post<any>(url, description, httpOption);
   }
 
+  delete(id:any){
+    // let token = localStorage.getItem('token');
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      // 'Authorization': 'Bearer ' + token
+    });
+
+    let httpOption = {
+      headers: headers
+    };
+    let endpoint="notes/";
+    let url = this.host + endpoint +id;
+    return this.http.delete<any>(url, httpOption);
+  }
+
 }
