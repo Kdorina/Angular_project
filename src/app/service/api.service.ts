@@ -72,10 +72,7 @@ export class ApiService {
   // }
 
 
-  delete(id: any){
-    let jsonUserData: any = localStorage.getItem('currentUser');
-    let currentUser = JSON.parse(jsonUserData);
-    let token = currentUser.token;
+  delete(id: any, token:string){
 
     let httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',

@@ -11,53 +11,54 @@ export class FileService {
 
   constructor(private http: HttpClient) { }
 
-  index(){
-    return this.http.get<any>(this.host+"image");
+  index(token:string){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+
+    let httpOption = {
+      headers: headers
+    };
+    return this.http.get<any>(this.host+"image", httpOption);
     
   };
   
  
-  addFiles(image:any, description:any){
-    // let jsonUserData: any = localStorage.getItem('currentUser');
-    // let currentUser = JSON.parse(jsonUserData);
-    // let token = currentUser.token;
-    // let token= localStorage.getItem('token');
-
-    let headers = new HttpHeaders({
-      'Content-Type':'application/json',
-      // 'Authorization':'Bearer' + token
-    });
-
+  addFiles(image:any, description:any, token:string){
+ 
     let file = {
       description: description,
       image: image
     }
+    
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
 
-    const httpOptions = {
-      headers : headers
+    let httpOption = {
+      headers: headers
     };
 
     let endpoint="images";
     let url = this.host + endpoint;
-    return this.http.post<any>(url,file, httpOptions);
+    return this.http.post<any>(url,file, httpOption);
   }
 
-  Delete(id:any){
-    let jsonUserData: any = localStorage.getItem('currentUser');
-    let currentUser = JSON.parse(jsonUserData);
-    let token = currentUser.token;
+  Delete(id:any, token:string){
 
-    let httpHeaders = new HttpHeaders({
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer' + token
+      'Authorization': 'Bearer ' + token
     });
 
-    const httpOptions = {
-      headers : httpHeaders
+    let httpOption = {
+      headers: headers
     };
 
     let endpoint="images/";
     let url = this.host + endpoint;
-    return this.http.delete<any>(url +id, httpOptions);
+    return this.http.delete<any>(url +id, httpOption);
   }
 }

@@ -111,7 +111,9 @@ updateSubject(){
 
 
 destroy(id:any){
-  this.api.delete(id).subscribe({
+  let jsonUserData: any = localStorage.getItem('currentUser');
+  let currentUser = JSON.parse(jsonUserData);
+  this.api.delete(id, currentUser.token).subscribe({
     next:res=>{
       console.log(res);
       

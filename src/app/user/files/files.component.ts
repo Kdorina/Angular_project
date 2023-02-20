@@ -26,7 +26,9 @@ export class FilesComponent implements OnInit{
   images:any;
 
   index(){
-    this.file.index().subscribe({
+    let jsonUserData: any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(jsonUserData);
+    this.file.index(currentUser.token).subscribe({
       next:res=>{
       this.images =res;
         console.log(this.images);
@@ -36,10 +38,12 @@ export class FilesComponent implements OnInit{
 
 
   addNewFile(){
+    let jsonUserData: any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(jsonUserData);
       let description = this.fileForm.value.description;
       let image = this.fileForm.value.image;
 
-    this.file.addFiles(image, description).subscribe({
+    this.file.addFiles(image, description, currentUser.token).subscribe({
       next: res => {
         // this.images = res;
         console.log(res);
@@ -51,7 +55,9 @@ export class FilesComponent implements OnInit{
 
 
   Delete(id:any){
-    this.file.Delete(id).subscribe({
+    let jsonUserData: any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(jsonUserData);
+    this.file.Delete(id, currentUser.token).subscribe({
       next:res=>{
         console.log(res)
         this.index(); //<= egyből vissza adja a törölt értéket az oldalon , nem kell frissiteni
