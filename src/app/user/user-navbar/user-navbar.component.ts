@@ -20,12 +20,13 @@ export class UserNavbarComponent {
     let currentUser = JSON.parse(jsonCurrentUser);
     console.log(currentUser.name);
     console.log(currentUser.token);
-    this.auth.logout(currentUser.name, currentUser.token).subscribe({
+    this.auth.logout(currentUser.email, currentUser.token).subscribe({
       next: res => {
         console.log(res);
+        localStorage.removeItem("currentUser");
+        this.router.navigate(['home'])
       }
     });
-      localStorage.removeItem("currentUser");
-      this.router.navigate(['home'])
+      
   }
 }
