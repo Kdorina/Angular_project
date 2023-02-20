@@ -33,6 +33,7 @@ ngOnInit(): void {
   });
    
  this.form = this.formBuilder.group({
+   id: [''],
    subject: [''],
    grade: [''],
   });
@@ -42,7 +43,9 @@ ngOnInit(): void {
 }
 
 index(){
-  this.api.index().subscribe({
+  let jsonCurrentUser: any = localStorage.getItem("currentUser");
+  let currentUser = JSON.parse(jsonCurrentUser);
+  this.api.index(currentUser.token).subscribe({
       next: res=>{
         this.subjects = res;
         console.log(res);
@@ -59,14 +62,18 @@ add(){
 }
 
 addSubjects(){
+  let jsonCurrentUser: any = localStorage.getItem("currentUser");
+  let currentUser = JSON.parse(jsonCurrentUser);
   let subject = {
     subject: this.addForm.value.subject,
     grade: this.addForm.value.grade,
 
   }
-  this.api.store(subject).subscribe({
+  this.api.store(subject, currentUser.token).subscribe({
     next:res =>{
       console.log(res);
+      this.addPanel = false;
+      this.index();
   }
 });
 }
@@ -80,16 +87,21 @@ editShow(subject:any){
 }
 
 updateSubject(){
- let subject = {
+  let jsonUserData: any = localStorage.getItem('currentUser');
+  let currentUser = JSON.parse(jsonUserData);
+  console.log(currentUser.name);
+  console.log(currentUser.token);
+ 
+  let subject = {
   id: this.form.value.id,
   subject: this.form.value.subject,
   grade: this.form.value.grade,
-
  }
-  this.api.update(subject).subscribe({
+  this.api.update(subject, currentUser.token).subscribe({
     next:res=>{
       console.log(res);
       this.show = false;
+      this.index();
     }
         
       });

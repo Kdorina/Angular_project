@@ -11,14 +11,21 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  index(){
-    return this.http.get<any>(this.host+"subject");
+  index(token:string){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+
+    let httpOption = {
+      headers: headers
+    };
+    return this.http.get<any>(this.host+"subject", httpOption);
     
   };
   
  
-  store(subject:any){
-    let token = localStorage.getItem('token');
+  store(subject:any, token:string){
 
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -43,27 +50,21 @@ export class ApiService {
     return this.http.get<any>(this.host+`subjects/`+id);
   }
 
-  // update(id: number): Observable<any> {
-  //   return this.http.put<any>(this.host+ `subjects/`+id, httpOptions);
-  // }
 
-  update(subject:any){
-    let jsonUserData: any = localStorage.getItem('currentUser');
-    let currentUser = JSON.parse(jsonUserData);
-    let token = currentUser.token;
+  update(subject:any, token:string){
 
-    let httpHeaders = new HttpHeaders({
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer' + token
+      'Authorization': 'Bearer ' + token
     });
 
-    const httpOptions = {
-      headers : httpHeaders
+    let httpOption = {
+      headers: headers
     };
 
     let endpoint="subjects/";
     let url = this.host + endpoint+subject.id
-    return this.http.put<any>(url, subject, httpOptions);
+    return this.http.put<any>(url, subject, httpOption);
   }
 
   // destroy(id:any): Observable<any> {
