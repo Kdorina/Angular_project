@@ -18,7 +18,9 @@ export class UserStatisticComponent implements OnInit{
   show:any;
   avarageAll:any;
   argAll(){
-    this.statistic.avarageAllSubject().subscribe(res=>{
+    let jsonUserData: any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(jsonUserData);
+    this.statistic.avarageAllSubject(currentUser.token).subscribe(res=>{
     this.avarageAll = res;
     this.show = this.avarageAll;
     console.log(this.show)

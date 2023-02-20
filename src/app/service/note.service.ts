@@ -10,43 +10,53 @@ export class NoteService {
 
   constructor(private http: HttpClient) { }
 
-  index(){
-    return this.http.get<any>(this.host+"note");
+  index(token:string){
+    
+    let httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer' + token
+    });
+
+    const httpOptions = {
+      headers : httpHeaders
+    };
+    return this.http.get<any>(this.host+"note", httpOptions);
     
   };
 
-  store(notes:any){
-    // let token = localStorage.getItem('token');
+  store(notes:any, token:string){
+
     let description={
       note:notes
     }
-    let headers = new HttpHeaders({
+   
+    let httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
-      // 'Authorization': 'Bearer ' + token
+      'Authorization': 'Bearer' + token
     });
 
-    let httpOption = {
-      headers: headers
+    const httpOptions = {
+      headers : httpHeaders
     };
     let endpoint="notes";
     let url = this.host + endpoint;
-    return this.http.post<any>(url, description, httpOption);
+    return this.http.post<any>(url, description, httpOptions);
   }
 
-  delete(id:any){
-    // let token = localStorage.getItem('token');
+  delete(id:any, token:string){
 
-    let headers = new HttpHeaders({
+    let httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
-      // 'Authorization': 'Bearer ' + token
+      'Authorization': 'Bearer' + token
     });
 
-    let httpOption = {
-      headers: headers
+    const httpOptions = {
+      headers : httpHeaders
     };
+
     let endpoint="notes/";
     let url = this.host + endpoint +id;
-    return this.http.delete<any>(url, httpOption);
+    return this.http.delete<any>(url, httpOptions);
   }
 
 }

@@ -11,8 +11,6 @@ export class StatisticService {
   constructor(private http: HttpClient) { }
 
   avarageAllSubject(){
-    let jsonUserData: any = localStorage.getItem('currentUser');
-    let currentUser = JSON.parse(jsonUserData);
     let httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
     });

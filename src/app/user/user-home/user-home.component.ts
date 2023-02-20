@@ -24,7 +24,9 @@ export class UserHomeComponent implements OnInit{
   }
 
   getNotes(){
-    this.noteService.index().subscribe({
+    let jsonUserData: any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(jsonUserData);
+    this.noteService.index(currentUser.token).subscribe({
       next: res=> {
         this.description = res;
         console.log(this.description);
@@ -32,8 +34,10 @@ export class UserHomeComponent implements OnInit{
     })
   }
   addNote(){
+    let jsonUserData: any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(jsonUserData);
     let notes = this.noteForm.value.note
-    this.noteService.store(notes).subscribe({
+    this.noteService.store(notes, currentUser.token).subscribe({
       next: res => {
         console.log(res);
         this.getNotes();
@@ -42,7 +46,9 @@ export class UserHomeComponent implements OnInit{
   }
 
   deleteNote(id:any){
-    this.noteService.delete(id).subscribe({
+    let jsonUserData: any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(jsonUserData);
+    this.noteService.delete(id, currentUser.token).subscribe({
       next: res=>{
         console.log(res)
         this.getNotes();
@@ -50,14 +56,4 @@ export class UserHomeComponent implements OnInit{
     })
   }
 
-
-  // navigateSub(){
-  //   this.router.navigate(['/user/subject'])
-  // }
-  // navigateStat(){
-  //   this.router.navigate(['/user/statist'])
-  // }
-  // navigateFile(){
-  //   this.router.navigate(['/user/file'])
-  // }
 }
