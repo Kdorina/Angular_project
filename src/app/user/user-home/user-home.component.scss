@@ -65,14 +65,26 @@ text-align: center;
     transition: 0.5s;
 }
 
-
+.subCont{
+     margin: 40px;
+    min-width: 500px;
+    min-height: 200px;
+    background-color: #86a5ff;
+}
+.subject{
+    height: 100px;
+    width: 500px;
+    padding: 50px;
+}
 
 //NOTE CARD
 
 .noteCard{
+    margin: 40px;
     // min-width: 400px;
     // min-height: 700px;
     flex-grow: 1;
+    // display: flex;
     position: relative;
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
                 inset -5px -5px 5px rgba(255, 255, 255, 0.5),

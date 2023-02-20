@@ -25,24 +25,38 @@ export class LoginComponent implements OnInit {
   
     ngOnInit(): void {
       this.form = this.formBuilder.group({
-        name:['', Validators.required],
+        email:['', Validators.required],
         password: ['', Validators.required]
       });
       }
     
       login(){
-        let name = this.form.value.name;
+        let email = this.form.value.email;
         let pass = this.form.value.password;
 
-        this.auth.login(name, pass)
-        .subscribe( res => {
+        this.auth.login(email, pass)
+        .subscribe({
+          next:data =>{
+          
+        //   localStorage.setItem('token', data.data.token);
+        //   localStorage.setItem('name', data.data.name);
+        //   console.log(' Az azonosítás sikeres!');
+          
+        //   if(data.success){
+        //     this.router.navigate(['Uhome']);
+        //   }
+        // },
+        // error: err => {
+        //   console.log('Hiba! Az azonosítás sikertelen!')
+        // }
 
-            console.log(res.data.token);
-            console.log(res.data.name);
+        
+            console.log(data.data.token);
+            console.log(data.data.name);
 
-            if(res.success) {
+            if(data.success) {
 
-            localStorage.setItem('currentUser', JSON.stringify({token: res.data.token, name: res.data.name}));
+            localStorage.setItem('currentUser', JSON.stringify({token: data.data.token, name: data.data.name}));
 
             this.router.navigate(['user/Uhome']);
 
@@ -51,8 +65,7 @@ export class LoginComponent implements OnInit {
           {
             alert('A belépés sikertelen!');
         }
-        })
-
-   
+      }
+        });
     }
 }

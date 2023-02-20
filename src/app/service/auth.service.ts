@@ -11,10 +11,10 @@ export class AuthService {
   constructor( private http: HttpClient) { }
 
 //LOGIN
-  login(name: string, pass:string){
+  login(email: string, pass:string){
     let authData =
     {
-      name: name,
+      email: email,
       password: pass
     }
     let headers = new HttpHeaders({

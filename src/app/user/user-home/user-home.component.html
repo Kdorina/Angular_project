@@ -20,7 +20,6 @@
                     <!-- <h3>Fájlok</h3> -->
                </div>
             </div>
-   
         
             <div class="content" routerLink="/user/statist">
                 <h2><i id="icon" class="bi bi-graph-up"></i></h2>
@@ -29,55 +28,36 @@
                     <!-- <h3>Statistika</h3> -->
                </div>
             </div>
+
+     
+     
         </div>
 
     <div class="noteCard mt-5" >
         <div class="noteContent">
            <div class="noteParent">
             <p class="noteText">To do list</p>
-               <div class="hold">
-                <form action="" [formGroup]="noteForm" (submit)="addNote()">
-                    <div class="noteChild">
-                       <input type="text" class="form-control" placeholder="Teendő.." formControlName="note">
-                       <div class="d-grid gap-2">
-                        <button class="addBtn btn btn-dark mt-2" type="submit">Felvesz</button>
-                    </div>
-                    </div>
-                </form>
+                <div class="hold">
 
-                <div class="list mt-4" >
-                   <div class="listBox mt-2" *ngFor="let text of description">
-                    <p>{{text.note}}</p>
-                    <button class="delBtn" (click)="deleteNote(text.id)">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                   </div>
-                   <!-- <div class="listBox mt-2">
-                    <p>szia!</p>
-                    <button class="delBtn"><i class="bi bi-trash"></i></button>
-                   </div>
-                   <div class="listBox mt-2">
-                    <p>szia!</p>
-                    <button class="delBtn"><i class="bi bi-trash"></i></button>
-                   </div>
-                   <div class="listBox mt-2">
-                    <p>szia!</p>
-                    <button class="delBtn"><i class="bi bi-trash"></i></button>
-                   </div>
-                   <div class="listBox mt-2">
-                    <p>szia!</p>
-                    <button class="delBtn"><i class="bi bi-trash"></i></button>
-                   </div>
-                   <div class="listBox mt-2">
-                    <p>szia!</p>
-                    <button class="delBtn"><i class="bi bi-trash"></i></button>
-                   </div>
-                   <div class="listBox mt-2">
-                    <p>szia!</p>
-                    <button class="delBtn"><i class="bi bi-trash"></i></button>
-                   </div> -->
+                    <form action="" [formGroup]="noteForm" (submit)="addNote()">
+                        <div class="noteChild">
+                        <input type="text" class="form-control" placeholder="Teendő.." formControlName="note">
+                        <div class="d-grid gap-2">
+                            <button class="addBtn btn btn-dark mt-2" type="submit">Felvesz</button>
+                        </div>
+                        </div>
+                    </form>
+
+                    <div class="list mt-4" >
+                        <div class="listBox mt-2" *ngFor="let text of description">
+                            <p>{{text.note}}</p>
+                            <button class="delBtn" (click)="deleteNote(text.id)">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
-               </div>
            </div>
         </div>
     </div>

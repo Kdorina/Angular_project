@@ -48,7 +48,7 @@ index(){
         console.log(res);
       },
       error: err => {
-        console.log('Hiba! A dolgozók letöltése sikertelen!');
+        console.log('Hiba! A tantárgyak letöltése sikertelen!');
       }
     });
 }
