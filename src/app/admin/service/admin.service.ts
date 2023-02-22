@@ -108,6 +108,50 @@ isLoggedIn(){
 
   }
 
+  usersSubjects(){
+    let httpHeaders = new HttpHeaders();
+    httpHeaders.set('Content-Type', 'application/json');
+    const httpOptions = {
+      headers: httpHeaders
+    }
+    let endpoint ='usersSubjects';
+    let url = this.host + endpoint;
+    return this.http.get<any>(url, httpOptions);
+  }
+
+
+  getWomens(){
+    let httpHeaders = new HttpHeaders();
+    httpHeaders.set('Content-Type', 'application/json');
+    const httpOptions = {
+      headers: httpHeaders
+    }
+    let endpoint ='womens';
+    let url = this.host + endpoint;
+    return this.http.get<any>(url, httpOptions);
+  }
+
+  getMens(){
+    let httpHeaders = new HttpHeaders();
+    httpHeaders.set('Content-Type', 'application/json');
+    const httpOptions = {
+      headers: httpHeaders
+    }
+    let endpoint ='mens';
+    let url = this.host + endpoint;
+    return this.http.get<any>(url, httpOptions);
+  }
+
+  getElse(){
+    let httpHeaders = new HttpHeaders();
+    httpHeaders.set('Content-Type', 'application/json');
+    const httpOptions = {
+      headers: httpHeaders
+    }
+    let endpoint ='else';
+    let url = this.host + endpoint;
+    return this.http.get<any>(url, httpOptions);
+  }
 
 
 }

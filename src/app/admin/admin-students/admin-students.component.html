@@ -1,1 +1,88 @@
-<p>admin-students works!</p>
+
+<header class="text-center mt-5">
+    <h2>Felhasználók statisztikai adatai</h2>
+</header>
+
+<div class="container">
+
+    <div class="cards">
+        <div class="box">
+            <div class="content">
+                <i id="womenIcon" class="bi bi-gender-female"></i>
+               <p>{{womens}}</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="box">
+            <div class="content">
+                <i id="menIcon" class="bi bi-gender-male"></i>
+                <p>{{mens}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="box">
+            <div class="content">
+                <i id="transIcon" class="bi bi-gender-trans"></i>
+                <p>{{elseG}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainCard" class="mt-5">
+        <div id="main">
+            <div class="scroll"   id="mainContent" >
+                <table class="table table-striped">
+                    <thead>
+                        <th>ID</th>
+                        <th>Név</th>
+                        <th>Email</th>
+                        <th>Szülév</th>
+                        <th>Nem</th>
+                    </thead>
+    
+                    <tbody *ngIf="users.length ">
+                        <tr *ngFor="let user of users">
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.date_of_birth }}</td>
+                            <td>{{ user.gender }}</td>
+                        </tr>
+    
+                    </tbody>
+                </table>
+    
+            </div>
+        </div>
+    </div>
+
+
+    <div id="mainCard" >
+        <div id="main">
+            <div class="scroll" id="mainContent" >
+                <table class="table table-striped">
+                    <thead>
+                        <th>User ID</th>
+                        <th>Tantárgyak</th>
+                    </thead>
+    
+                    <tbody *ngIf="subs.length ">
+                        <tr *ngFor="let sub of subs">
+                            <td>{{ sub.user_id }}</td>
+                            <td>{{ sub.subject }}</td>
+                        </tr>
+    
+                    </tbody>
+                </table>
+    
+            </div>
+        </div>
+    </div>
+
+    
+</div>
