@@ -185,6 +185,7 @@ container .cards .box .content p{
     left: 20px;
     right: 20px;
     bottom: 20px;
+    padding: 20px;
     background: #ffffff;
     box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
     border-radius: 15px;
@@ -195,7 +196,7 @@ container .cards .box .content p{
 
 #mainCard{
     position: relative;
-    min-width: 1000px;
+    width: 1000px;
     min-height: 50vh;
     // box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
     //             inset -5px -5px 5px rgba(255, 255, 255, 0.5),
