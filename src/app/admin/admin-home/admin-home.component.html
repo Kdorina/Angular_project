@@ -1,6 +1,6 @@
 <html>
     <div class="container">
-    
+
         <div class="cards">
             <div class="box">
                 <div class="content" >
@@ -42,8 +42,8 @@
                     <div class="parent">
                         <div class="child5"><i id="icon" class="bi bi-calendar-week"></i></div>
                         <!-- <h3>korosztály</h3> -->
-                        <div class="child6" >
-                            <!-- {{showAge}} -->
+                        <div class="child6">
+                            <!-- {{showAge}} lekérdezés működik, de objectet ad! -->
                         </div>
                     </div>
                 </div>
@@ -56,14 +56,13 @@
                     <h2>4</h2>
                     <div class="parent">
                         <div class="child7"><i id="icon" class="bi bi-gender-ambiguous"></i></div>
-                        <!-- <h3>Nem</h3> -->
-                        <div class="child8" >
-                            {{"XY"}}
-                        </div>
+    
+
                     </div>
                 </div>
             </div>
         </div>
+
         <div id="mainCard" >
             <div id="main">
                 <div class="scroll"   id="mainContent" >
@@ -114,5 +113,16 @@
                     </div>
                 </div>
         </div>
+
     </div>
+
+    <div class="progress" role="progressbar" aria-label="Default striped example" attr.aria-valuenow="{{womens}}" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped" [style.width]="womens+'%'"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Default striped example" attr.aria-valuenow="{{mens}}" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped" [style.width]="mens+'%'"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Default striped example" attr.aria-valuenow="{{elseG}}" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped" [style.width]="elseG+'%'"></div>
+      </div>
 </html>

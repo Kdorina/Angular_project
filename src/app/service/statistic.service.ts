@@ -10,17 +10,31 @@ export class StatisticService {
 
   constructor(private http: HttpClient) { }
 
-  avarageAllSubject(){
-    let httpHeaders = new HttpHeaders({
+  avarageAllSubject(token:string){
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
     });
 
-    const httpOptions = {
-      headers : httpHeaders
+    let httpOption = {
+      headers: headers
     };
-
     let endpoint="argAll";
     let url = this.host + endpoint;
-    return this.http.get<any>(url, httpOptions);
+    return this.http.get<any>(url, httpOption);
+  }
+
+  avgGradesSubjects(token:string){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+
+    let httpOption = {
+      headers: headers
+    };
+    let endpoint="grade";
+    let url = this.host + endpoint;
+    return this.http.get<any>(url, httpOption);
   }
 }

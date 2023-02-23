@@ -18,6 +18,9 @@ export class AdminHomeComponent implements OnInit {
     this.countUser();
     this.ageOfUsers();
     this.Schools();
+    this.getWomens();
+    this.getMens();
+    this.getElse();
   }
 
 
@@ -47,22 +50,12 @@ export class AdminHomeComponent implements OnInit {
   //USERS AGE
   // age:any;
   showAge:any;
+  age!:any;
+  ageAvg!:any;
   ageOfUsers(){
     this.AdminService.ageOfUsers().subscribe(data=>{
       this.showAge = data;
       console.log(this.showAge);
-
-      // var str = data;
-      // var num = Number(str)
-      // console.log(num);
-      
-      
-
-      var string = JSON.stringify({data});
-      console.log(string);
-
-
-    
     });
    
  
@@ -77,6 +70,35 @@ numSchool:any;
 
       this.numSchool = data? data.length : 0;
     });
+  }
+
+   womens!:any;
+  getWomens(){
+    this.AdminService.getWomens().subscribe({
+      next:data => {
+        this.womens = data;
+        console.log(this.womens);
+      }
+    })
+  }
+ 
+  mens!:any;
+  getMens(){
+    this.AdminService.getMens().subscribe({
+      next:data => {
+        this.mens = data;
+        console.log(this.mens);
+      }
+    })
+  }
+  elseG!:any;
+  getElse(){
+    this.AdminService.getElse().subscribe({
+      next:data => {
+        this.elseG = data;
+        console.log(this.elseG);
+      }
+    })
   }
 
 }

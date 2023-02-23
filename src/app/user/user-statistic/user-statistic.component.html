@@ -25,6 +25,13 @@
                 </div>
             </div>
         </div>
+
+        <table class="table table-striped">
+            <tr class="content" *ngFor="let grade of grades">
+                <td class="subject">{{grade.subject}}</td>
+                <td class="grade">{{grade.atlag}}</td>
+            </tr>
+        </table>
     </div>
     
 </body>
