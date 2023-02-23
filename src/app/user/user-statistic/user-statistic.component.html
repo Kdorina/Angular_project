@@ -1,5 +1,5 @@
 <body>
-    <h2 class="text-center mt-5">Tekintsd általunk elkészitett statisztikádat</h2>
+    <h2 class="text-center mt-5">Tekintsd meg általunk elkészitett statisztikádat</h2>
     <div class="container">
 
         
@@ -26,12 +26,43 @@
             </div>
         </div>
 
-        <table class="table table-striped">
-            <tr class="content" *ngFor="let grade of grades">
-                <td class="subject">{{grade.subject}}</td>
-                <td class="grade">{{grade.atlag}}</td>
-            </tr>
-        </table>
+            <div class="calcCard mt-4">
+                <form [formGroup]="form" (submit)="avgCalc()">
+                    <select class="form-select" aria-label="Default select example" >
+                        <option selected>Válassz tantárgyat</option>
+                        <option *ngFor="let grade of grades">
+                            <button (click)="choice(grade)">{{grade.subject}}</button>
+                        </option>
+                      </select>
+                      <div class="input mt-2">
+                        <input class="form-control" type="text" formControlName="input">
+                      </div>
+                      <div class="currentAvg mt-2">
+                        <input class="form-control" for="currentAvg" type="text" formControlName="atlag" readonly>
+                      </div>
+                
+                      <div class="avgButton text-center mt-3">
+                        <button type="submit" class="btn btn-info">Számít</button>
+                      </div>
+                      <div class="result mt-3" *ngIf="result">
+                        <input type="text" class="form-control" readonly>
+                      </div>
+                </form>
+            </div>
+
+        <div class="gradeTable">
+            <table class="table">
+                <tr class="contentTable" *ngFor="let grade of grades">
+                    <td class="subject">
+                        <div class="contentRow">{{grade.subject}}</div>
+                    </td>
+                   
+                    <td class="grade">
+                        <div class="contentRow">{{grade.atlag}}</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
     
 </body>

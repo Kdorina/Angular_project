@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { ApiService } from '../../service/api.service';
 
@@ -20,8 +20,7 @@ export class SubjectsComponent implements OnInit{
   subjects: any;
 
   constructor(private api:ApiService ,private router: Router, 
-              private formBuilder: FormBuilder,
-              private route: ActivatedRoute){}
+              private formBuilder: FormBuilder,){}
 
 
 ngOnInit(): void {
