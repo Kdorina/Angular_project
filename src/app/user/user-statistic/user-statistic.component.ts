@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { StatisticService } from 'src/app/service/statistic.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class UserStatisticComponent implements OnInit{
   ngOnInit(): void {
   this.argAll();
   this.avgGradesSubjects();
+
 
   this.form = this.formBuilder.group({
     input:[''],
@@ -53,18 +55,26 @@ export class UserStatisticComponent implements OnInit{
     })
   }
 
+  e!:any;
+  avgSub(e:any){
+    let atlag = e.target.value;
+    this.form.patchValue({atlag: atlag});
+
+    
+  }
+
+
   result!:any;
 
   avgCalc(){
-    // let grade = {
-    //   id: this.form.value.id,
-    //   subject: this.form.value.subject,
-    //   grade: this.form.value.grade,
-    //  }
-
+    this.calcAtlag();
     this.result = true;
   }
-  choice(grade:any){
-    this.form.patchValue({atlag: grade.atlag});
+
+  calcAtlag(){
+
+    let result = Number(this.form.value.input);
+    this.form.patchValue({result: result });
+
   }
 }

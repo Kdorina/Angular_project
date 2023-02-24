@@ -11,6 +11,7 @@ export class StatisticService {
   constructor(private http: HttpClient) { }
 
   avarageAllSubject(token:string){
+
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
@@ -37,4 +38,5 @@ export class StatisticService {
     let url = this.host + endpoint;
     return this.http.get<any>(url, httpOption);
   }
+
 }
