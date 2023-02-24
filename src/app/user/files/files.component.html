@@ -32,7 +32,7 @@
                                 <tr *ngFor="let image of images">
                                     <td>{{ image.id }}</td>
                                     <td>{{ image.description }}</td>
-                                    <td><img src="{{ image.image }}"></td>
+                                    <td><img [src]="imageDirectoryPath+image.image" height="10000px" ></td>
                                     <td>
                                         <button id="deleteBtn" class="btn btn-danger" (click)="Delete(image.id)">Törlés</button>
                                     </td>

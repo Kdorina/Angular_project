@@ -11,6 +11,8 @@ import { FileService } from 'src/app/service/file.service';
 })
 export class FilesComponent implements OnInit{
 
+  imageDirectoryPath:any = '/storage/app/'
+
   constructor(private file:FileService, private router: Router, private formBuilder: FormBuilder){}
 
   ngOnInit(): void {
@@ -51,7 +53,6 @@ export class FilesComponent implements OnInit{
       }
     })
   }
-
 
 
   Delete(id:any){

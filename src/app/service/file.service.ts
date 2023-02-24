@@ -13,7 +13,8 @@ export class FileService {
 
   index(token:string){
     let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
+      // 'Content-Type': 'application/json',
+      'Content-Type': 'image/jpeg',
       'Authorization': 'Bearer ' + token
     });
 
