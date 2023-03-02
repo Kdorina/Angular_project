@@ -17,6 +17,8 @@ export class UserStatisticComponent implements OnInit{
   ngOnInit(): void {
   this.argAll();
   this.avgGradesSubjects();
+  this.CountNotes();
+  this.CountFiles();
 
 
   this.form = this.formBuilder.group({
@@ -39,10 +41,10 @@ export class UserStatisticComponent implements OnInit{
   }
 
   showFile!:any;
-  Allfiles(){
+  CountFiles(){
     let jsonUserData: any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(jsonUserData);
-    this.statistic.CountFile(currentUser).subscribe(res=>{
+    this.statistic.CountFile(currentUser.token).subscribe(res=>{
       this.showFile = res;
       console.log(this.showFile);
 
@@ -55,6 +57,7 @@ export class UserStatisticComponent implements OnInit{
     this.statistic.Count(currentUser.token).subscribe({
       next:data=>{
         this.countNote = data;
+        console.log(this.countNote);
       }
     })
   }
