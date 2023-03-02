@@ -74,26 +74,26 @@ export class UserStatisticComponent implements OnInit{
     })
   }
 
-  e!:any;
-  avgSub(e:any){
-    let atlag = e.target.value;
-    this.form.patchValue({atlag: atlag});
+  // e!:any;
+  // avgSub(e:any){
+  //   let atlag = e.target.value;
+  //   this.form.patchValue({atlag: atlag});
 
     
-  }
+  // }
 
 
-  result!:any;
+  // result!:any;
 
-  avgCalc(){
-    this.calcAtlag();
-    this.result = true;
-  }
+  // avgCalc(){
+  //   this.calcAtlag();
+  //   this.result = true;
+  // }
 
-  calcAtlag(){
+  // calcAtlag(){
 
-    let result = Number(this.form.value.input);
-    this.form.patchValue({result: result });
+  //   let result = Number(this.form.value.input);
+  //   this.form.patchValue({result: result });
 
-  }
+  // }
 }

@@ -3,42 +3,40 @@
     <h2 class="text-center mt-5">Tekintsd meg általunk elkészitett statisztikádat</h2>
     <div class="container">
         
-        <div class="cards">
-            <div class="content">
-                <div class="box mt-2">
-                        <!-- <p>jelenlegi átlagom az eddig felvett tantárgyakból</p> -->
-                        <p>Jelenlegi átlagom </p>
-                        <div class="data">
-                            <p>{{show}}</p>
-                        </div>
-                </div>
-            </div>
-        </div>
-        <div class="cards">
-            <div class="content">
-                <div class="box mt-2">
-                        <!-- <p>jelenlegi átlagom az eddig felvett tantárgyakból</p> -->
-                        <p>Feltöltött jegyzeteim</p>
-                        <div class="data">
-                            <p>{{showFile}}</p>
-                        </div>
-                </div>
-            </div>
-        </div>
+        <!-- <div class="cardCont"> -->
 
-        <div class="cards">
-            <div class="content">
-                <div class="box mt-2">
-                        <!-- <p>jelenlegi átlagom az eddig felvett tantárgyakból</p> -->
-                        <p>Teendőim száma</p>
-                        <div class="data">
-                            <p>{{countNote}}</p>
-                        </div>
-                </div>
+                <div class="content">
+                    <div class="box mt-2">
+                            <!-- <p>jelenlegi átlagom az eddig felvett tantárgyakból</p> -->
+                            <p class="cardTitle">Jelenlegi átlagom </p>
+                            <div class="data">
+                                {{show}}
+                            </div>
+                    </div>
+       
             </div>
-        </div>
+                <div class="content">
+                    <div class="box mt-2">
+                            <!-- <p>jelenlegi átlagom az eddig felvett tantárgyakból</p> -->
+                            <p class="cardTitle">Feltöltött jegyzeteim</p>
+                            <div class="data">
+                                {{showFile}}
+                            </div>
+                    </div>
+            </div>
+                <div class="content">
+                    <div class="box mt-2">
+                            <!-- <p>jelenlegi átlagom az eddig felvett tantárgyakból</p> -->
+                            <p class="cardTitle">Teendőim száma</p>
+                            <div class="data">
+                                {{countNote}}
+                            </div>
+                    </div>
+            </div>
+        <!-- </div> -->
 
-            <div class="calcCard mt-4">
+        <!-- Nem működik még -->
+            <!-- <div class="calcCard mt-4">
                 <form [formGroup]="form" (ngSubmit)="avgCalc()">
                     <select class="form-select" aria-label="Default select example" (change)="avgSub($event)" >
                         <option selected>Válassz tantárgyat</option>
@@ -58,7 +56,7 @@
                         <input type="text" class="form-control" formControlName="result" readonly>
                       </div>
                 </form>
-            </div>
+            </div> -->
 
         <div class="gradeTable">
             <table class="table">
