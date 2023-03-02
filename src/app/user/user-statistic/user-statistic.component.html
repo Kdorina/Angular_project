@@ -1,7 +1,7 @@
 <body>
+
     <h2 class="text-center mt-5">Tekintsd meg általunk elkészitett statisztikádat</h2>
     <div class="container">
-
         
         <div class="cards">
             <div class="content">
@@ -20,7 +20,19 @@
                         <!-- <p>jelenlegi átlagom az eddig felvett tantárgyakból</p> -->
                         <p>Feltöltött jegyzeteim</p>
                         <div class="data">
-                            <!-- <p>{{show}}</p> -->
+                            <p>{{showFile}}</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="content">
+                <div class="box mt-2">
+                        <!-- <p>jelenlegi átlagom az eddig felvett tantárgyakból</p> -->
+                        <p>Teendőim száma</p>
+                        <div class="data">
+                            <p>{{countNote}}</p>
                         </div>
                 </div>
             </div>
@@ -50,15 +62,28 @@
 
         <div class="gradeTable">
             <table class="table">
-                <tr class="contentTable" *ngFor="let grade of grades">
-                    <td class="subject">
-                        <div class="contentRow">{{grade.subject}}</div>
-                    </td>
-                   
-                    <td class="grade">
-                        <div class="contentRow">{{grade.atlag}}</div>
-                    </td>
-                </tr>
+
+                <thead>
+                    <th>Tantárgy</th>
+                    <th>Jegyek száma</th>
+                    <th>Átlag</th>
+                </thead>
+                
+                <tbody>
+                    <tr class="contentTable" *ngFor="let grade of grades">
+                        <td class="subject">
+                            <div class="contentRow">{{grade.subject}}</div>
+                        </td>
+                        <td class="subject">
+                            <div class="contentRow">{{grade.jegydb}}</div>
+                        </td>
+                    
+                        <td class="grade">
+                            <div class="contentRow">{{grade.atlag}}</div>
+                        </td>
+                    </tr>
+                </tbody>
+                
             </table>
         </div>
     </div>

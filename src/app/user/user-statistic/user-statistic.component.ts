@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
 import { StatisticService } from 'src/app/service/statistic.service';
 
 @Component({
@@ -39,8 +38,25 @@ export class UserStatisticComponent implements OnInit{
   
   }
 
+  showFile!:any;
   Allfiles(){
+    let jsonUserData: any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(jsonUserData);
+    this.statistic.CountFile(currentUser).subscribe(res=>{
+      this.showFile = res;
+      console.log(this.showFile);
 
+    });
+  }
+  countNote!:any;
+  CountNotes(){
+    let jsonUserData: any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(jsonUserData);
+    this.statistic.Count(currentUser.token).subscribe({
+      next:data=>{
+        this.countNote = data;
+      }
+    })
   }
 
   grades!:any;
