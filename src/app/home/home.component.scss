@@ -165,6 +165,26 @@ app-navbar{
     height: 280px;
     border-radius: 15px;
     background: #dce9fdbc;
+    
+}
+
+.img{
+    margin: 30px;
+}
+
+img{
+    width: 120px;
+    background-color: #FFFFFF;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.cardTitle{
+    text-align: center;
+    // margin-top: 40%;
+    font-weight: 500;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
 }
 
 .fourthSection{
