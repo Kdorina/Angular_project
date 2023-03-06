@@ -26,13 +26,8 @@ export class FileService {
   };
   
  
-  addFiles(image:any, description:any, token:string){
+  addFiles(file:any, token:string){
  
-    let file = {
-      description: description,
-      image: image
-    }
-    
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
