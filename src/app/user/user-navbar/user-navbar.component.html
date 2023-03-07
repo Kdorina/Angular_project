@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #f4f4f4;" >
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #f1f7ff;" >
     <div class="container-fluid">
       <a class="navbar-brand" href="#">StudCloud</a>
       <button (click)="user()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span  class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav"  [ngClass]="{'show':userNavbar}">
+      <div class="collapse navbar-collapse  justify-content-end" id="navbarNav"  [ngClass]="{'show':userNavbar}">
         <ul class="navbar-nav">
           <li class="nav-item"  >
             <a class="nav-link" routerLink="/user/Uhome">Főoldal</a>
@@ -18,10 +18,14 @@
           <li class="nav-item">
             <a class="nav-link "  routerLink="/user/file">Fájlok</a>
           </li>
-          <li class="nav-item">
+          </ul>
+          </div>
+          <div class="collapse navbar-collapse justify-content-end"  id="navbarNav"  [ngClass]="{'show':userNavbar}">
+            <ul class="navbar-nav">
+            <li class="nav-item">
             <a class="nav-link " routerLink="/home" (click)="logout()"><i class="bi bi-box-arrow-left"></i> Kijelentkezés </a>
           </li>
-        </ul>
-      </div>
+          </ul>
+          </div>
     </div>
   </nav>

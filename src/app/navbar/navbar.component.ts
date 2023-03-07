@@ -13,7 +13,7 @@ export class NavbarComponent {
   this.homeNavbar = !this.homeNavbar;
   }
   show(){
-    console.log("ooooo")
+  
   }
 
 }
