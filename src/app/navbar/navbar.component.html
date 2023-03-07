@@ -10,18 +10,18 @@
               <li class="nav-item">
                 <a class="nav-link" routerLink="/home">Főoldal</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" routerLink="/about">Rólunk</a>
-              </li>
+              </li> -->
             </ul>
           </div>
           <div class="collapse navbar-collapse justify-content-end"  id="navbarNav"  [ngClass]="{'show':homeNavbar}">
             <ul class="navbar-nav">
-              <li class="nav-item" >
-                <a class="nav-link " id="logreg" routerLink="/user/login">Bejelentkezés</a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link " routerLink="/user/register">Regisztráció</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link " id="logreg" routerLink="/user/login">Bejelentkezés</a>
               </li>
             </ul>
           </div>
