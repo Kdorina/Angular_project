@@ -18,9 +18,9 @@ export class AdminHomeComponent implements OnInit {
     this.countUser();
     this.ageOfUsers();
     this.Schools();
-    this.getWomens();
-    this.getMens();
-    this.getElse();
+    // this.getWomens();
+    // this.getMens();
+    // this.getElse();
   }
 
 
@@ -49,13 +49,11 @@ export class AdminHomeComponent implements OnInit {
 
   //USERS AGE
   // age:any;
-  showAge:any;
-  age!:any;
-  ageAvg!:any;
+  ages!:any;
   ageOfUsers(){
     this.AdminService.ageOfUsers().subscribe(data=>{
-      this.showAge = data;
-      console.log(this.showAge);
+      this.ages = data;
+      console.log(this.ages);
     });
    
  
@@ -72,34 +70,34 @@ numSchool:any;
     });
   }
 
-   womens!:any;
-  getWomens(){
-    this.AdminService.getWomens().subscribe({
-      next:data => {
-        this.womens = data;
-        console.log(this.womens);
-      }
-    })
-  }
+  //  womens!:any;
+  // getWomens(){
+  //   this.AdminService.getWomens().subscribe({
+  //     next:data => {
+  //       this.womens = data;
+  //       console.log(this.womens);
+  //     }
+  //   })
+  // }
  
-  mens!:any;
-  getMens(){
-    this.AdminService.getMens().subscribe({
-      next:data => {
-        this.mens = data;
-        console.log(this.mens);
-      }
-    })
-  }
-  elseG!:any;
-  getElse(){
-    this.AdminService.getElse().subscribe({
-      next:data => {
-        this.elseG = data;
-        console.log(this.elseG);
-      }
-    })
-  }
+  // mens!:any;
+  // getMens(){
+  //   this.AdminService.getMens().subscribe({
+  //     next:data => {
+  //       this.mens = data;
+  //       console.log(this.mens);
+  //     }
+  //   })
+  // }
+  // elseG!:any;
+  // getElse(){
+  //   this.AdminService.getElse().subscribe({
+  //     next:data => {
+  //       this.elseG = data;
+  //       console.log(this.elseG);
+  //     }
+  //   })
+  // }
 
 }
 
