@@ -3,19 +3,20 @@
     <div class="container">
         <h2>Töltsd fel fájlaidat | jegyzeteidről képeidet</h2>
         <div class="box">
-            <form action="post" [formGroup]="fileForm" (submit)="addNewFile()">
+            <form action="post" [formGroup]="fileForm" (submit)="addNewFile()" enctype="multipart/form-data">
                 <div class="input-box ">
                     <label for="description" class="form-label" >Leírás</label>
                     <input type="text" class="form-control"  formControlName="description">
                 </div>
                 <div class="input-box ">
                     <label for="image" class="form-label" >Fájl</label>
-                    <input type="file" class="form-control"  formControlName="image"> 
+                    <input type="file" class="form-control"  formControlName="image" > 
                 </div>
                 <div class="d-grid mt-3">
                     <button class="btn btn-info" type="submit">Feltölt</button>
                 </div>
             </form>
+
         </div>
 
             <div class="fileTable" >
@@ -32,7 +33,7 @@
                                 <tr *ngFor="let image of images">
                                     <td>{{ image.id }}</td>
                                     <td>{{ image.description }}</td>
-                                    <td><img [src]="image.image" height="100px" ></td>
+                                    <td><img src="{{image.image}}" alt=""></td>
                                     <td>
                                         <button id="deleteBtn" class="btn btn-danger" (click)="Delete(image.id)">Törlés</button>
                                     </td>

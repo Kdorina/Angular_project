@@ -32,6 +32,7 @@ export class FilesComponent implements OnInit{
       next:res=>{
       this.images =res;
         console.log(this.images);
+       
       }
     });
   }

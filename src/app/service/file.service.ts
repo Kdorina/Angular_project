@@ -33,13 +33,13 @@ export class FileService {
       'Authorization': 'Bearer ' + token
     });
 
-    let httpOption = {
+    let httpOptions = {
       headers: headers
     };
 
     let endpoint="images";
     let url = this.host + endpoint;
-    return this.http.post<any>(url,file, httpOption);
+    return this.http.post<any>(url,file, httpOptions);
   }
 
   Delete(id:any, token:string){
