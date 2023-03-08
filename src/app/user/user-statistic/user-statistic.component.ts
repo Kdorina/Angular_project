@@ -44,10 +44,14 @@ export class UserStatisticComponent implements OnInit{
   CountFiles(){
     let jsonUserData: any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(jsonUserData);
-    this.statistic.CountFile(currentUser.token).subscribe(res=>{
-      this.showFile = res;
-      console.log(this.showFile);
-
+    this.statistic.CountFile(currentUser.token).subscribe({
+      next:res =>{
+        
+        this.showFile = res;
+        console.log(this.showFile);
+  
+      }
+    
     });
   }
   countNote!:any;

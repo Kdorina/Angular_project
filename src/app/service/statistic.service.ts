@@ -68,7 +68,7 @@ export class StatisticService {
       headers: headers
     };
 
-    let endpoint="countFile";
+    let endpoint="countfile";
     let url = this.host + endpoint;
     return this.http.get<any>(url, httpOption);
   }

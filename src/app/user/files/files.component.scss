@@ -19,10 +19,18 @@ h2{
     margin-top: 70px;
     margin-bottom: 80px;
 }
-
+.addBtn{
+    background-color: #b4daff;
+}
 .fileContent{
    justify-content: center;
    align-items: center;
+}
+.fileTable{
+    background-color: #f4fbff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
 }
 #deleteBtn{
  color: white;
