@@ -15,10 +15,9 @@ app-navbar{
 }
 
 .mainImage{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: none;
+    width: 250px;
+    margin-left: 55px;
+    margin-bottom: 30px;
 }
 
 .firstSection{
@@ -33,9 +32,6 @@ app-navbar{
 }
 
 .mainText{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-weight: 700;
     font-size: 80px;
     color: #FFFFFF;
@@ -43,9 +39,7 @@ app-navbar{
 }
 
 .miniTitle{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
     font-weight: 400;
     font-size: 25px;
     color: #FFFFFF;
@@ -190,7 +184,7 @@ app-navbar{
     margin: 30px;
 }
 
-img{
+.pic{
     width: 120px;
     background-color: #FFFFFF;
     padding: 15px;
