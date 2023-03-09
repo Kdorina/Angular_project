@@ -76,7 +76,7 @@ export class ApiService {
 
     let httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer' + token
+      'Authorization': 'Bearer ' + token
     });
 
     const httpOptions = {
@@ -88,5 +88,25 @@ export class ApiService {
     let url = this.host + endpoint +id;
     return this.http.delete<any>(url, httpOptions);
   }
+
+
+  actualSubjects(token:string){
+
+    let httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+
+    const httpOptions = {
+      headers : httpHeaders
+    };
+
+
+    let endpoint="arg";
+    let url = this.host + endpoint;
+    return this.http.get<any>(url, httpOptions);
+  }
+
+
 
 }

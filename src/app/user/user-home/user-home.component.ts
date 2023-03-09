@@ -2,6 +2,7 @@ import { WeekDay } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/service/api.service';
 import { NoteService } from 'src/app/service/note.service';
 
 @Component({
@@ -14,10 +15,11 @@ export class UserHomeComponent implements OnInit{
   description:any;
   noteForm!: FormGroup;
 
-  constructor( private noteService: NoteService, private router: Router, private formBuilder: FormBuilder){}
+  constructor( private noteService: NoteService, private api:ApiService, private router: Router, private formBuilder: FormBuilder){}
 
   ngOnInit(): void {
     this.getNotes();
+    this.ActualSubjects();
     this.noteForm = this.formBuilder.group({
       note:['']
     })
@@ -33,6 +35,19 @@ export class UserHomeComponent implements OnInit{
       }
     })
   }
+  actualSubs:any;
+  ActualSubjects(){
+    let jsonUserData: any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(jsonUserData);
+    this.api.actualSubjects(currentUser.token).subscribe({
+      next:data=>{
+        this.actualSubs = data;
+        console.log(this.actualSubs);
+      }
+    })
+
+  }
+
   addNote(){
     let jsonUserData: any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(jsonUserData);

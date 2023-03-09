@@ -28,12 +28,9 @@
                     <!-- <h3>Statistika</h3> -->
                </div>
             </div>
-
-     
-     
         </div>
 
-    <div class="noteCard mt-5" >
+    <!-- <div class="noteCard mt-5" >
         <div class="noteContent">
            <div class="noteParent">
             <p class="noteText">To do list</p>
@@ -60,6 +57,46 @@
                 </div>
            </div>
         </div>
+    </div> -->
+</div>
+<div class="secondSection">
+    <div class="s">
+        <div class="sCard">
+            <p class="subText">Eddigi felvett tantárgyaim</p>
+            <div class="contentSubjects" *ngFor="let actualSub of actualSubs">
+                <div class="columnSubs">{{actualSub.subject}}</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="s">
+        <div class="noteCard mt-5" >
+            <div class="noteContent">
+               <div class="noteParent">
+                <p class="noteText">To do list</p>
+                    <div class="hold">
+        
+                        <form action="" [formGroup]="noteForm" (submit)="addNote()">
+                            <div class="noteChild">
+                            <input type="text" class="form-control" placeholder="Teendő.." formControlName="note">
+                            <div class="d-grid gap-2">
+                                <button class="addBtn btn btn-dark mt-2" type="submit">Felvesz</button>
+                            </div>
+                            </div>
+                        </form>
+        
+                        <div class="list mt-4" >
+                            <div class="listBox mt-2" *ngFor="let text of description">
+                                <p>{{text.note}}</p>
+                                <button class="delBtn" (click)="deleteNote(text.id)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+        
+                    </div>
+               </div>
+            </div>
+        </div>
     </div>
 </div>
-
