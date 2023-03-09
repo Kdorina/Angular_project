@@ -14,6 +14,13 @@ app-navbar{
     width: 5000px;
 }
 
+.mainImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
 .firstSection{
     position: relative;
     // margin-top: 80px;
