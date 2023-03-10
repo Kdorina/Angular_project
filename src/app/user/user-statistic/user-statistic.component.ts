@@ -9,7 +9,7 @@ import { StatisticService } from 'src/app/service/statistic.service';
   styleUrls: ['./user-statistic.component.scss']
 })
 export class UserStatisticComponent implements OnInit{
-  
+
   form!: FormGroup;
 
   constructor(private statistic: StatisticService, private router : Router, private formBuilder:FormBuilder){}
@@ -78,26 +78,5 @@ export class UserStatisticComponent implements OnInit{
     })
   }
 
-  // e!:any;
-  // avgSub(e:any){
-  //   let atlag = e.target.value;
-  //   this.form.patchValue({atlag: atlag});
-
-    
-  // }
-
-
-  // result!:any;
-
-  // avgCalc(){
-  //   this.calcAtlag();
-  //   this.result = true;
-  // }
-
-  // calcAtlag(){
-
-  //   let result = Number(this.form.value.input);
-  //   this.form.patchValue({result: result });
-
-  // }
+  
 }
