@@ -29,23 +29,23 @@ adminLogin(email: string, pass:string){
   return this.http.post<any>(url, adminData, httpOptions);
 }
  
-logout() {
-  if(localStorage.getItem('currentAdmin') === null){
-    return;
+logout(email:any, token:string) {
+  let adminData ={
+    email: email,
+    token: token
   }
-  let data:any = localStorage.getItem('currentAdmin');
-  localStorage.removeItem('currentAdmin');
-  let currentUser = JSON.parse(data);
-  let token = currentUser.token;
-  let httpHeaders = new HttpHeaders();
-  httpHeaders.set('Content-Type', 'application/json');
+
+  let headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + token
+  })
 
   const httpOptions = {
-    headers: httpHeaders
+    headers: headers
   }
-  let endpoint = 'logout';
+  let endpoint = 'adminLogout';
   let url = this.host + endpoint;
-  return this.http.post<any>(url, httpOptions);
+  return this.http.post<any>(url,adminData, httpOptions);
 }
 
 

@@ -23,8 +23,15 @@ export class AdminNavbarComponent implements OnInit{
 
   logout(){
 
-    this.adminSerivce.logout();
-    console.log('Kilépés');
-    this.router.navigate(['admin/login'])
+    let jsonCurrentUser: any = localStorage.getItem('currentUser')
+    let currentUser = JSON.parse(jsonCurrentUser);
+    this.adminSerivce.logout(currentUser.email, currentUser.token).subscribe({
+     next:data =>{
+      console.log('Kilépés',data);
+      localStorage.removeItem('currentUser')
+      this.router.navigate(['admin/login'])
+     }
+    });
+   
 }
 }

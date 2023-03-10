@@ -1,32 +1,34 @@
-
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #ffffff;" >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="/assets/images/LOGO.png" alt=""> StudCloud | Admin</a>
-        <button (click)="admin()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span  class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav"  [ngClass]="{'show':adminNavbar}">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/admin/home">Főoldal</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/admin/students">Tanulók</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/admin/schools">Iskolák</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  routerLink="/admin/statistic">Statisztika</a>
-              </li>
-            </ul>
-          </div>
-          <div  class="collapse navbar-collapse justify-content-end" id="navbarNav"  [ngClass]="{'show':adminNavbar}">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link " routerLink="/admin/login" (click)="logout()"><i class="bi bi-box-arrow-left"></i> Kijelentkezés</a>
-              </li>
-            </ul>
-          </div>
-      </div>
-    </nav>
+<div class="container">
+  
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="/assets/images/LOGO.png" alt=""> StudCloud | Admin</a>
+          <button (click)="admin()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span  class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav"  [ngClass]="{'show':adminNavbar}">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/admin/home">Főoldal</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/admin/students">Tanulók</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/admin/schools">Iskolák</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link "  routerLink="/admin/statistic">Statisztika</a>
+                </li>
+              </ul>
+            </div>
+            <div  class="collapse navbar-collapse justify-content-end" id="navbarNav"  [ngClass]="{'show':adminNavbar}">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link " routerLink="/admin/login" (click)="logout()"><i class="bi bi-box-arrow-left"></i> Kijelentkezés</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+</div>
