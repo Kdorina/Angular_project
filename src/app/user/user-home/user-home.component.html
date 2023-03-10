@@ -8,7 +8,7 @@
                 <h2><i id="icon" class="bi bi-journal-plus"></i></h2>
                <div class="parent">
                    <div class="child3">Tantárgyak</div>
-                    <!-- <h3>Tantárgyak</h3> -->
+                   
                </div>
             </div>
        
@@ -17,7 +17,7 @@
                 <h2><i id="icon" class="bi bi-file-arrow-up"></i></h2>
                <div class="parent">
                    <div class="child3">Fájlok</div>
-                    <!-- <h3>Fájlok</h3> -->
+                    
                </div>
             </div>
         
@@ -25,7 +25,7 @@
                 <h2><i id="icon" class="bi bi-graph-up"></i></h2>
                <div class="parent">
                    <div class="child3">Statisztika</div>
-                    <!-- <h3>Statistika</h3> -->
+            
                </div>
             </div>
         </div>
@@ -60,17 +60,15 @@
     </div> -->
 </div>
 <div class="secondSection">
-    <div class="s">
-        <div class="sCard">
+    
+        <div id="s" class="sCard">
             <p class="subText">Eddigi felvett tantárgyaim</p>
             <div class="contentSubjects" *ngFor="let actualSub of actualSubs">
                 <div class="columnSubs">{{actualSub.subject}}</div>
             </div>
         </div>
-    </div>
-    
-    <div class="s">
-        <div class="noteCard mt-5" >
+
+        <div id="s" class="noteCard mt-5" >
             <div class="noteContent">
                <div class="noteParent">
                 <p class="noteText">To do list</p>
@@ -98,5 +96,4 @@
                </div>
             </div>
         </div>
-    </div>
 </div>
