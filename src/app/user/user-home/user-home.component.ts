@@ -39,6 +39,7 @@ export class UserHomeComponent implements OnInit{
   ActualSubjects(){
     let jsonUserData: any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(jsonUserData);
+
     this.api.actualSubjects(currentUser.token).subscribe({
       next:data=>{
         this.actualSubs = data;
