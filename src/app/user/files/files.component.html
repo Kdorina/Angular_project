@@ -3,14 +3,14 @@
     <div class="container">
         <h2>Töltsd fel fájlaidat | jegyzeteidről képeidet</h2>
         <div class="box">
-            <form action="post" [formGroup]="fileForm" (submit)="addNewFile()" enctype="multipart/form-data">
-                <div class="input-box ">
+            <form action="post" [formGroup]="fileForm" (submit)="addNewFile()">
+                <!-- <div class="input-box ">
                     <label for="description" class="form-label" >Leírás</label>
                     <input type="text" class="form-control"  formControlName="description">
-                </div>
+                </div> -->
                 <div class="input-box ">
-                    <label for="image" class="form-label" >Fájl</label>
-                    <input type="file" class="form-control"  formControlName="image" > 
+                    <label for="imgpath" class="form-label" >Fájl</label>
+                    <input type="file" class="form-control" (change)="onFileChange($event)"> 
                 </div>
                 <div class="d-grid mt-3">
                     <button class="addBtn btn btn" type="submit">Feltölt</button>
@@ -24,7 +24,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <th>ID</th>
-                                <th>Leírás</th>
+                                <!-- <th>Leírás</th> -->
                                 <th>Fájlok</th>
                                 <th>Törlés</th>
                             </thead>
@@ -32,8 +32,7 @@
                             <tbody >
                                 <tr *ngFor="let image of images">
                                     <td>{{ image.id }}</td>
-                                    <td>{{ image.description }}</td>
-                                    <td><img src="{{image.image}}" alt=""></td>
+                                    <td><img [src]='"http://localhost:8000/storage/"+image.imgpath' alt="kép" width="20px"></td>
                                     <td>
                                         <button id="deleteBtn" class="btn btn-danger" (click)="Delete(image.id)">Törlés</button>
                                     </td>
@@ -43,7 +42,14 @@
                         </table>
                 </div>
             </div>
+
+
+            <div class="imgHolder">
+                <div class="imgContent" *ngFor="let image of images">
+                    <img class="imgFile" [src]='"http://localhost:8000/storage/"+image.imgpath' alt="kép">
+                </div>
+            </div>
         
         </div>
-
+       
 </body>

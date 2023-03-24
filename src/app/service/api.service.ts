@@ -102,7 +102,7 @@ export class ApiService {
     };
 
 
-    let endpoint="arg";
+    let endpoint="mySubject";
     let url = this.host + endpoint;
     return this.http.get<any>(url, httpOptions);
   }

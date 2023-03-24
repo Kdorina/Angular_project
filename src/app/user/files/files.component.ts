@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,42 +11,49 @@ import { FileService } from 'src/app/service/file.service';
 })
 export class FilesComponent implements OnInit{
 
- 
-
-  constructor(private file:FileService, private router: Router, private formBuilder: FormBuilder){}
-
-  ngOnInit(): void {
-   this.index();
-   this.fileForm = this.formBuilder.group({
-    description: [''],
-    image: [''],
-
-   })
+  constructor(private file:FileService, private router: Router, private formBuilder: FormBuilder){
   }
   fileForm!:FormGroup;
   images:any;
 
+  ngOnInit(): void {
+   this.index();
+   this.fileForm = this.formBuilder.group({
+    file:null,
+
+   })
+  }
+
   index(){
     let jsonUserData: any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(jsonUserData);
+    
     this.file.index(currentUser.token).subscribe({
       next:res=>{
-      this.images =res;
+      this.images = res;
         console.log(this.images);
        
       }
     });
   }
 
+
+  onFileChange(event:Event) {
+    const file = (event.target as HTMLInputElement)?.files?.[0];
+    this.fileForm.patchValue({
+      file:file
+    })
+}
+
   addNewFile(){
     let jsonUserData: any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(jsonUserData);
-    let file ={
-      description : this.fileForm.value.description,
-      image : this.fileForm.value.image
-    }
-
-
+    const file:any = new FormData();
+    file.append('imgpath', this.fileForm.controls['file'].value);
+    // let file ={
+    //   description : this.fileForm.value.description,
+    //   imgpath : this.fileForm.value.imgpath
+    // }
     this.file.addFiles(file, currentUser.token).subscribe({
       next: res => {
         console.log(res);
@@ -65,4 +73,5 @@ export class FilesComponent implements OnInit{
       }
     })
   }
+
 }

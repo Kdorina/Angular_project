@@ -30,6 +30,7 @@ import { UserHomeComponent } from './user/user-home/user-home.component';
 import { FilesComponent } from './user/files/files.component';
 import { UserStatisticComponent } from './user/user-statistic/user-statistic.component';
 import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
     AdminRoutingModule,
     UserRoutingModule,
     CommonModule,
+    NgxExtendedPdfViewerModule
     
   ],
   providers: [],
