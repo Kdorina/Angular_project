@@ -20,6 +20,7 @@ export class FilesComponent implements OnInit{
    this.index();
    this.fileForm = this.formBuilder.group({
     file:null,
+    description:['']
 
    })
   }
@@ -27,12 +28,12 @@ export class FilesComponent implements OnInit{
   index(){
     let jsonUserData: any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(jsonUserData);
-    
+
     this.file.index(currentUser.token).subscribe({
       next:res=>{
       this.images = res;
         console.log(this.images);
-       
+
       }
     });
   }
@@ -50,10 +51,7 @@ export class FilesComponent implements OnInit{
     let currentUser = JSON.parse(jsonUserData);
     const file:any = new FormData();
     file.append('imgpath', this.fileForm.controls['file'].value);
-    // let file ={
-    //   description : this.fileForm.value.description,
-    //   imgpath : this.fileForm.value.imgpath
-    // }
+    file.append('description', this.fileForm.value.description)
     this.file.addFiles(file, currentUser.token).subscribe({
       next: res => {
         console.log(res);
