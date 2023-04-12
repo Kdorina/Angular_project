@@ -21,10 +21,10 @@ export class ApiService {
       headers: headers
     };
     return this.http.get<any>(this.host+"subject", httpOption);
-    
+
   };
-  
- 
+
+
   store(subject:any, token:string){
 
     let headers = new HttpHeaders({
@@ -47,7 +47,7 @@ export class ApiService {
 
 
   show(id:any): Observable<any> {
-    return this.http.get<any>(this.host+`subjects/`+id);
+    return this.http.get<any>(this.host+`showSubject/`+id);
   }
 
 
@@ -62,7 +62,7 @@ export class ApiService {
       headers: headers
     };
 
-    let endpoint="subjects/";
+    let endpoint="updateSubject/";
     let url = this.host + endpoint+subject.id
     return this.http.put<any>(url, subject, httpOption);
   }
@@ -84,7 +84,7 @@ export class ApiService {
     };
 
 
-    let endpoint="subjects/";
+    let endpoint="deleteSubject/";
     let url = this.host + endpoint +id;
     return this.http.delete<any>(url, httpOptions);
   }

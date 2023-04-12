@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class FileService {
 
- 
+
   host = 'http://localhost:8000/api/';
 
   constructor(private http: HttpClient) { }
@@ -22,12 +22,12 @@ export class FileService {
       headers: headers
     };
     return this.http.get<any>(this.host+"image", httpOption);
-    
+
   };
-  
- 
+
+
   addFiles(file:any, token:string){
- 
+
     let headers = new HttpHeaders({
       'Accept': 'application/json',
       'Authorization': 'Bearer ' + token
@@ -53,7 +53,7 @@ export class FileService {
       headers: headers
     };
 
-    let endpoint="images/";
+    let endpoint="deleteImages/";
     let url = this.host + endpoint;
     return this.http.delete<any>(url +id, httpOption);
   }

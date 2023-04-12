@@ -11,7 +11,7 @@ export class NoteService {
   constructor(private http: HttpClient) { }
 
   index(token:string){
-    
+
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
@@ -21,7 +21,7 @@ export class NoteService {
       headers: headers
     };
     return this.http.get<any>(this.host+"note", httpOption);
-    
+
   };
 
   store(notes:any, token:string){
@@ -53,7 +53,7 @@ export class NoteService {
       headers: headers
     };
 
-    let endpoint="notes/";
+    let endpoint="deleteNotes/";
     let url = this.host + endpoint +id;
     return this.http.delete<any>(url, httpOption);
   }
