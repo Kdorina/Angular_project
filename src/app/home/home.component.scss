@@ -203,15 +203,18 @@ app-navbar{
 .fifthSection{
     position: relative;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     min-height: 600px;
     background-size: cover;
     background-position: center;
-    background: #a9c1ff;
+    background: #e5ebffd1;
 }
+.aboutImg{
+  margin:30px;
+  border-radius: 20px;
+  width: 30%;
+  height: 30%;
 
+}
 footer{
     background-color: #0b193d;
     text-align: center;
@@ -220,4 +223,5 @@ footer{
     align-items: center;
     height: 136px;
     width: 100%;
+    color: #a9c1ff;
 }
