@@ -7,7 +7,7 @@
 
   <div class="container">
      <div id="regText" class="text-center">Regisztráció</div>
-  
+
       <!-- REG FORM (RIGHT SIDE) -->
         <form  [formGroup]="form" (ngSubmit)="register()">
             <!-- REG BOX -->
@@ -28,7 +28,7 @@
                     Név megadása kötelező.
                    </span>
                 </div>
-  
+
               <div class="input-box mb-3">
                   <label class="form-label ">Email</label>
                   <input type="email" class="form-control"
@@ -37,17 +37,17 @@
                     Email cím megadása kötelező.
                    </span>
                 </div>
-  
-  
+
+
               <div class="input-box mb-3">
                   <label class="form-label ">Születési év</label>
                   <input type="date" class="form-control"
-                   formControlName="birthday"> 
+                   formControlName="birthday">
                    <span *ngIf="form.controls['birthday'].errors?.['required']">
                     Születési év megadása kötelező.
                    </span>
                 </div>
-  
+
                 <div class=" input-box mb-3">
                   <label for="password" class="form-label">Nem</label>
                   <select formControlName="gender" class="form-select" aria-label="Default select example">
@@ -59,7 +59,7 @@
                     Nem megadása kötelező.
                    </span>
               </div>
-  
+
               <div class="input-box mb-3">
                   <label class="form-label">Jelszó</label>
                   <input type="password" class="form-control"
@@ -68,7 +68,7 @@
                     Jelszó megadása kötelező.
                    </span>
                 </div>
-  
+
               <div class="input-box mb-3">
                   <label class="form-label">Jelszó megerősítés</label>
                   <input type="password" class="form-control"
@@ -77,20 +77,30 @@
                     Jelszó megerősítés kötelező.
                    </span>
                 </div>
-  
+
               </div>
-  
+
             <!-- REG BUTTON -->
             <div class="button mb-3 text-center">
                 <button id="button" class="btn btn-info" type="submit" >Regisztráció</button>
             </div>
-  
+
                <!-- LOG LINK -->
             <div class="link text-center">
               <a class="regLink" href="/user/login">Van már fiókja? Jelentkezzen be!</a>
           </div>
-  
+
         </form>
     </div>
-  
+
 </body>
+
+
+<footer>
+  <small>&copy; Copyright, Kovács Dorina</small>
+  <small>
+  <a href="https://www.facebook.com/dorina.kovacs.76"><i class="bi bi-facebook"></i></a>
+  <a href="https://www.instagram.com/dorina_k__/"><i class="bi bi-instagram"></i></a>
+  <a href="http://twitter.com"><i class="bi bi-twitter"></i></a>
+</small>
+</footer>

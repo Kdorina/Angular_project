@@ -1,20 +1,20 @@
 
 
 <body>
-  
+
   <div class="navbar">
     <app-navbar></app-navbar>
 </div>
 
   <div class="container">
-  
+
       <form class="login" [formGroup]="form" (submit)="login()">
           <div id="loginText" class="text-center">Bejelentkezés</div>
-  
+
           <!-- LOGIN BOX -->
           <div class="box">
-  
-            <div class="input-box mb-3">
+
+            <div class="input-box mb-1">
                 <label for="email" class="form-label ">Email cím</label>
                 <input type="text" class="form-control"
                  placeholder="Felhasználó név" formControlName="email" >
@@ -22,8 +22,8 @@
                   Email cím megadása kötelező.
                  </span>
               </div>
-  
-            <div class="input-box mb-3">
+
+            <div class="input-box mb-1">
                 <label for="pass" class="form-label">Jelszó</label>
                 <input type="password" class="form-control"
                 placeholder="Jelszó" formControlName="password">
@@ -31,19 +31,29 @@
                   Jelszó megadása kötelező.
                  </span>
               </div>
-  
+
             </div>
-  
+
           <!-- LOGIN BUTTON -->
           <div class="button mb-3 text-center">
               <button id="button" class="btn btn-info" type="submit" >Bejelentkezés</button>
           </div>
-  
+
              <!-- REG LINK -->
           <div class="link text-center">
             <a class="regLink" href="user/register">Nincs még fiókja? Regisztráljon itt!</a>
         </div>
-  
+
       </form>
   </div>
 </body>
+
+  <footer>
+    <small>&copy; Copyright, Kovács Dorina</small>
+    <small>
+    <a href="https://www.facebook.com/dorina.kovacs.76"><i class="bi bi-facebook"></i></a>
+    <a href="https://www.instagram.com/dorina_k__/"><i class="bi bi-instagram"></i></a>
+    <a href="http://twitter.com"><i class="bi bi-twitter"></i></a>
+  </small>
+</footer>
+

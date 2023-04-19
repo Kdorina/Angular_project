@@ -1,8 +1,7 @@
 body{
-    height: 100vh;
+    height: 95vh;
     padding: 10px;
     background-image: url('/assets/images/bg3.gif');
-   
 }
 
 
@@ -10,28 +9,27 @@ body{
     display:flex;
     align-items: center;
     justify-content: center;
-    
+
     }
     app-navbar{
         margin-top: 20px;
         width: 5000px;
     }
-    
+
 
 // CONTAINER
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    max-width: 700px;
-    width: 100%;
-    height: 500px;
+    max-width: 600px;
+    width: 78%;
+    height: 480px;
     border-radius: 15px ;
     box-shadow: 0px 2px 20px #5a5b5c;
     background-color: #ffffff68 ;
     margin:auto;
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 // jobb oldal LOGIN
@@ -60,8 +58,8 @@ form .box .input-box .form-label{
     font-weight: 500;
     margin-bottom: 5px;
  }
- 
- 
+
+
  .login .box .input-box input{
      height: 35px;
      width: 100%;
@@ -120,4 +118,21 @@ input.ng-invalid {
 }
 span{
     color: #e41b1b;
+}
+
+
+small a{
+  padding:10px;
+  color: #FA9646;
+}
+
+
+footer{
+    background-color: #0b193d;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    color: #a9c1ff;
 }

@@ -2,7 +2,7 @@ body{
     height: 100vh;
     padding: 10px;
     background-image: url('/assets/images/bg3.gif');
-   
+
 }
 
 
@@ -10,13 +10,13 @@ body{
     display:flex;
     align-items: center;
     justify-content: center;
-    
+
     }
     app-navbar{
         margin-top: 20px;
         width: 5000px;
     }
-    
+
 
 
 
@@ -121,14 +121,14 @@ form .button button:hover{
         max-height: 300px;
         overflow-y: scroll;
     }
-    
+
     .box::-webkit-scrollbar{
         width: 0;
     }
     form .box .input-box{
         margin: 15px;
     }
-    
+
 }
 
 .regLink{
@@ -146,4 +146,32 @@ input.ng-valid {
 
 span{
     color: #e41b1b;
+}
+
+small a{
+  padding:10px;
+  color: #FA9646;
+}
+
+
+footer{
+    background-color: #0b193d;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    color: #a9c1ff;
+}
+@media (min-width:584px) {
+    footer{
+        margin-top: 250px;
+        background-color: #0b193d;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70px;
+        color: #a9c1ff;
+    }
 }
