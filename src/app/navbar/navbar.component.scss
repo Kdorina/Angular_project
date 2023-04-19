@@ -10,6 +10,14 @@ img{
     margin-right: 10px;
 }
 
+@media screen and (min-width:988px){
+  .nav-item:hover{
+    background-color:rgb(246, 127, 42);
+    border-radius: 20px;
+  }
+}
+
+
 
 // header{
 //     position: relative;
@@ -39,7 +47,7 @@ img{
 // }
 // .navbar{
 //     display: flex;
-   
+
 // }
 
 // .navbar a{
@@ -49,7 +57,7 @@ img{
 //     padding: 5px 0;
 //     margin: 0px 30px;
 //     transition: all .50s ease;
-    
+
 // }
 
 // .navbar a:hover{
@@ -101,15 +109,15 @@ img{
 //         padding: 14px 2%;
 //         transition: .2s;
 //     }
-    
-    
+
+
 //     .navbar a{
 //         padding: 5px 0;
 //         margin: 0px 20px;
-      
-        
+
+
 //     }
-   
+
 // }
 // @media (max-width: 1090px){
 //     #menu-icon{
@@ -121,7 +129,7 @@ img{
 //     }
 //     #menu-icon:hover{
 //         background-color: rgba(255, 115, 0, 0.493);
-       
+
 //     }
 //     .navbar{
 //         position: absolute;
@@ -136,7 +144,7 @@ img{
 //         justify-content: flex-start;
 //         border-radius: 10px;
 //         transition: all .50s ease;
-       
+
 //     }
 //     .navbar td{
 //         display: block;
@@ -156,7 +164,7 @@ img{
 //         background-color: rgba(255, 115, 0, 0.443);
 //         // transform: translateY(5px);
 //         transition: 0.1s;
-        
+
 //     }
 //     .navbar a:active{
 //         color: #000;
@@ -178,7 +186,7 @@ img{
 //         margin-right: 150px;
 //     }
 //     .main .log {
-        
+
 //         margin-left: 100px;
 //     }
 
