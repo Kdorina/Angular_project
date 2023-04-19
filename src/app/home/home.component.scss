@@ -201,6 +201,10 @@ app-navbar{
 }
 
 .fifthSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
     position: relative;
     width: 100%;
     min-height: 600px;
@@ -208,15 +212,13 @@ app-navbar{
     background-position: center;
     background: #e5ebffd1;
 }
-/* .circle{
-  opacity: 1;
-  display: block;
-  position: relative; width: 200px; height: 200px; overflow: hidden; border-radius: 50%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
 
-} */
+.aboutme {
+font-size: 40px;
+font-weight: 500;
+}
+
+
 .aboutimg{
     border-radius: 50%;
     width: 200px;
@@ -225,7 +227,7 @@ app-navbar{
 
 }
 .github{
-    padding: 40px;
+    padding: 20px;
     display:  flex;
     justify-content: center;
     align-items: center;
@@ -239,7 +241,7 @@ app-navbar{
   object-fit: cover;
   opacity: 0;
   transition: .5s ease;
-  background-color: #08080879;
+  background-color: #878dc179;
 }
 
 .link {
@@ -260,16 +262,21 @@ app-navbar{
 
 
 .link:hover {
-  color: #4694fa;
+  color: #000000;
 }
 
 .aboutCard{
-  background-color: #8d9fdad1;
+
+  background-color: #8d9fda9e;
   padding: 10px;
   border-radius: 10px;
   margin: 30px;
   max-width: 800px;
 ;
+}
+
+small a{
+  padding:10px;
 }
 
 
