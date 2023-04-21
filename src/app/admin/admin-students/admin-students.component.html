@@ -44,7 +44,7 @@
                         <th>Szülév</th>
                         <th>Nem</th>
                     </thead>
-    
+
                     <tbody *ngIf="users.length ">
                         <tr *ngFor="let user of users">
                             <td>{{ user.id }}</td>
@@ -53,10 +53,10 @@
                             <td>{{ user.date_of_birth }}</td>
                             <td>{{ user.gender }}</td>
                         </tr>
-    
+
                     </tbody>
                 </table>
-    
+
             </div>
         </div>
     </div>
@@ -70,19 +70,19 @@
                         <th>User ID</th>
                         <th>Tantárgyak</th>
                     </thead>
-    
+
                     <tbody *ngIf="subs.length ">
                         <tr *ngFor="let sub of subs">
                             <td>{{ sub.user_id }}</td>
                             <td>{{ sub.subject }}</td>
                         </tr>
-    
+
                     </tbody>
                 </table>
-    
+
             </div>
         </div>
     </div>
 
-    
+
 </div>
