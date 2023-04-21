@@ -10,8 +10,8 @@ import { AdminService } from '../service/admin.service';
 export class AdminHomeComponent implements OnInit {
 
   constructor(private AdminService: AdminService, private router: Router) { }
-  
- 
+
+
 
   ngOnInit(){
     this.getUsers();
@@ -29,10 +29,10 @@ export class AdminHomeComponent implements OnInit {
   getUsers(){
    this.users= this.AdminService.getUsers().subscribe(user=>{
       this.users= user;
-     
+
       // console.log(user);
     });
-  
+
   }
 
   // USERS NUMBER
@@ -41,7 +41,7 @@ export class AdminHomeComponent implements OnInit {
   countUser(){
     this.count= this.AdminService.getUsers().subscribe(data=>{
       this.count= data;
-      
+
    this.num  = data? data.length : 0;
     // console.log(this.num)
     });
@@ -55,8 +55,8 @@ export class AdminHomeComponent implements OnInit {
       this.ages = data;
       console.log(this.ages);
     });
-   
- 
+
+
 
   }
 schools:any;
@@ -79,7 +79,7 @@ numSchool:any;
   //     }
   //   })
   // }
- 
+
   // mens!:any;
   // getMens(){
   //   this.AdminService.getMens().subscribe({

@@ -1,1 +1,15 @@
-<p>admin-schools works!</p>
+
+  <div class="container">
+    <table class="table tbale-striped">
+      <thead>
+        <th>#</th>
+        <th>Intézmény név</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let school of schools">
+          <td>{{school.id}}</td>
+          <td>{{school.buildingName}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
