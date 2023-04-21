@@ -46,10 +46,10 @@ export class ApiService {
   // }
 
 
-  show(id:any): Observable<any> {
+/*   show(id:any): Observable<any> {
     return this.http.get<any>(this.host+`showSubject/`+id);
   }
-
+ */
 
   update(subject:any, token:string){
 

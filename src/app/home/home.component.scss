@@ -151,7 +151,7 @@ app-navbar{
 
 .cards{
     margin: 30px;
-    padding: 10px 0px 10px;
+    padding: 10px 10px 10px;
     max-width: 1450px;
     display: flex;
     overflow-x: scroll;
@@ -202,6 +202,28 @@ app-navbar{
   background: #2B468B;
 }
 
+.title5{
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #b6c8f8;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title6{
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 5px;
+  color: #b7cbff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .fifthSection{
   display: flex;
   justify-content: center;
@@ -219,7 +241,6 @@ app-navbar{
 font-size: 40px;
 font-weight: 500;
 }
-
 
 .aboutimg{
     border-radius: 50%;

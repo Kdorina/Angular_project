@@ -19,7 +19,7 @@ export class SubjectsComponent implements OnInit{
   form!: FormGroup;
   subjects: any;
 
-  constructor(private api:ApiService ,private router: Router, 
+  constructor(private api:ApiService ,private router: Router,
               private formBuilder: FormBuilder,){}
 
 
@@ -30,13 +30,13 @@ ngOnInit(): void {
    subject: [''],
    grade: [''],
   });
-   
+
  this.form = this.formBuilder.group({
    id: [''],
    subject: [''],
    grade: [''],
   });
-   
+
 
 
 }
@@ -90,7 +90,7 @@ updateSubject(){
   let currentUser = JSON.parse(jsonUserData);
   console.log(currentUser.name);
   console.log(currentUser.token);
- 
+
   let subject = {
   id: this.form.value.id,
   subject: this.form.value.subject,
@@ -102,7 +102,7 @@ updateSubject(){
       this.show = false;
       this.index();
     }
-        
+
       });
     }
 
@@ -115,7 +115,8 @@ destroy(id:any){
   this.api.delete(id, currentUser.token).subscribe({
     next:res=>{
       console.log(res);
-      
+      this.index();
+
   }
 });
 }

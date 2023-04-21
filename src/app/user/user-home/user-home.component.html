@@ -2,30 +2,30 @@
 <!-- <h2>Szia!</h2> -->
 
 <div class="container" >
-    
+
         <div class="cards mt-2">
             <div class="content" routerLink="/user/subject">
                 <h2><i id="icon" class="bi bi-journal-plus"></i></h2>
                <div class="parent">
                    <div class="child3">Tantárgyak</div>
-                   
+
                </div>
             </div>
-       
-       
+
+
             <div class="content"  routerLink="/user/file">
                 <h2><i id="icon" class="bi bi-file-arrow-up"></i></h2>
                <div class="parent">
                    <div class="child3">Fájlok</div>
-                    
+
                </div>
             </div>
-        
+
             <div class="content" routerLink="/user/statist">
                 <h2><i id="icon" class="bi bi-graph-up"></i></h2>
                <div class="parent">
                    <div class="child3">Statisztika</div>
-            
+
                </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
     </div> -->
 </div>
 <div class="secondSection">
-    
+
         <div id="s" class="sCard">
             <p class="subText">Eddigi felvett tantárgyaim</p>
             <div class="contentSubjects" *ngFor="let actualSub of actualSubs">
@@ -73,7 +73,7 @@
                <div class="noteParent">
                 <p class="noteText">To do list</p>
                     <div class="hold">
-        
+
                         <form action="" [formGroup]="noteForm" (submit)="addNote()">
                             <div class="noteChild">
                             <input type="text" class="form-control" placeholder="Teendő.." formControlName="note">
@@ -82,16 +82,16 @@
                             </div>
                             </div>
                         </form>
-        
+
                         <div class="list mt-4" >
                             <div class="listBox mt-2" *ngFor="let text of description">
-                                <p>{{text.note}}</p>
+                                <p style="margin-right: 45px;">{{text.note}}</p>
                                 <button class="delBtn" (click)="deleteNote(text.id)">
                                     <i class="bi bi-trash"></i>
                                 </button>
                             </div>
                         </div>
-        
+
                     </div>
                </div>
             </div>
