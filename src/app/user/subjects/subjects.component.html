@@ -72,17 +72,17 @@
 
 <div class="subjectTable mt-1">
     <div class="dataContent">
-        <table class="table table-default">
+        <table class="table table">
         <thead>
-            <th>ID</th>
+<!--         <th>ID</th> -->
             <th>Tantárgy</th>
             <th>Jegy</th>
-            <th>Szerkeztés</th>
-            <th>Törlés</th>
+            <!-- <th>Szerkeztés</th>
+            <th>Törlés</th> -->
         </thead>
         <tbody>
             <tr *ngFor="let subject of subjects | service:actualData">
-                <td>{{ subject.id }}</td>
+             <!--    <td>{{ subject.id }}</td> -->
                 <td>{{ subject.subject }}</td>
                 <td>{{ subject.grade }}</td>
                 <td><button class="btn btn-info" (click)="editShow(subject)"><i class="bi bi-pencil"></i></button></td>

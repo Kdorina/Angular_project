@@ -35,28 +35,24 @@ h2{
 
 
 .subjectTable{
-    position: relative;
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
-                inset -5px -5px 5px rgba(255, 255, 255, 0.5),
-                5px 5px 5px rgba(0, 0, 0,0.05),
-                -5px -5px 5px rgba(255, 255, 255, 0.5);
-    margin: 30px;
-    background-color: rgb(245, 245, 245);
-    padding: 15px;
-    border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+  inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+  5px 5px 5px rgba(0, 0, 0,0.05),
+  -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 .dataContent{
-    padding: 20px;
-    background: #77adffbc;
-    box-shadow: 1px 5px 20px #00000006;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: #77adffbc;
+  margin: 3px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .table{
-    color: #fbfeff;
+  color: #fbfeff;
+
 }
 
 //addButton
