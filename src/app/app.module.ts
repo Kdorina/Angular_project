@@ -31,6 +31,7 @@ import { FilesComponent } from './user/files/files.component';
 import { UserStatisticComponent } from './user/user-statistic/user-statistic.component';
 import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { ServicePipe } from './service/pipe/service.pipe';
 
 
 @NgModule({
@@ -56,8 +57,9 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     FilesComponent,
     SubjectsComponent,
     UserStatisticComponent,
-    
-   
+    ServicePipe,
+
+
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     UserRoutingModule,
     CommonModule,
     NgxExtendedPdfViewerModule
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

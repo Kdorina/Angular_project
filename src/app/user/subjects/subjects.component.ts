@@ -12,7 +12,7 @@ import { ApiService } from '../../service/api.service';
 })
 export class SubjectsComponent implements OnInit{
 
-
+  actualData!:any;
   addPanel: boolean = false;
   show: boolean = false;
   addForm!: FormGroup;

@@ -61,6 +61,10 @@
         </div>
 </div>
 
+<div class="m-5">
+  <input type="search" class="search form-control" placeholder="Keresés..." [(ngModel)]="actualData">
+</div>
+
 <div class="subjectTable mt-1">
     <div class="dataContent">
         <table class="table table-default">
@@ -72,7 +76,7 @@
             <th>Törlés</th>
         </thead>
         <tbody>
-            <tr *ngFor="let subject of subjects">
+            <tr *ngFor="let subject of subjects | service:actualData">
                 <td>{{ subject.id }}</td>
                 <td>{{ subject.subject }}</td>
                 <td>{{ subject.grade }}</td>
