@@ -77,14 +77,18 @@ text-align: center;
     padding: 50px;
 }
 
+
+.secondSection{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 //NOTE CARD
 
 .noteCard{
-
     margin: 40px;
     flex-grow: 1;
-    // flex-wrap: wrap;
-    // position: relative;
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
                 inset -5px -5px 5px rgba(255, 255, 255, 0.5),
                 5px 5px 5px rgba(0, 0, 0,0.05),
@@ -93,14 +97,12 @@ text-align: center;
     background-color: #f5f5f5;
     padding: 15px;
     border-radius: 5px;
+    min-width: 350px;
 }
 
 .noteCard .hold{
    justify-content: center;
-    // margin-left: 10px;
     background-color: #0088ff;
-    // max-width: 380px;
-    // min-height: 590px;
     padding: 20px;
     border-radius: 10px;
 }
@@ -109,7 +111,6 @@ text-align: center;
     padding: 20px;
     border-radius: 5px;
     background-color: #fdfdfd8b;
-    // max-width: 350px;
 }
 
 .noteCard .noteText{
@@ -119,12 +120,6 @@ text-align: center;
     font-size: 40px;
     font-weight: 600;
 }
-//NOTE ADD BUTTON
-.addBtn{
-
-}
-
-// ///////////////////////////////////////////
 
 .list{
     padding: 10px;
@@ -158,12 +153,7 @@ text-align: center;
 .delBtn:hover{
     background-color: #86a5ff;
 }
-
-.secondSection{
-    display: flex;
-    // justify-content: center;
-    flex-wrap: wrap;
-}
+////////////////////////
 
 .subText{
     margin-top: 5px;
@@ -179,17 +169,16 @@ text-align: center;
     width: 200px;
     margin: 40px;
     padding: 15px;
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+   /*  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
     inset -5px -5px 5px rgba(255, 255, 255, 0.5),
     5px 5px 5px rgba(0, 0, 0,0.05),
-    -5px -5px 5px rgba(255, 255, 255, 0.5);
+    -5px -5px 5px rgba(255, 255, 255, 0.5); */
 
-    background-color: #f5f5f5;
+  /*   background-color: #f5f5f5; */
     border-radius: 5px;
 }
 #s{
     flex: 1;
-    border: 2px solid yellow;
 }
 
 .contentSubjects{
@@ -212,7 +201,7 @@ text-align: center;
 @media (max-width: 900px)  {
     .cards{
         position: relative;
-        overflow-x: auto;
+        overflow-x: scroll;
         display: scroll;
         box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
                 inset -5px -5px 5px rgba(255, 255, 255, 0.5),
