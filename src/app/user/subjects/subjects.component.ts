@@ -73,6 +73,7 @@ addSubjects(){
       console.log(res);
       this.addPanel = false;
       this.index();
+      this.addPanel = false;
   }
 });
 }
@@ -101,6 +102,7 @@ updateSubject(){
       console.log(res);
       this.show = false;
       this.index();
+      this.show = false;
     }
 
       });
