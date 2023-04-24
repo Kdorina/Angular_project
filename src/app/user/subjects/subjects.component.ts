@@ -12,7 +12,8 @@ import { ApiService } from '../../service/api.service';
 })
 export class SubjectsComponent implements OnInit{
 
-  actualData!:any;
+  searchPanel!:any;
+  actualData!:string;
   addPanel: boolean = false;
   show: boolean = false;
   addForm!: FormGroup;
@@ -58,6 +59,14 @@ index(){
 //tantárgy hozzáadás és eltárolása
 add(){
   this.addPanel = true;
+  this.searchPanel = false;
+  this.show = false;
+}
+
+search(){
+  this.searchPanel = true;
+  this.show = false;
+  this.addPanel = false;
 }
 
 addSubjects(){
@@ -84,6 +93,8 @@ editShow(subject:any){
   this.form.patchValue({subject: subject.subject});
   this.form.patchValue({grade: subject.grade});
   this.show = true;
+  this.addPanel = false;
+  this.searchPanel = false;
 }
 
 updateSubject(){
