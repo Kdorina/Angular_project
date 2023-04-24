@@ -18,22 +18,23 @@
 }
 
 .box{
-    background: linear-gradient(45deg, rgb(158, 211, 255),rgb(221, 167, 255));
+   /*  background: linear-gradient(45deg, rgb(158, 211, 255),rgb(221, 167, 255)); */
+    background-color: cornflowerblue;
     box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
     border-radius: 15px;
-    width: 400px;
-    height: 200px;
+    width: 300px;
+    height: 100px;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 .data{
     display: flex;
     background-color: aliceblue;
     border-radius: 10px;
-    width: 70px;
+    min-width: 70px;
     height: 70px;
     justify-content: center;
     align-items: center;
@@ -61,7 +62,7 @@
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 800px;
     min-height: 200px;
     background-color: rgba(239, 239, 239, 0.623);
 }
@@ -74,16 +75,17 @@
 
 @media (max-width: 500px){
     .box{
-        background: linear-gradient(45deg, rgb(158, 211, 255),rgb(221, 167, 255));
+       /*  background: linear-gradient(45deg, rgb(158, 211, 255),rgb(221, 167, 255));*/
+        background-color: cornflowerblue;
         box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
         border-radius: 15px;
-        width: 210px;
-        height: 120px;
+        width: 200px;
+        height: 70px;
         padding: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
     }
     .data{
         background-color: aliceblue;
@@ -103,22 +105,4 @@
         color: rgb(255, 255, 255);
         margin-right: 10px;
     }
-
-    // .cardCont{
-    //     display: flex;
-    //     flex-direction: row;
-    //     position: relative;;
-    //     overflow-x: auto;
-    //     display: scroll;
-    //     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
-    //             inset -5px -5px 5px rgba(255, 255, 255, 0.5),
-    //             5px 5px 5px rgba(0, 0, 0,0.05),
-    //             -5px -5px 5px rgba(255, 255, 255, 0.5);
-    //     // margin-right: 20px;
-    //     border-radius: 10px;
-    // }
-
-    // .cardCont::-webkit-scrollbar{
-    //     width: 0;
-    // }
 }
