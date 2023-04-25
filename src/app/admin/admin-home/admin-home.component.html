@@ -1,66 +1,53 @@
 <html>
     <div class="container">
 
-        <div class="cards">
-            <div class="box">
-                <div class="content" >
-                    <h2>1</h2>
-                    <div class="parent">
-                        <div class="child1">
-                            <i id="icon" class="bi bi-people"></i>
+        <div class="scrollCard">
+            <div class="cards">
+                <div class="box">
+                    <div class="content" >
+                        <!-- <h2>1</h2> -->
+                        <div class="parent">
+                            <div class="child1">
+                                <i id="icon" class="bi bi-people"></i>
+                            </div>
+                                <div class="child2">
+                                     {{num}}
+                                </div>
+                            </div>
                         </div>
-                            <div class="child2">
-                                 {{num}}
+                        <!-- <h3>Tanulók</h3> -->
+                        <p></p>
+                    </div>
+                </div>
+            <div class="cards">
+                <div class="box">
+                    <div class="content">
+                        <!-- <h2>2</h2> -->
+                       <div class="parent">
+                           <div class="child3"><i id="icon" class="bi bi-building"></i></div>
+                            <!-- <h3>Iskolák</h3> -->
+                            <div class="child4">
+                                {{numSchool}}
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="box">
+                    <div class="content">
+                        <!-- <h2>3</h2> -->
+                        <div class="parent">
+                            <div class="child5"><i id="icon" class="bi bi-calendar-week"></i></div>
+                            <!-- <h3>korosztály</h3> -->
+                            <div class="child6" *ngFor="let showAge of ages">
+                                {{showAge.kor}}
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- <h3>Tanulók</h3> -->
-                    <p></p>
-                </div>
-            </div>
-    
-        <div class="cards">
-            <div class="box">
-                <div class="content">
-                    <h2>2</h2>
-                   <div class="parent">
-                       <div class="child3"><i id="icon" class="bi bi-building"></i></div>
-                        <!-- <h3>Iskolák</h3> -->
-                        <div class="child4">
-                            {{numSchool}}
-                        </div>
-                   </div>
                 </div>
             </div>
         </div>
-    
-        <div class="cards">
-            <div class="box">
-                <div class="content">
-                    <h2>3</h2>
-                    <div class="parent">
-                        <div class="child5"><i id="icon" class="bi bi-calendar-week"></i></div>
-                        <!-- <h3>korosztály</h3> -->
-                        <div class="child6" *ngFor="let showAge of ages">
-                            {{showAge.kor}} 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <!-- <div class="cards">
-            <div class="box">
-                <div class="content">
-                    <h2>4</h2>
-                    <div class="parent">
-                        <div class="child7"><i id="icon" class="bi bi-gender-ambiguous"></i></div>
-    
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
         <div id="mainCard" >
             <div id="main">
@@ -85,11 +72,11 @@
 
                         </tbody>
                     </table>
-                    
+
                 </div>
             </div>
         </div>
-    
+
 
         <div id="mainCard2">
             <div id="main2">
@@ -99,20 +86,20 @@
                                     <!-- <th>ID</th> -->
                                     <th>Regisztrált Intézmények</th>
                                 </thead>
-        
+
                                 <tbody >
                                     <tr *ngFor="let school of schools">
                                         <!-- <td>{{ school.id }}</td> -->
                                         <td>{{ school.buildingName }}</td>
                                     </tr>
-        
+
                                 </tbody>
                             </table>
-                            
+
                     </div>
                 </div>
         </div>
 
     </div>
-    
+
 </html>
