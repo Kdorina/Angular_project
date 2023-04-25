@@ -138,7 +138,6 @@
 
   .scrollCard{
   display: flex;
-/*   margin-bottom: 50px; */
   margin:50px;
   vertical-align: middle;
   }
@@ -197,10 +196,12 @@
       color: rgba(255, 255, 255, 0.05);
       transition: 0.5s;
   }
+
   thead {
-      color: #b2c4ff;
+      color: #133264;
       font-size: 3vmin;
       }
+
   tbody{
     font-size: 2.8vmin;
   }
