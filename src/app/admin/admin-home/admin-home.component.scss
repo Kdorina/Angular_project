@@ -20,7 +20,7 @@
       width: 300px;
       height: 200px;
       border-radius: 15px;
-
+      margin-right: 20px;
   }
 
   .container .cards .box{
@@ -138,7 +138,9 @@
 
   .scrollCard{
   display: flex;
-  margin-bottom: 50px;
+/*   margin-bottom: 50px; */
+  margin:50px;
+  vertical-align: middle;
   }
 
   @media (max-width:1000px) {
@@ -172,9 +174,10 @@
     flex: 2;
     margin: 30px;
     position: relative;
-    width: 500px;
+    min-width: 300px;
     min-height: 50vh;
     border-radius: 15px;
+
 }
 
   #main{
@@ -196,8 +199,11 @@
   }
   thead {
       color: #b2c4ff;
-      font-size: 25px;
+      font-size: 3vmin;
       }
+  tbody{
+    font-size: 2.8vmin;
+  }
 
       .scroll{
           margin-top: 5px;
@@ -211,7 +217,7 @@
         flex: 2;
         margin: 30px;
         position: relative;
-        width: 500px;
+        min-width: 300px;
         min-height: 50vh;
         border-radius: 15px;
 
