@@ -1,6 +1,6 @@
-html{
+/* html{
     background-color: rgb(243, 243, 243);
-}
+} */
 .progress{
     width:20%;
 }
@@ -36,7 +36,7 @@ html{
     right: 10px;
     bottom: 20px;
     background-color: #ffffff;
-    // box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.187);
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -44,7 +44,7 @@ html{
 }
 
 .container .cards:hover .box{
-    
+
     transform: translateY(-5px);
 }
 
@@ -74,7 +74,7 @@ html{
     font-size: 50px;
   }
 
- 
+
 .child2 {
     margin-left: 0px;
     display: inline-block;
@@ -219,7 +219,7 @@ thead {
     color: #b2c4ff;
     font-size: 25px;
     }
-    
+
     .scroll{
         margin-top: 5px;
         height: 400px;
@@ -243,13 +243,13 @@ thead {
     justify-content: center;
     align-items: center;
 }
- #mainCard2{    
+ #mainCard2{
     flex: 2;
     position: relative;
     width: 500px;
     min-height: 50vh;
     border-radius: 15px;
-   
+
 }
 
 #mainCard2 #main2 #mainContent2 h2{
