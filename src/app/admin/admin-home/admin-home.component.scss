@@ -1,264 +1,64 @@
-/* html{
-    background-color: rgb(243, 243, 243);
-} */
-.progress{
-    width:20%;
-}
 
-.container{
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1500px;
-    flex-wrap: wrap;
-    padding: 40px 0;
-
-}
-
-.container .cards{
-    position: relative;
-    margin-left: 20px;
-    width: 300px;
-    height: 200px;
-    border-radius: 15px;
-
-}
-
-.container .cards .box{
-    margin: 20px;
-    margin-top: 40px;
-    width: 270px;
-    height: 150px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container .cards:hover .box{
-
-    transform: translateY(-5px);
-}
-
-.container .cards .box .content{
-    padding: 20px;
-    text-align: center;
-}
-
-.parent{
-    // position: relative;
-    display: flex;
-    padding: 5px 5px;
-    text-align: center;
-}
-
-
-
-// USER CARD
-.child1 {
-    color: #7e9bfd;
-    background-color:#b2c4ff;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin-right: 90px;
-    display: inline-block;
-    vertical-align:middle;
-    font-size: 50px;
+  .progress{
+      width:20%;
   }
 
+  .container{
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1500px;
+      flex-wrap: wrap;
+      padding: 40px 0;
 
-.child2 {
-    margin-left: 0px;
-    display: inline-block;
-    font-weight: 600;
-    vertical-align: middle;
-    font-size: 50px;
   }
 
-
- // INTEZMENY CARD
-.child3 {
-    color: #54daff;
-    background-color:#b2eeff;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin-right: 90px;
-    display: inline-block;
-    vertical-align:middle;
-    font-size: 50px;
-  }
-
-.child4 {
-    margin-left: 0px;
-    display: inline-block;
-    font-weight: 600;
-    vertical-align: middle;
-    font-size: 50px;
-  }
-
-  // AGE CARD
-  .child5 {
-    color: #8aff54;
-    background-color:#caffb2;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin-right: 90px;
-    display: inline-block;
-    vertical-align:middle;
-    font-size: 50px;
-  }
-
-.child6 {
-    margin-left: 0px;
-    display: inline-block;
-    font-weight: 600;
-    vertical-align: middle;
-    font-size: 50px;
-  }
-
-// GENDER CARD
- .child7 {
-        color: rgb(255, 246, 73);
-        background-color: #fbffb2;
-        padding: 10px 20px;
-        border-radius: 10px;
-        margin-right: 90px;
-        display: inline-block;
-        vertical-align:middle;
-        font-size: 50px;
-      }
- .child8 {
-        margin-left: 0px;
-        display: inline-block;
-        font-weight: 600;
-        vertical-align: middle;
-        font-size: 50px;
-      }
-
-
-
-/*
-.container .cards .box .content h2{
-    position: absolute;
-    top: -10px;
-    right: 30px;
-    font-size: 8em;
-    color: rgb(0, 0, 0,0.05);
-    transition: 0.5s;
-}
-
-.container .cards:hover .box .content h2{
-    color: rgba(0, 0, 0, 0.05);
-}
-
-.container .cards .box .content h3{
-   font-size: 1.8rem;
-   color: #777;
-   z-index: 1;
-    transition: 0.5s;
-} */
-
-/* .container .cards .box .content p{
-    font-size: 1em;
-    font-weight: 300;
-    color: #777;
-    z-index: 1;
-    transition: 0.5s;
-}
-.container .cards:hover .box .content h3,
-.container .cards:hover .box .content p{
-    color: rgb(0, 0, 0);
-} */
-
-.scrollCard{
-display: flex;
-margin-bottom: 50px;
-}
-
-@media (max-width:1000px) {
-
-  .scrollCard{
-    position: relative;
-    overflow-x: scroll;
-    display: scroll;
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
-            inset -5px -5px 5px rgba(255, 255, 255, 0.5),
-            5px 5px 5px rgba(0, 0, 0,0.05),
-            -5px -5px 5px rgba(255, 255, 255, 0.5);
-    margin: 30px;
-    border-radius: 15px;
-  }
   .container .cards{
-    margin-bottom:30px;
-}
+      position: relative;
+      margin-left: 20px;
+      width: 300px;
+      height: 200px;
+      border-radius: 15px;
 
-/* // USER CARD
-.child1 {
-  padding: 5px 15px;
-  border-radius: 10px;
-  margin-right: 30px;
-  display: inline-block;
-  vertical-align:middle;
-  font-size: 50px;
-}
+  }
+
+  .container .cards .box{
+      margin: 20px;
+      margin-top: 40px;
+      width: 270px;
+      height: 150px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .container .cards:hover .box{
+
+      transform: translateY(-5px);
+  }
+
+  .container .cards .box .content{
+      padding: 20px;
+      text-align: center;
+  }
+
+  .parent{
+      // position: relative;
+      display: flex;
+      padding: 5px 5px;
+      text-align: center;
+  }
 
 
-.child2 {
-  margin-left: 0px;
-  display: inline-block;
-  font-weight: 600;
-  vertical-align: middle;
-  font-size: 50px;
-}
 
-
-// INTEZMENY CARD
-.child3 {
-  color: #54daff;
-  background-color:#b2eeff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-right: 90px;
-  display: inline-block;
-  vertical-align:middle;
-  font-size: 50px;
-}
-
-.child4 {
-  margin-left: 0px;
-  display: inline-block;
-  font-weight: 600;
-  vertical-align: middle;
-  font-size: 50px;
-}
-
-// AGE CARD
-.child5 {
-  color: #8aff54;
-  background-color:#caffb2;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-right: 90px;
-  display: inline-block;
-  vertical-align:middle;
-  font-size: 50px;
-}
-
-.child6 {
-  margin-left: 0px;
-  display: inline-block;
-  font-weight: 600;
-  vertical-align: middle;
-  font-size: 50px;
-}
-
-// GENDER CARD
-.child7 {
-      color: rgb(255, 246, 73);
-      background-color: #fbffb2;
+  // USER CARD
+  .child1 {
+      color: #7e9bfd;
+      background-color:#b2c4ff;
       padding: 10px 20px;
       border-radius: 10px;
       margin-right: 90px;
@@ -266,110 +66,180 @@ margin-bottom: 50px;
       vertical-align:middle;
       font-size: 50px;
     }
-.child8 {
+
+
+  .child2 {
       margin-left: 0px;
       display: inline-block;
       font-weight: 600;
       vertical-align: middle;
       font-size: 50px;
     }
- */
-  .cards::-webkit-scrollbar{
-    width: 0;
-}
-
-}
 
 
-// MAIN ADMIN CARDS
-
-#main{
-
-    position:absolute;
-    top:20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    padding: 20px;
-    background: #ffffff;
-    box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#mainCard{
-    position: relative;
-    width: 1000px;
-    min-height: 50vh;
-    // box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
-    //             inset -5px -5px 5px rgba(255, 255, 255, 0.5),
-    //             5px 5px 5px rgba(0, 0, 0,0.05),
-    //             -5px -5px 5px rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    // margin: 30px;
-}
-
-#mainCard #main #mainContent h2{
-    position: relative;
-    top: -10px;
-    right: 30px;
-    font-size: 8em;
-    color: rgba(255, 255, 255, 0.05);
-    transition: 0.5s;
-}
-thead {
-    color: #b2c4ff;
-    font-size: 25px;
+  // INTEZMENY CARD
+  .child3 {
+      color: #54daff;
+      background-color:#b2eeff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-right: 90px;
+      display: inline-block;
+      vertical-align:middle;
+      font-size: 50px;
     }
 
-    .scroll{
-        margin-top: 5px;
-        height: 400px;
-        width: 900px;
-        overflow-y: scroll;
-        padding: 10px;
+  .child4 {
+      margin-left: 0px;
+      display: inline-block;
+      font-weight: 600;
+      vertical-align: middle;
+      font-size: 50px;
     }
 
- #main2{
-    // display: flex;
-    position:absolute;
-    top:20px;
-    left: 20px;
-    right: 20px;
-    padding: 20px;
-    bottom: 20px;
-    background: #ffffff;
-    box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // AGE CARD
+    .child5 {
+      color: #8aff54;
+      background-color:#caffb2;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-right: 90px;
+      display: inline-block;
+      vertical-align:middle;
+      font-size: 50px;
+    }
+
+  .child6 {
+      margin-left: 0px;
+      display: inline-block;
+      font-weight: 600;
+      vertical-align: middle;
+      font-size: 50px;
+    }
+
+  // GENDER CARD
+  .child7 {
+          color: rgb(255, 246, 73);
+          background-color: #fbffb2;
+          padding: 10px 20px;
+          border-radius: 10px;
+          margin-right: 90px;
+          display: inline-block;
+          vertical-align:middle;
+          font-size: 50px;
+        }
+  .child8 {
+          margin-left: 0px;
+          display: inline-block;
+          font-weight: 600;
+          vertical-align: middle;
+          font-size: 50px;
+        }
+
+  .scrollCard{
+  display: flex;
+  margin-bottom: 50px;
+  }
+
+  @media (max-width:1000px) {
+
+    .scrollCard{
+      position: relative;
+      overflow-x: scroll;
+      display: scroll;
+      box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+              inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+              5px 5px 5px rgba(0, 0, 0,0.05),
+              -5px -5px 5px rgba(255, 255, 255, 0.5);
+      margin: 30px;
+      border-radius: 15px;
+    }
+    .container .cards{
+      margin-bottom:30px;
+  }
+  .container .cards:hover .box{
+    transform: none;
 }
- #mainCard2{
+    .cards::-webkit-scrollbar{
+      width: 0;
+  }
+
+  }
+
+
+  // MAIN ADMIN CARDS
+  #mainCard{
     flex: 2;
+    margin: 30px;
     position: relative;
     width: 500px;
     min-height: 50vh;
     border-radius: 15px;
-
 }
 
-#mainCard2 #main2 #mainContent2 h2{
-    position: relative;
-    top: -10px;
-    right: 30px;
-    font-size: 8em;
-    color: rgb(0, 0, 0,0.05);
-    transition: 0.5s;
-}
+  #main{
+      background: #ffffff;
+      box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
 
-.scroll2{
-    position: relative;
-    margin-top: 5px;
-    height: 400px;
-    width: 650px;
-    overflow-y: scroll;
-    padding: 10px;
-}
+  #mainCard #main #mainContent h2{
+      position: relative;
+      top: -10px;
+      right: 30px;
+      font-size: 8em;
+      color: rgba(255, 255, 255, 0.05);
+      transition: 0.5s;
+  }
+  thead {
+      color: #b2c4ff;
+      font-size: 25px;
+      }
+
+      .scroll{
+          margin-top: 5px;
+          height: 400px;
+          width: 900px;
+          overflow-y: scroll;
+          padding: 10px;
+      }
+
+      #mainCard2{
+        flex: 2;
+        margin: 30px;
+        position: relative;
+        width: 500px;
+        min-height: 50vh;
+        border-radius: 15px;
+
+    }
+
+  #main2{
+      background: #ffffff;
+      box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #mainCard2 #main2 #mainContent2 h2{
+      position: relative;
+      top: -10px;
+      right: 30px;
+      font-size: 8em;
+      color: rgb(0, 0, 0,0.05);
+      transition: 0.5s;
+  }
+
+  .scroll2{
+      position: relative;
+      margin-top: 5px;
+      height: 400px;
+      width: 650px;
+      overflow-y: scroll;
+      padding: 10px;
+  }
