@@ -8,11 +8,11 @@ import { AdminService } from '../service/admin.service';
   styleUrls: ['./admin-navbar.component.scss']
 })
 export class AdminNavbarComponent implements OnInit{
-  
+
   constructor(private adminSerivce: AdminService, private router: Router){}
-  
+
   ngOnInit(): void {
-    
+
   }
 
   adminNavbar = false;
@@ -23,15 +23,15 @@ export class AdminNavbarComponent implements OnInit{
 
   logout(){
 
-    let jsonCurrentUser: any = localStorage.getItem('currentUser')
+    let jsonCurrentUser: any = localStorage.getItem('currentAdmin')
     let currentUser = JSON.parse(jsonCurrentUser);
     this.adminSerivce.logout(currentUser.email, currentUser.token).subscribe({
      next:data =>{
       console.log('Kilépés',data);
-      localStorage.removeItem('currentUser')
+      localStorage.removeItem('currentAdmin')
       this.router.navigate(['admin/login'])
      }
     });
-   
+
 }
 }

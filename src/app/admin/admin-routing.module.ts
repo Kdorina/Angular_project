@@ -19,27 +19,26 @@ const routes: Routes = [
   }]},
 
     {path: "admin", component: AdminComponent,
-    children: [{ 
+    children: [{
       path:"students", component: AdminStudentsComponent,
       canActivate:[AdminGuard]
   }]},
 
     {path: "admin", component: AdminComponent,
-    children: [{ 
+    children: [{
       path:"schools", component: AdminSchoolsComponent,
       canActivate:[AdminGuard]
   }]},
-  
+
     {path: "admin", component: AdminComponent,
-    children: [{ 
+    children: [{
       path:"statistic", component: AdminStatisticComponent,
       canActivate:[AdminGuard]
   }]},
 ]
-  
+
   @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
   })
   export class AdminRoutingModule { }
-  

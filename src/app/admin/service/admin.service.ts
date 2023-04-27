@@ -11,7 +11,7 @@ export class AdminService {
 
   constructor( private http: HttpClient) { }
 
-  
+
 //LOGIN
 adminLogin(email: string, pass:string){
   let adminData =
@@ -28,7 +28,7 @@ adminLogin(email: string, pass:string){
   let url = this.host + endpoint;
   return this.http.post<any>(url, adminData, httpOptions);
 }
- 
+
 logout(email:any, token:string) {
   let adminData ={
     email: email,
@@ -40,7 +40,7 @@ logout(email:any, token:string) {
     'Authorization': 'Bearer ' + token
   })
 
-  const httpOptions = {
+  let httpOptions = {
     headers: headers
   }
   let endpoint = 'adminLogout';
