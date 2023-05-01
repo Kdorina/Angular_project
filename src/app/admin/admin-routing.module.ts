@@ -3,7 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AdminHomeComponent } from "./admin-home/admin-home.component";
 
 import { AdminSchoolsComponent } from "./admin-schools/admin-schools.component";
-import { AdminStatisticComponent } from "./admin-statistic/admin-statistic.component";
+
 import { AdminStudentsComponent } from "./admin-students/admin-students.component";
 import { AdminComponent } from "./admin.component";
 import { AdminGuard } from "./service/admin.guard";
@@ -30,11 +30,6 @@ const routes: Routes = [
       canActivate:[AdminGuard]
   }]},
 
-    {path: "admin", component: AdminComponent,
-    children: [{
-      path:"statistic", component: AdminStatisticComponent,
-      canActivate:[AdminGuard]
-  }]},
 ]
 
   @NgModule({

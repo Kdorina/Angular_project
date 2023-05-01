@@ -20,7 +20,6 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminRoutingModule} from 'src/app/admin/admin-routing.module';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
-import { AdminStatisticComponent } from './admin/admin-statistic/admin-statistic.component';
 import { AdminStudentsComponent } from './admin/admin-students/admin-students.component';
 import { AdminSchoolsComponent } from './admin/admin-schools/admin-schools.component';
 
@@ -32,6 +31,7 @@ import { UserStatisticComponent } from './user/user-statistic/user-statistic.com
 import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { ServicePipe } from './service/pipe/service.pipe';
+import { adminPipe } from './admin/service/pipe/admin.pipe';
 
 
 @NgModule({
@@ -46,7 +46,6 @@ import { ServicePipe } from './service/pipe/service.pipe';
     AdminComponent,
     AdminHomeComponent,
     AdminNavbarComponent,
-    AdminStatisticComponent,
     AdminStudentsComponent,
     AdminSchoolsComponent,
     AdminLoginComponent,
@@ -58,6 +57,7 @@ import { ServicePipe } from './service/pipe/service.pipe';
     SubjectsComponent,
     UserStatisticComponent,
     ServicePipe,
+    adminPipe,
 
 
   ],

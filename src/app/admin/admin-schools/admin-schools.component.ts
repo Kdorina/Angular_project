@@ -10,10 +10,17 @@ import { FormBuilder } from '@angular/forms';
 export class AdminSchoolsComponent implements OnInit{
 
 
+  searchPanel!:any;
+  actualBuilding!:string;
+
   constructor( private admin : AdminService, private formBuilder: FormBuilder){}
 
   ngOnInit(): void {
     this.Schools();
+  }
+
+  search(){
+    this.searchPanel = true;
   }
 
   schools:any;
@@ -23,7 +30,6 @@ export class AdminSchoolsComponent implements OnInit{
       this.schools = data ;
       console.log(this.schools);
 
-/*       this.numSchool = data? data.length : 0; */
     });
   }
 

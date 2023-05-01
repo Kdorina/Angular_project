@@ -1,0 +1,27 @@
+.container
+{
+  position: relative;
+  border-radius: 10px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.content{
+  margin-top: 20px;
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgb(0, 0, 0,0.1);
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchContainer{
+  display: flex;
+  margin-top: 20px;
+
+}
+//search button
+#search{
+  margin-left: 20px;
+}
