@@ -31,58 +31,51 @@
                 <p>{{elseG}}</p>
             </div>
         </div>
-    </div>
-
-    <div id="mainCard" class="mt-5">
-        <div id="main">
-            <div class="scroll"   id="mainContent" >
-                <table class="table table-striped">
-                    <thead>
-                        <th>ID</th>
-                        <th>Név</th>
-                        <th>Email</th>
-                        <th>Szülév</th>
-                        <th>Nem</th>
-                    </thead>
-
-                    <tbody *ngIf="users.length ">
-                        <tr *ngFor="let user of users">
-                            <td>{{ user.id }}</td>
-                            <td>{{ user.name }}</td>
-                            <td>{{ user.email }}</td>
-                            <td>{{ user.date_of_birth }}</td>
-                            <td>{{ user.gender }}</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-
-            </div>
-        </div>
-    </div>
+      </div>
+</div>
 
 
-    <div id="mainCard" >
-        <div id="main">
-            <div class="scroll" id="mainContent" >
-                <table class="table table-striped">
-                    <thead>
-                        <th>User ID</th>
-                        <th>Tantárgyak</th>
-                    </thead>
+<div class="holder">
+  <div id="mainCard" >
 
-                    <tbody *ngIf="subs.length ">
-                        <tr *ngFor="let sub of subs">
-                            <td>{{ sub.user_id }}</td>
-                            <td>{{ sub.subject }}</td>
-                        </tr>
+      <div id="main">
+          <div class="scroll"   id="mainContent" >
+              <table class="table table-striped">
+                  <thead>
+                      <th>ID</th>
+                      <th>Név</th>
+                      <th>Email</th>
+                      <th>Szülév</th>
+                      <th>Nem</th>
+                  </thead>
+                  <tbody *ngIf="users.length ">
+                      <tr *ngFor="let user of users">
+                          <td>{{ user.id }}</td>
+                          <td>{{ user.name }}</td>
+                          <td>{{ user.email }}</td>
+                          <td>{{ user.date_of_birth }}</td>
+                          <td>{{ user.gender }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
 
-                    </tbody>
-                </table>
-
-            </div>
-        </div>
-    </div>
-
-
+      <div id="main" class="mt-5">
+          <div class="scroll" id="mainContent" >
+              <table class="table table-striped">
+                  <thead>
+                      <th>User ID</th>
+                      <th>Tantárgyak</th>
+                  </thead>
+                  <tbody *ngIf="subs.length ">
+                      <tr *ngFor="let sub of subs">
+                          <td>{{ sub.user_id }}</td>
+                          <td>{{ sub.subject }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+</div>
 </div>
